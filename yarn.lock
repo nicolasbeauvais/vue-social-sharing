@@ -1392,7 +1392,7 @@ conventional-commits-parser@^1.0.0:
     through2 "^2.0.0"
     trim-off-newlines "^1.0.0"
 
-conventional-github-releaser@^1.1.2:
+conventional-github-releaser:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/conventional-github-releaser/-/conventional-github-releaser-1.1.3.tgz#e12720aafc6fd680613d096d341e332d64d44e1b"
   dependencies:
@@ -1731,6 +1731,10 @@ dot-prop@^3.0.0:
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-3.0.0.tgz#1b708af094a49c9a0e7dbcad790aba539dac1177"
   dependencies:
     is-obj "^1.0.0"
+
+dotenv:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-2.0.0.tgz#bd759c357aaa70365e01c96b7b0bec08a6e0d949"
 
 eastasianwidth@^0.1.1:
   version "0.1.1"

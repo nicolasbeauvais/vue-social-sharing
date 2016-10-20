@@ -3,13 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Vue social sharing example</title>
-    <script src="../../node_modules/vue/dist/vue.min.js"></script>
-    <script src="../../dist/vue-social-sharing.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js"></script>
+    <script src="../dist/vue-social-sharing.js"></script>
   </head>
   <body>
+    <div id="app">
+      <social-sharing url="https://vuejs.org/" twitter-user="vuejs" inline-template>
+        <div>
+          <ul>
+            <li>
+              <facebook><i class="fa fa-facebook"></i> Facebook</facebook>
+            </li>
+            <li>
+              <twitter><i class="fa fa-twitter"></i> Twitter</twitter>
+            </li>
+            <li>
+              <googleplus><i class="fa fa-google-plus"></i> Google +</googleplus>
+            </li>
+            <li>
+              <pinterest><i class="fa fa-pinterest"></i> Pinterest</pinterest>
+            </li>
+            <li>
+              <reddit><i class="fa fa-reddit"></i> Reddit</reddit>
+            </li>
+            <li>
+              <linkedin><i class="fa fa-linkedin"></i> LinkedIn</linkedin>
+            </li>
+            <li>
+              <whatsapp><i class="fa fa-whatsapp"></i> Whatsapp</whatsapp>
+            </li>
+          </ul>
+        </div>
+      </social-sharing>
+    </div>
     <script>
-      var vm = new Vue({
-        el: 'body',
+      new Vue({
+        el: '#app',
         data: {}
       });
     </script>

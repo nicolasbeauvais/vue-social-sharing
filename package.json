@@ -1,7 +1,7 @@
 {
   "name": "vue-social-sharing",
   "description": "A Vue.js component for sharing links to social networks",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": {
     "name": "nicolasbeauvais",
     "email": "nicolasbeauvais1@gmail.com"
@@ -19,8 +19,9 @@
     "buble": "^0.13.1",
     "chromedriver": "^2.21.2",
     "conventional-changelog-cli": "^1.1.1",
-    "conventional-github-releaser": "^1.1.2",
+    "conventional-github-releaser": "^1.1.3",
     "cross-spawn": "^4.0.0",
+    "dotenv": "^2.0.0",
     "eslint": "^3.4.0",
     "eslint-config-vue": "^1.1.0",
     "eslint-loader": "^1.3.0",
@@ -80,7 +81,7 @@
   "scripts": {
     "build": "node config/build.js",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -p angular",
-    "release": "conventional-github-releaser -p angular",
+    "release": "node -r dotenv/config && conventional-github-releaser -p angular",
     "clean": "rm -rf coverage && rm -rf dist/*.js* && rm ./*.log",
     "dev": "webpack-dev-server --quiet --config config/webpack.dev.conf.js --host 0.0.0.0",
     "lint": "eslint src test config",
