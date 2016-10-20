@@ -1,0 +1,13 @@
+{
+  "env": {
+    "jasmine": true
+  },
+  "globals": {
+    "waitForUpdate": true,
+    "assert": true
+  },
+  "extends": "vue",
+  "rules": {
+    "semi": [2, "always"]
+  }
+}
