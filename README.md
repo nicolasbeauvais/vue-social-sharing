@@ -1,8 +1,8 @@
 # vue-social-sharing
 
+[![Build Status](https://travis-ci.org/nicolasbeauvais/vue-social-sharing.svg?branch=dev)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
+
 A Vue.js component for sharing links to social networks
-
-
 
 ## Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-social-sharing/blob/dev/CHANGELOG.md).

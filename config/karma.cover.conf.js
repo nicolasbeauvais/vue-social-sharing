@@ -14,7 +14,7 @@ module.exports = config => {
     singleRun: true
   });
 
-  // add babel-plugin-coverage for code intrumentation
+  // add babel-plugin-coverage for code instrumentation
   options.webpack.babel = {
     plugins: [['coverage', { ignore: ['test/'] }]]
   };

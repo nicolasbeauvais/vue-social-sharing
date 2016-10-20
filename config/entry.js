@@ -15,13 +15,13 @@ const moduleName = classify(pack.name);
 
 const entries = {
   commonjs: {
-    entry: 'src/vue-social-sharing.js',
+    entry: 'src/index.js',
     dest: `dist/${pack.name}.common.js`,
     format: 'cjs',
     banner
   },
   production: {
-    entry: 'src/vue-social-sharing.js',
+    entry: 'src/index.js',
     dest: `dist/${pack.name}.min.js`,
     format: 'umd',
     env: 'production',
@@ -29,7 +29,7 @@ const entries = {
     banner
   },
   development: {
-    entry: 'src/vue-social-sharing.js',
+    entry: 'src/index.js',
     dest: `dist/${pack.name}.js`,
     format: 'umd',
     env: 'development',

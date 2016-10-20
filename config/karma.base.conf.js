@@ -36,5 +36,6 @@ module.exports = {
   webpack: webpackConfig,
   webpackMiddleware: {
     noInfo: true
-  }
+  },
+  failOnEmptyTestSuite: false
 };
