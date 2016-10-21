@@ -1,15 +1,6 @@
 <!--
 Thank you for contributing! Please carefully read the following before opening your issue.
 
-Got a question?
-===============
-The issue list of this repo is **exclusively** for bug reports and feature requests. For simple questions, please use the following resources:
-
-- Read the docs: https://github.com/nicolasbeauvais/vue-social-sharing/blob/dev/README.md
-- Ask in the Gitter chat room: https://gitter.im/vuejs/vue
-- Ask on the forums: http://forum.vuejs.org/
-- Look for/ask questions on stack overflow: https://stackoverflow.com/questions/ask?tags=vue-social-sharing
-
 Reporting a bug?
 ================
 - Try to search for your issue, it may have already been answered or even fixed in the `dev` branch.
@@ -29,7 +20,7 @@ Remove the template from below and provide thoughtful commentary *and code sampl
 
 <!-- BUG REPORT TEMPLATE -->
 ### vue & vue-social-sharing version
-2.0.x, x.y.z
+0.0.x, x.y.z
 
 ### Reproduction Link
 <!-- A minimal JSBin, JSFiddle, Codepen, or a GitHub reprository that can reproduce the bug. -->
