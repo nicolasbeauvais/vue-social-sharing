@@ -83,7 +83,7 @@
   "scripts": {
     "build": "node config/build.js",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -p angular",
-    "release": "conventional-github-releaser -p angular",
+    "release": "conventional-github-releaser -p angular && npm publish",
     "clean": "rm -rf coverage && rm -rf dist/*.js* && rm ./*.log",
     "dev": "webpack-dev-server --quiet --config config/webpack.dev.conf.js --host 0.0.0.0",
     "lint": "eslint src test config",
