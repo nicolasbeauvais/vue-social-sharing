@@ -12,7 +12,7 @@
 
   - For more complicated questions, you can use [the official forum](http://forum.vuejs.org/) or StackOverflow. Make sure to provide enough information when asking your questions - this makes it easier for others to help you!
 
-- Try to search for your issue, it may have already been answered or even fixed in the development branch.
+- Try to search for your issue, it may have already been answered or even fixed in the master branch.
 
 - Check if the issue is reproducible with the latest stable version of Vue. If you are using a pre-release, please indicate the specific version you are using.
 
@@ -25,10 +25,6 @@
 - If your issue is resolved but still open, don’t hesitate to close it. In case you found a solution by yourself, it could be helpful to explain how you fixed it.
 
 ## Pull Request Guidelines
-
-- The `master` branch is basically just a snapshot of the latest stable release. All development should be done in dedicated branches. **Do not submit PRs against the `master` branch.**
-
-- Checkout a topic branch from the relevant branch, e.g. `dev`, and merge back against that branch.
 
 - Work in the `src` folder and **DO NOT** checkin `dist` in the commits.
 
@@ -46,11 +42,11 @@
 
 ### Work Step Example
 - Fork the repository from [nicolasbeauvais/vue-social-sharing](https://github.com/nicolasbeauvais/vue-social-sharing) !
-- Create your topic branch from `dev`: `git branch my-new-topic origin/dev`
+- Create your topic branch from `master`: `git branch my-new-topic origin/master`
 - Add codes and pass tests !
 - Commit your changes: `git commit -am 'Add some topic'`
 - Push to the branch: `git push origin my-new-topic`
-- Submit a pull request to `dev` branch of `nicolasbeauvais/vue-social-sharing` repository !
+- Submit a pull request to `master` branch of `nicolasbeauvais/vue-social-sharing` repository !
 
 ## Development Setup
 
