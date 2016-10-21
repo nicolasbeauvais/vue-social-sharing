@@ -67,7 +67,9 @@
   "keywords": [
     "plugin",
     "vue",
-    "vuejs"
+    "vuejs",
+    "social",
+    "share"
   ],
   "license": "MIT",
   "main": "dist/vue-social-sharing.common.js",
