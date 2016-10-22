@@ -10,3 +10,4 @@ node_modules
 *.log
 *.swp
 *~
+yarn.lock
