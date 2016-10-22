@@ -1,6 +1,9 @@
 # vue-social-sharing
 
+[![npm version](https://badge.fury.io/js/vue-social-sharing.svg)](https://badge.fury.io/js/vue-social-sharing)
+[![Bower version](https://badge.fury.io/bo/vue-social-sharing.svg)](https://badge.fury.io/bo/vue-social-sharing)
 [![Build Status](https://travis-ci.org/nicolasbeauvais/vue-social-sharing.svg?branch=master)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
+[![Coverage Status](https://coveralls.io/repos/github/nicolasbeauvais/vue-social-sharing/badge.svg?branch=master)](https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master)
 
 A Vue.js component for sharing links to social networks
 
