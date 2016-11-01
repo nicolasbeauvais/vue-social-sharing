@@ -67,6 +67,15 @@ var SocialSharing = {
     },
 
     /**
+     * Facebook quote
+     * @var string
+     */
+    quote: {
+      type: String,
+      default: ''
+    },
+
+    /**
      * Twitter user.
      * @var string
      */
@@ -103,7 +112,7 @@ var SocialSharing = {
        */
       networks: {
         facebook: {
-          sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&summary=@title',
+          sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
           stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
         },
 
@@ -160,9 +169,11 @@ var SocialSharing = {
      * @param network Social network key.
      */
     _getSharer: function (network) {
-      return this.networks[network].sharer.replace(/@url/g, this.url)
+      return this.networks[network].sharer
+        .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, this.title)
         .replace(/@description/g, this.description)
+        .replace(/@quote/g, this.quote)
         .replace(/@twitteruser/g, this.twitterUser);
     },
 
