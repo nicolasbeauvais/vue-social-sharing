@@ -39,7 +39,7 @@ require('vue-social-sharing');
 ### Using the social sharing component
 
 ```html
-<social-sharing url="https://vuejs.org/" twitter-user="vuejs" inline-template>
+<social-sharing url="https://vuejs.org/" inline-template>
   <div>
       <facebook>
         <i class="fa fa-facebook"></i> Facebook
@@ -71,6 +71,18 @@ require('vue-social-sharing');
   </div>
 </social-sharing>
 ```
+
+#### Available properties
+
+List of available props to use in the component:
+
+Prop           | Data Type  | Default   | Description
+-------------- | ---------- | --------- | -----------
+`url`          | String     | current   | URL to share.
+`title`        | String     |           | Sharing title (if available).
+`description`  | String     |           | Sharing description (if available).
+`quote`        | String     |           | Facebook quote (Only for facebook).
+`twitter-user` | String     |           | Twitter user (Only for twitter).
 
 ## Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/CHANGELOG.md).
