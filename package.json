@@ -1,7 +1,7 @@
 {
   "name": "vue-social-sharing",
   "description": "A Vue.js component for sharing links to social networks",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "nicolasbeauvais",
     "email": "nicolasbeauvais1@gmail.com"
