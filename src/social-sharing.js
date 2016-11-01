@@ -72,7 +72,7 @@ export default {
         },
 
         twitter: {
-          sharer: 'https://twitter.com/intent/tweet?url=@url&via=@twitteruser'
+          sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser'
         },
 
         googleplus: {
