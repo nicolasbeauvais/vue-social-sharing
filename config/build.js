@@ -13,7 +13,7 @@ if (!exist('dist')) {
 
 // update main file
 const main = readFile('src/index.js', 'utf-8')
-  .replace(/SocialSharing\.version = '[\d\.]+'/, `SocialSharing.version = '${pack.version}'`);
+  .replace(/SocialSharing\.version = '[\d.]+'/, `SocialSharing.version = '${pack.version}'`);
 writeFile('src/index.js', main);
 
 let entries = getAllEntries();
