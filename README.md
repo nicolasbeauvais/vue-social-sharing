@@ -1,9 +1,10 @@
 # vue-social-sharing
 
-[![npm version](https://badge.fury.io/js/vue-social-sharing.svg)](https://badge.fury.io/js/vue-social-sharing)
-[![Bower version](https://badge.fury.io/bo/vue-social-sharing.svg)](https://badge.fury.io/bo/vue-social-sharing)
-[![Build Status](https://travis-ci.org/nicolasbeauvais/vue-social-sharing.svg?branch=master)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
-[![Coverage Status](https://coveralls.io/repos/github/nicolasbeauvais/vue-social-sharing/badge.svg?branch=master)](https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master)
+[![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/releases)
+[![Build Status](https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
+[![Coverage Status](https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square)](https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master)
+[![Downloads](https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-squar)](https://www.npmjs.com/package/vue-social-sharing)
+[![License](https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE)
 
 A Vue.js component for sharing links to social networks
 
@@ -79,10 +80,11 @@ List of available props to use in the component:
 Prop           | Data Type  | Default   | Description
 -------------- | ---------- | --------- | -----------
 `url`          | String     | current   | URL to share.
-`title`        | String     |           | Sharing title (if available).
-`description`  | String     |           | Sharing description (if available).
-`quote`        | String     |           | Facebook quote (Only for facebook).
-`twitter-user` | String     |           | Twitter user (Only for twitter).
+`title`        | String     |           | Sharing title (when available).
+`description`  | String     |           | Sharing description (when available).
+`quote`        | String     |           | Facebook quote (Facebook only).
+`hashtags`     | String     |           | A list of comma-separated hashtags (Twitter only).
+`twitter-user` | String     |           | Twitter user (Twitter only).
 
 ## Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/CHANGELOG.md).
