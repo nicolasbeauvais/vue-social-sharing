@@ -3,7 +3,7 @@
 [![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/releases)
 [![Build Status](https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
 [![Coverage Status](https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square)](https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master)
-[![Downloads](https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-squar)](https://www.npmjs.com/package/vue-social-sharing)
+[![Downloads](https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-square)](https://www.npmjs.com/package/vue-social-sharing)
 [![License](https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE)
 
 A Vue.js component for sharing links to social networks
