@@ -39,6 +39,11 @@ export default {
       default: ''
     },
 
+    hashtags: {
+      type: String,
+      default: '',
+    },
+
     /**
      * Twitter user.
      * @var string
@@ -81,7 +86,7 @@ export default {
         },
 
         twitter: {
-          sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser'
+          sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser&hashtags=@hashtags'
         },
 
         googleplus: {
@@ -138,6 +143,7 @@ export default {
         .replace(/@title/g, this.title)
         .replace(/@description/g, this.description)
         .replace(/@quote/g, this.quote)
+        .replace(/@hashtags/g, this.hashtags)
         .replace(/@twitteruser/g, this.twitterUser);
     },
 
