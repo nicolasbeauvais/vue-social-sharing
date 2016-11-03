@@ -1,6 +1,6 @@
 import SocialSharing from './social-sharing';
 
-SocialSharing.version = '0.0.3';
+SocialSharing.version = '0.0.4';
 
 export default SocialSharing;
 

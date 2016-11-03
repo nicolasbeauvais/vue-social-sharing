@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v0.0.3 
+ * vue-social-sharing v0.0.4 
  * (c) 2016 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -79,7 +79,7 @@ var SocialSharing = {
 
     hashtags: {
       type: String,
-      default: '',
+      default: ''
     },
 
     /**
@@ -278,7 +278,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '0.0.3';
+SocialSharing.version = '0.0.4';
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.component('social-sharing', SocialSharing);
