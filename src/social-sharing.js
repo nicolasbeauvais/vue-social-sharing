@@ -41,7 +41,7 @@ export default {
 
     hashtags: {
       type: String,
-      default: '',
+      default: ''
     },
 
     /**
