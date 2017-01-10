@@ -1,6 +1,6 @@
 /*!
  * vue-social-sharing v0.0.4 
- * (c) 2016 nicolasbeauvais
+ * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -16,14 +16,14 @@ var SocialSharingMixin = {
    * Mixin for popup link sharers.
    */
   popup: {
-    template: '<a href="#share-{{network}}" @click.prevent="$parent.share(network)"><slot></slot></a>'
+    template: '<a :href="\'#share-\'+ network" @click.prevent="$parent.share(network)"><slot></slot></a>'
   },
 
   /**
    * Mixin for direct link sharers.
    */
   direct: {
-    template: '<a v-bind:href="$parent._getSharer(network)" data-action="{{attributes(\'data-action\')}}" @click="$parent.touch(network)"><slot></slot></a>',
+    template: '<a v-bind:href="$parent._getSharer(network)" :data-action="attributes(\'data-action\')" @click="$parent.touch(network)"><slot></slot></a>',
     methods: {
       /**
        * Returns attribute value by key.
@@ -192,16 +192,16 @@ var SocialSharing = {
      */
     share: function (network) {
       if (this.url !== undefined) { this._openSharer(this._getSharer(network)); }
-      this.$dispatch('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
-     * Touches network and dispatches click event.
+     * Touches network and emits click event.
      *
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$dispatch('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -233,7 +233,7 @@ var SocialSharing = {
   /**
    * Sets default url if non is indicated.
    */
-  ready: function () {
+  mounted: function () {
     if (this.url === undefined) { this.url = window.location.href; }
 
     // Allow for borders.

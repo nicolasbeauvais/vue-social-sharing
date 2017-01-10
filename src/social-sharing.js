@@ -154,16 +154,16 @@ export default {
      */
     share: function (network) {
       if (this.url !== undefined) { this._openSharer(this._getSharer(network)); }
-      this.$dispatch('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
-     * Touches network and dispatches click event.
+     * Touches network and emits click event.
      *
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$dispatch('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -195,7 +195,7 @@ export default {
   /**
    * Sets default url if non is indicated.
    */
-  ready: function () {
+  mounted: function () {
     if (this.url === undefined) { this.url = window.location.href; }
 
     // Allow for borders.
