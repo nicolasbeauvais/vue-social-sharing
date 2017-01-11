@@ -120,6 +120,6 @@ describe('SocialSharing', () => {
         expect(vm.attributes(key)).toBe(attr[key]);
       });
       done();
-    })
+    });
   });
 });
