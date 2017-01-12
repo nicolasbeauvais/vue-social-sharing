@@ -1,6 +1,11 @@
 const webpack = require('webpack');
 
 const webpackConfig = {
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
   module: {
     loaders: [{
       test: /\.js$/,
