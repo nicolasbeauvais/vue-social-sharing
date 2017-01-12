@@ -1,6 +1,44 @@
 import Vue from 'vue';
 import SocialSharingMixin from './social-sharing-mixin';
 
+var $window = window;
+
+export function mockWindow (self) {
+  $window = self || window; // mock window for unit testing
+}
+
+export const networks = {
+  facebook: {
+    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
+    stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
+  },
+
+  twitter: {
+    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser&hashtags=@hashtags'
+  },
+
+  googleplus: {
+    sharer: 'https://plus.google.com/share?url=@url',
+    stats: 'https://plusone.google.com/_/+1/fastbutton?url=@url'
+  },
+
+  pinterest: {
+    sharer: 'https://pinterest.com/pin/create/button/?url=@url&description=@title'
+  },
+
+  reddit: {
+    sharer: 'http://www.reddit.com/submit?url=@url&title=@title'
+  },
+
+  linkedin: {
+    sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description'
+  },
+
+  whatsapp: {
+    sharer: 'whatsapp://send?text=@url'
+  }
+};
+
 export default {
   props: {
     /**
@@ -9,7 +47,7 @@ export default {
      */
     url: {
       type: String,
-      default: undefined
+      default: $window.location.href
     },
 
     /**
@@ -79,37 +117,7 @@ export default {
        * Available sharing networks.
        * @param object
        */
-      networks: {
-        facebook: {
-          sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
-          stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
-        },
-
-        twitter: {
-          sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser&hashtags=@hashtags'
-        },
-
-        googleplus: {
-          sharer: 'https://plus.google.com/share?url=@url',
-          stats: 'https://plusone.google.com/_/+1/fastbutton?url=@url'
-        },
-
-        pinterest: {
-          sharer: 'https://pinterest.com/pin/create/button/?url=@url&description=@title'
-        },
-
-        reddit: {
-          sharer: 'http://www.reddit.com/submit?url=@url&title=@title'
-        },
-
-        linkedin: {
-          sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description'
-        },
-
-        whatsapp: {
-          sharer: 'whatsapp://send?text=@url'
-        }
-      },
+      networks,
 
       /**
        * Popup settings.
@@ -153,17 +161,17 @@ export default {
      * @param string network Social network key.
      */
     share: function (network) {
-      if (this.url !== undefined) { this._openSharer(this._getSharer(network)); }
-      this.$dispatch('social_shares_click', network, this.url);
+      this._openSharer(this._getSharer(network));
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
-     * Touches network and dispatches click event.
+     * Touches network and emits click event.
      *
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$dispatch('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -195,14 +203,12 @@ export default {
   /**
    * Sets default url if non is indicated.
    */
-  ready: function () {
-    if (this.url === undefined) { this.url = window.location.href; }
-
+  mounted: function () {
     // Allow for borders.
-    this.popup.left = (window.screen.width / 2) - ((this.popup.width / 2) + 10);
+    this.popup.left = ($window.screen.width / 2) - ((this.popup.width / 2) + 10);
 
     // Allow for title and status bars.
-    this.popup.top = (window.screen.height / 2) - ((this.popup.height / 2) + 50);
+    this.popup.top = ($window.screen.height / 2) - ((this.popup.height / 2) + 50);
   },
 
   /**
