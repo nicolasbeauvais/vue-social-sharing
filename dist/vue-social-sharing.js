@@ -1,6 +1,6 @@
 /*!
- * vue-social-sharing v0.0.4 
- * (c) 2016 nicolasbeauvais
+ * vue-social-sharing v1.0.0 
+ * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -16,14 +16,14 @@ var SocialSharingMixin = {
    * Mixin for popup link sharers.
    */
   popup: {
-    template: '<a href="#share-{{network}}" @click.prevent="$parent.share(network)"><slot></slot></a>'
+    template: '<a :href="\'#share-\'+ network" @click.prevent="$parent.share(network)"><slot></slot></a>'
   },
 
   /**
    * Mixin for direct link sharers.
    */
   direct: {
-    template: '<a v-bind:href="$parent._getSharer(network)" data-action="{{attributes(\'data-action\')}}" @click="$parent.touch(network)"><slot></slot></a>',
+    template: '<a v-bind:href="$parent._getSharer(network)" :data-action="attributes(\'data-action\')" @click="$parent.touch(network)"><slot></slot></a>',
     methods: {
       /**
        * Returns attribute value by key.
@@ -39,6 +39,40 @@ var SocialSharingMixin = {
   }
 };
 
+var $window = window;
+
+var networks = {
+  facebook: {
+    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
+    stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
+  },
+
+  twitter: {
+    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser&hashtags=@hashtags'
+  },
+
+  googleplus: {
+    sharer: 'https://plus.google.com/share?url=@url',
+    stats: 'https://plusone.google.com/_/+1/fastbutton?url=@url'
+  },
+
+  pinterest: {
+    sharer: 'https://pinterest.com/pin/create/button/?url=@url&description=@title'
+  },
+
+  reddit: {
+    sharer: 'http://www.reddit.com/submit?url=@url&title=@title'
+  },
+
+  linkedin: {
+    sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description'
+  },
+
+  whatsapp: {
+    sharer: 'whatsapp://send?text=@url'
+  }
+};
+
 var SocialSharing = {
   props: {
     /**
@@ -47,7 +81,7 @@ var SocialSharing = {
      */
     url: {
       type: String,
-      default: undefined
+      default: $window.location.href
     },
 
     /**
@@ -117,37 +151,7 @@ var SocialSharing = {
        * Available sharing networks.
        * @param object
        */
-      networks: {
-        facebook: {
-          sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
-          stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
-        },
-
-        twitter: {
-          sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser&hashtags=@hashtags'
-        },
-
-        googleplus: {
-          sharer: 'https://plus.google.com/share?url=@url',
-          stats: 'https://plusone.google.com/_/+1/fastbutton?url=@url'
-        },
-
-        pinterest: {
-          sharer: 'https://pinterest.com/pin/create/button/?url=@url&description=@title'
-        },
-
-        reddit: {
-          sharer: 'http://www.reddit.com/submit?url=@url&title=@title'
-        },
-
-        linkedin: {
-          sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description'
-        },
-
-        whatsapp: {
-          sharer: 'whatsapp://send?text=@url'
-        }
-      },
+      networks: networks,
 
       /**
        * Popup settings.
@@ -191,17 +195,17 @@ var SocialSharing = {
      * @param string network Social network key.
      */
     share: function (network) {
-      if (this.url !== undefined) { this._openSharer(this._getSharer(network)); }
-      this.$dispatch('social_shares_click', network, this.url);
+      this._openSharer(this._getSharer(network));
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
-     * Touches network and dispatches click event.
+     * Touches network and emits click event.
      *
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$dispatch('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -233,14 +237,12 @@ var SocialSharing = {
   /**
    * Sets default url if non is indicated.
    */
-  ready: function () {
-    if (this.url === undefined) { this.url = window.location.href; }
-
+  mounted: function () {
     // Allow for borders.
-    this.popup.left = (window.screen.width / 2) - ((this.popup.width / 2) + 10);
+    this.popup.left = ($window.screen.width / 2) - ((this.popup.width / 2) + 10);
 
     // Allow for title and status bars.
-    this.popup.top = (window.screen.height / 2) - ((this.popup.height / 2) + 50);
+    this.popup.top = ($window.screen.height / 2) - ((this.popup.height / 2) + 50);
   },
 
   /**
@@ -278,7 +280,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '0.0.4';
+SocialSharing.version = '1.0.0';
 
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.component('social-sharing', SocialSharing);
