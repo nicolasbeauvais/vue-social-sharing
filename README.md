@@ -8,6 +8,11 @@
 
 A Vue.js component for sharing links to social networks
 
+##### For Vue.js prior to < V2 use vue-social-sharing v0.x
+##### For Vue.js V2 use vue-social-sharing v1.x
+
+---
+
 ## Installation
 
 ```bash
