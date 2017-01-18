@@ -8,10 +8,12 @@ function verifySharePopup (expectedUrl) {
   };
 }
 
+var url = 'http://localhost:8080/examples/vue2-example.html';
+
 module.exports = {
   'share on facebook': function (browser) {
     browser
-      .url('http://localhost:8080/examples/')
+      .url(url)
       .click('#facebook')
       .windowHandles(verifySharePopup('https://www.facebook.com/'))
       .end();
@@ -19,7 +21,7 @@ module.exports = {
 
   'share on twitter': function (browser) {
     browser
-      .url('http://localhost:8080/examples/')
+      .url(url)
       .click('#twitter')
       .windowHandles(verifySharePopup('https://twitter.com'))
       .end();
@@ -27,7 +29,7 @@ module.exports = {
 
   'share on google plus': function (browser) {
     browser
-      .url('http://localhost:8080/examples/')
+      .url(url)
       .click('#google-plus')
       .windowHandles(verifySharePopup('https://plus.google.com'))
       .end();
@@ -35,7 +37,7 @@ module.exports = {
 
   'share on pinterest': function (browser) {
     browser
-      .url('http://localhost:8080/examples/')
+      .url(url)
       .click('#pinterest')
       .windowHandles(verifySharePopup('pinterest.com'))
       .end();
@@ -43,7 +45,7 @@ module.exports = {
 
   'share on reddit': function (browser) {
     browser
-      .url('http://localhost:8080/examples/')
+      .url(url)
       .click('#reddit')
       .windowHandles(verifySharePopup('https://www.reddit.com'))
       .end();
@@ -51,7 +53,7 @@ module.exports = {
 
   'share on linkedin': function (browser) {
     browser
-      .url('http://localhost:8080/examples/')
+      .url(url)
       .click('#linkedin')
       .windowHandles(verifySharePopup('https://www.linkedin.com'))
       .end();

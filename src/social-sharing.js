@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import SocialSharingMixin from './social-sharing-mixin';
 
 var $window = window;
@@ -77,6 +76,10 @@ export default {
       default: ''
     },
 
+    /**
+     * Twitter hashtags
+     * @var string
+     */
     hashtags: {
       type: String,
       default: ''
@@ -139,6 +142,7 @@ export default {
       }
     };
   },
+
   methods: {
     /**
      * Returns generated sharer url.
@@ -215,33 +219,35 @@ export default {
    * Set component aliases for buttons and links.
    */
   components: {
-    'facebook': Vue.extend({
+    'facebook': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'facebook' }; }
-    }),
-    'twitter': Vue.extend({
+    },
+    'twitter': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'twitter' }; }
-    }),
-    'googleplus': Vue.extend({
+    },
+    'googleplus': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'googleplus' }; }
-    }),
-    'pinterest': Vue.extend({
+    },
+    'pinterest': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'pinterest' }; }
-    }),
-    'reddit': Vue.extend({
+    },
+    'reddit': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'reddit' }; }
-    }),
-    'linkedin': Vue.extend({
+    },
+    'linkedin': {
       mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'linkedin' }; }
-    }),
-    'whatsapp': Vue.extend({
+      data: () => { return { network: 'linkedin' }; }
+    },
+    'whatsapp': {
       mixins: [SocialSharingMixin.direct],
-      data: function () { return { network: 'whatsapp', attr: { 'data-action': 'share/whatsapp/share' }}; }
-    })
+      data: function () {
+        return { network: 'whatsapp', attr: { 'data-action': 'share/whatsapp/share' }};
+      }
+    }
   }
 };

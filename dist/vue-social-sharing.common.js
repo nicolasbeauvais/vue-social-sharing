@@ -1,13 +1,9 @@
 /*!
- * vue-social-sharing v1.0.0 
+ * vue-social-sharing v1.1.0 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var Vue = _interopDefault(require('vue'));
 
 var SocialSharingMixin = {
   /**
@@ -109,6 +105,10 @@ var SocialSharing = {
       default: ''
     },
 
+    /**
+     * Twitter hashtags
+     * @var string
+     */
     hashtags: {
       type: String,
       default: ''
@@ -171,6 +171,7 @@ var SocialSharing = {
       }
     };
   },
+
   methods: {
     /**
      * Returns generated sharer url.
@@ -247,41 +248,47 @@ var SocialSharing = {
    * Set component aliases for buttons and links.
    */
   components: {
-    'facebook': Vue.extend({
+    'facebook': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'facebook' }; }
-    }),
-    'twitter': Vue.extend({
+    },
+    'twitter': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'twitter' }; }
-    }),
-    'googleplus': Vue.extend({
+    },
+    'googleplus': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'googleplus' }; }
-    }),
-    'pinterest': Vue.extend({
+    },
+    'pinterest': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'pinterest' }; }
-    }),
-    'reddit': Vue.extend({
+    },
+    'reddit': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'reddit' }; }
-    }),
-    'linkedin': Vue.extend({
+    },
+    'linkedin': {
       mixins: [SocialSharingMixin.popup],
       data: function () { return { network: 'linkedin' }; }
-    }),
-    'whatsapp': Vue.extend({
+    },
+    'whatsapp': {
       mixins: [SocialSharingMixin.direct],
-      data: function () { return { network: 'whatsapp', attr: { 'data-action': 'share/whatsapp/share' }}; }
-    })
+      data: function () {
+        return { network: 'whatsapp', attr: { 'data-action': 'share/whatsapp/share' }};
+      }
+    }
   }
 };
 
-SocialSharing.version = '1.0.0';
+SocialSharing.version = '1.1.0';
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.component('social-sharing', SocialSharing);
+SocialSharing.install = function (Vue) {
+  Vue.component('social-sharing', SocialSharing);
+};
+
+if (typeof window !== 'undefined') {
+  window.SocialSharing = SocialSharing;
 }
 
 module.exports = SocialSharing;
