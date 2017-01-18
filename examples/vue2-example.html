@@ -5,7 +5,7 @@
     <title>Vue social sharing example</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script src="../dist/vue-social-sharing.js"></script>
   </head>
   <body>
@@ -20,31 +20,47 @@
         <div>
           <ul>
             <li>
-              <facebook id="facebook"><i class="fa fa-facebook"></i> Facebook</facebook>
+              <facebook id="facebook">
+                <i class="fa fa-facebook"></i> Facebook
+              </facebook>
             </li>
             <li>
-              <twitter id="twitter"><i class="fa fa-twitter"></i> Twitter</twitter>
+              <twitter id="twitter">
+                <i class="fa fa-twitter"></i> Twitter
+              </twitter>
             </li>
             <li>
-              <googleplus id="google-plus"><i class="fa fa-google-plus"></i> Google +</googleplus>
+              <googleplus id="google-plus">
+                <i class="fa fa-google-plus"></i> Google +
+              </googleplus>
             </li>
             <li>
-              <pinterest id="pinterest"><i class="fa fa-pinterest"></i> Pinterest</pinterest>
+              <pinterest id="pinterest">
+                <i class="fa fa-pinterest"></i> Pinterest
+              </pinterest>
             </li>
             <li>
-              <reddit id="reddit"><i class="fa fa-reddit"></i> Reddit</reddit>
+              <reddit id="reddit">
+                <i class="fa fa-reddit"></i> Reddit
+              </reddit>
             </li>
             <li>
-              <linkedin id="linkedin"><i class="fa fa-linkedin"></i> LinkedIn</linkedin>
+              <linkedin id="linkedin">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </linkedin>
             </li>
             <li>
-              <whatsapp id="whatsapp"><i class="fa fa-whatsapp"></i> Whatsapp</whatsapp>
+              <whatsapp id="whatsapp">
+                <i class="fa fa-whatsapp"></i> Whatsapp
+              </whatsapp>
             </li>
           </ul>
         </div>
       </social-sharing>
     </div>
     <script>
+      Vue.use(SocialSharing);
+
       new Vue({
         el: '#app',
         data: {}

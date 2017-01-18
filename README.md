@@ -33,7 +33,9 @@ bower install vue-social-sharing
 ##### Browserify / Webpack
 
 ```javascript
-require('vue-social-sharing');
+var SocialSharing = require('vue-social-sharing');
+
+Vue.use(SocialSharing);
 ```
 
 ##### HTML
