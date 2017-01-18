@@ -6,3 +6,16 @@
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/0.0.4...1.0.0) (2017-01-12)
 - Migrate the package to Vue.js v2
+
+<a name="0.0.4"></a>
+# [0.0.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/0.0.3...0.0.4) (2016-11-03)
+- Add twitter hashtag property
+- Add title description and quote parameters for facebook share
+
+<a name="0.0.3"></a>
+# [0.0.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/0.0.2...0.0.3) (2016-11-01)
+- Add property to fill twitter content
+
+<a name="0.0.2"></a>
+# [0.0.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/0.0.1...0.0.2) (2016-10-21)
+- Small fixes
