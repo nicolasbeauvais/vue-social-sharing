@@ -110,6 +110,9 @@ Prop           | Data Type  | Default   | Description
 `hashtags`     | String     |           | A list of comma-separated hashtags (Twitter only).
 `twitter-user` | String     |           | Twitter user (Twitter only).
 
+## Feature request
+Feel free to open an issue to ask for a new social network support.
+
 ## Changelog
 Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/CHANGELOG.md).
 
