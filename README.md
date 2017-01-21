@@ -13,6 +13,15 @@ A Vue.js component for sharing links to social networks
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
 ##### For Vue.js V2 use vue-social-sharing v1.x
 
+## Include support for:
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-facebook-1.png&amp;r=59&amp;g=89&amp;b=152" width="64">
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-twitter-1.png&amp;r=85&amp;g=172&amp;b=238" width="64">
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-google-plus-1.png&amp;r=211&amp;g=72&amp;b=54" width="64">
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-pinterest-1.png&amp;r=203&amp;g=32&amp;b=38" width="64">
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-reddit-1.png&amp;r=255&amp;g=92&amp;b=6" width="64">
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-linkedin-1.png&amp;r=0&amp;g=119&amp;b=181" width="64">
+<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-whatsapp-1.png&amp;r=37&amp;g=211&amp;b=102" width="64">
+
 ---
 
 ## Installation
