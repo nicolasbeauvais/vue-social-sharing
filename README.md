@@ -13,6 +13,8 @@ A Vue.js component for sharing links to social networks
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
 ##### For Vue.js V2 use vue-social-sharing v1.x
 
+##[Demo]https://nicolasbeauvais.github.io/vue-social-sharing/
+
 ## Include support for:
 <img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-facebook-1.png&amp;r=59&amp;g=89&amp;b=152" width="64">
 &nbsp;&nbsp;
