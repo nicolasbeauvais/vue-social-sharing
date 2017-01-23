@@ -3,5 +3,147 @@ layout: default
 title: Vue social sharing
 ---
 <div>
-  <h1>Hello world</h1>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+  <h1 id="vue-social-sharing">vue-social-sharing</h1>
+  <p>
+    <a href="https://github.com/nicolasbeauvais/vue-social-sharing/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Release"></a>
+    <a href="https://travis-ci.org/nicolasbeauvais/vue-social-sharing"><img src="https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Build Status"></a>
+    <a href="https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master"><img src="https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square" alt="Coverage Status"></a>
+    <a href="https://www.npmjs.com/package/vue-social-sharing"><img src="https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-square" alt="Downloads"></a>
+    <a href="https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="License"></a>
+    <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-1.x-brightgreen.svg" alt="vue1"></a>
+    <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="vue2"></a>
+  </p>
+  <p>A Vue.js component for sharing links to social networks</p>
+
+  <h2 id="demo">Demo</h2>
+
+  <div id="app">
+    <social-sharing url="https://github.com/nicolasbeauvais/vue-social-sharing"
+                    title="Try vue-social-sharing"
+                    description="A Vue.js component for sharing links to social networks, work with Vue.js 1.X or 2.X."
+                    quote="Vue social sharing help you share links on social networks."
+                    hashtags="vuejs,social,sharing"
+                    twitter-user="w3Nicolas"
+                    v-cloak inline-template>
+      <div>
+        <ul>
+          <li>
+            <facebook id="facebook">
+              <i class="fa fa-facebook"></i> Facebook
+            </facebook>
+          </li>
+          <li>
+            <twitter id="twitter">
+              <i class="fa fa-twitter"></i> Twitter
+            </twitter>
+          </li>
+          <li>
+            <googleplus id="google-plus">
+              <i class="fa fa-google-plus"></i> Google +
+            </googleplus>
+          </li>
+          <li>
+            <pinterest id="pinterest">
+              <i class="fa fa-pinterest"></i> Pinterest
+            </pinterest>
+          </li>
+          <li>
+            <reddit id="reddit">
+              <i class="fa fa-reddit"></i> Reddit
+            </reddit>
+          </li>
+          <li>
+            <linkedin id="linkedin">
+              <i class="fa fa-linkedin"></i> LinkedIn
+            </linkedin>
+          </li>
+          <li>
+            <whatsapp id="whatsapp">
+              <i class="fa fa-whatsapp"></i> Whatsapp
+            </whatsapp>
+          </li>
+        </ul>
+      </div>
+    </social-sharing>
+  </div>
+
+  <h2 id="installation">Installation</h2>
+
+  <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># Yarn</span>
+yarn add vue-social-sharing
+
+<span class="c"># NPM</span>
+npm install --save vue-social-sharing
+
+<span class="c"># Bower</span>
+bower install vue-social-sharing
+</code></pre>
+  </div>
+
+  <h2 id="usage">Usage</h2>
+
+  <h3 id="loading-the-library">Loading the library</h3>
+
+  <h5 id="browserify--webpack">Browserify / Webpack</h5>
+
+  <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">SocialSharing</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'vue-social-sharing'</span><span class="p">);</span>
+
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">SocialSharing</span><span class="p">);</span>
+</code></pre>
+  </div>
+
+<h5 id="html">HTML</h5>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/dist/vue-social-sharing.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="using-the-social-sharing-component">Using the social sharing component</h3>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;social-sharing</span> <span class="na">url=</span><span class="s">"https://vuejs.org/"</span> <span class="na">inline-template</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div&gt;</span>
+  <span class="nt">&lt;facebook&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-facebook"</span><span class="nt">&gt;&lt;/i&gt;</span> Facebook
+      <span class="nt">&lt;/facebook&gt;</span>
+
+      <span class="nt">&lt;twitter&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-twitter"</span><span class="nt">&gt;&lt;/i&gt;</span> Twitter
+      <span class="nt">&lt;/twitter&gt;</span>
+
+      <span class="nt">&lt;googleplus&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-google-plus"</span><span class="nt">&gt;&lt;/i&gt;</span> Google +
+      <span class="nt">&lt;/googleplus&gt;</span>
+
+      <span class="nt">&lt;pinterest&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-pinterest"</span><span class="nt">&gt;&lt;/i&gt;</span> Pinterest
+      <span class="nt">&lt;/pinterest&gt;</span>
+
+      <span class="nt">&lt;reddit&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-reddit"</span><span class="nt">&gt;&lt;/i&gt;</span> Reddit
+      <span class="nt">&lt;/reddit&gt;</span>
+
+      <span class="nt">&lt;linkedin&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-linkedin"</span><span class="nt">&gt;&lt;/i&gt;</span> LinkedIn
+      <span class="nt">&lt;/linkedin&gt;</span>
+
+      <span class="nt">&lt;whatsapp&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fa fa-whatsapp"</span><span class="nt">&gt;&lt;/i&gt;</span> Whatsapp
+      <span class="nt">&lt;/whatsapp&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/social-sharing&gt;</span>
+</code></pre>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+  <script src="https://raw.githubusercontent.com/nicolasbeauvais/vue-social-sharing/master/dist/vue-social-sharing.min.js"></script>
+  <script>
+    Vue.use(SocialSharing);
+
+    new Vue({
+      el: '#app',
+      data: {}
+    });
+  </script>
+</div>
 </div>
