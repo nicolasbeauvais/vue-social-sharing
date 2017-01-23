@@ -5,6 +5,12 @@ title: Vue social sharing
 <div>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
+  <style>
+    .networks li {
+      cursor: pointer;
+    }
+  </style>
+
   <h1 id="vue-social-sharing">vue-social-sharing</h1>
   <p>
     <a href="https://github.com/nicolasbeauvais/vue-social-sharing/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Release"></a>
@@ -17,7 +23,7 @@ title: Vue social sharing
   </p>
   <p>A Vue.js component for sharing links to social networks</p>
 
-  <h2 id="demo">Demo</h2>
+  <h2 id="demo">Demo:</h2>
 
   <div id="app">
     <social-sharing url="https://github.com/nicolasbeauvais/vue-social-sharing"
@@ -28,40 +34,40 @@ title: Vue social sharing
                     twitter-user="w3Nicolas"
                     v-cloak inline-template>
       <div>
-        <ul>
+        <ul class="networks">
           <li>
             <facebook id="facebook">
-              <i class="fa fa-facebook"></i> Facebook
+              <i class="fa fa-fw fa-facebook"></i> Facebook
             </facebook>
           </li>
           <li>
             <twitter id="twitter">
-              <i class="fa fa-twitter"></i> Twitter
+              <i class="fa fa-fw fa-twitter"></i> Twitter
             </twitter>
           </li>
           <li>
             <googleplus id="google-plus">
-              <i class="fa fa-google-plus"></i> Google +
+              <i class="fa fa-fw fa-google-plus"></i> Google +
             </googleplus>
           </li>
           <li>
             <pinterest id="pinterest">
-              <i class="fa fa-pinterest"></i> Pinterest
+              <i class="fa fa-fw fa-pinterest"></i> Pinterest
             </pinterest>
           </li>
           <li>
             <reddit id="reddit">
-              <i class="fa fa-reddit"></i> Reddit
+              <i class="fa fa-fw fa-reddit"></i> Reddit
             </reddit>
           </li>
           <li>
             <linkedin id="linkedin">
-              <i class="fa fa-linkedin"></i> LinkedIn
+              <i class="fa fa-fw fa-linkedin"></i> LinkedIn
             </linkedin>
           </li>
           <li>
             <whatsapp id="whatsapp">
-              <i class="fa fa-whatsapp"></i> Whatsapp
+              <i class="fa fa-fw fa-whatsapp"></i> Whatsapp
             </whatsapp>
           </li>
         </ul>
@@ -136,7 +142,7 @@ bower install vue-social-sharing
 </code></pre>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-  <script src="https://raw.githubusercontent.com/nicolasbeauvais/vue-social-sharing/master/dist/vue-social-sharing.min.js"></script>
+  <script src="master/dist/vue-social-sharing.min.js"></script>
   <script>
     Vue.use(SocialSharing);
 
