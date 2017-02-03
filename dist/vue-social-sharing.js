@@ -46,7 +46,7 @@ var networks = {
   },
 
   twitter: {
-    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&via=@twitteruser&hashtags=@hashtags'
+    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser'
   },
 
   googleplus: {
@@ -189,7 +189,7 @@ var SocialSharing = {
         .replace(/@description/g, this.description)
         .replace(/@quote/g, this.quote)
         .replace(/@hashtags/g, this.hashtags)
-        .replace(/@twitteruser/g, this.twitterUser);
+        .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
     },
 
     /**
