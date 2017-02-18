@@ -55,7 +55,7 @@ var networks = {
   },
 
   pinterest: {
-    sharer: 'https://pinterest.com/pin/create/button/?url=@url&description=@title'
+    sharer: 'https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title'
   },
 
   reddit: {
@@ -144,6 +144,14 @@ var SocialSharing = {
     googleKey: {
       type: String,
       default: undefined
+    },
+
+    /** Pinterest Media URL.
+     * Specifies the image/media to be used.
+     */
+    media: {
+      type: String,
+      default: ''
     }
   },
 
@@ -189,6 +197,7 @@ var SocialSharing = {
         .replace(/@description/g, this.description)
         .replace(/@quote/g, this.quote)
         .replace(/@hashtags/g, this.hashtags)
+        .replace(/@media/g, this.media)
         .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
     },
 
