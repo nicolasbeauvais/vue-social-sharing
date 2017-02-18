@@ -8,8 +8,7 @@ export function mockWindow (self) {
 
 export const networks = {
   facebook: {
-    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
-    stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
+    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote'
   },
 
   twitter: {
@@ -17,8 +16,7 @@ export const networks = {
   },
 
   googleplus: {
-    sharer: 'https://plus.google.com/share?url=@url',
-    stats: 'https://plusone.google.com/_/+1/fastbutton?url=@url'
+    sharer: 'https://plus.google.com/share?url=@url'
   },
 
   pinterest: {
