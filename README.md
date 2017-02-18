@@ -111,6 +111,7 @@ Prop           | Data Type  | Default   | Description
 `quote`        | String     |           | Facebook quote (Facebook only).
 `hashtags`     | String     |           | A list of comma-separated hashtags (Twitter only).
 `twitter-user` | String     |           | Twitter user (Twitter only).
+`media`        | String     |           | Url to a media (Pinterest only).
 
 ## Feature request
 Feel free to open an issue to ask for a new social network support.
