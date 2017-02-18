@@ -6,18 +6,30 @@ describe('SocialSharing', () => {
   const createComponent = (propsData = {}, attr = {}, mixins = SocialSharingMixin.popup) => {
     const Ctor = Vue.extend({
       template: `
-        <social-sharing
-          inline-template>
-          <div class="icons">
-            <facebook class="icon">
-              <i class="fa fa-facebook"></i>
+        <social-sharing url="https://vuejs.org/" title="The Progressive JavaScript Framework"
+                 description="Intuitive, Fast and Composable MVVM for building interactive interfaces." inline-template>
+          <div class="networks">
+            <facebook id="facebook" class="network">
+              <i class="fa fa-facebook"></i> Facebook
             </facebook>
-            <twitter class="icon">
-              <i class="fa fa-twitter"></i>
-              </twitter>
-            <linkedin class="icon">
-              <i class="fa fa-linkedin"></i>
+            <twitter id="twitter" class="network">
+              <i class="fa fa-twitter"></i> Twitter
+            </twitter>
+            <googleplus id="google-plus" class="network">
+              <i class="fa fa-google-plus"></i> Google +
+            </googleplus>
+            <pinterest id="pinterest" class="network">
+              <i class="fa fa-pinterest"></i> Pinterest
+            </pinterest>
+            <reddit id="reddit" class="network">
+              <i class="fa fa-reddit"></i> Reddit
+            </reddit>
+            <linkedin id="linkedin" class="network">
+              <i class="fa fa-linkedin"></i> LinkedIn
             </linkedin>
+            <whatsapp id="whatsapp" class="network">
+              <i class="fa fa-whatsapp"></i> Whatsapp
+            </whatsapp>
           </div>
         </social-sharing>
       `,
@@ -62,65 +74,47 @@ describe('SocialSharing', () => {
       }
     });
 
-    const comp = new Vue({
-      el: document.createElement('div'),
-      render: (h) => h(SocialSharing)
-    });
+    const vm = createComponent();
 
     Vue.nextTick(() => {
-      // console.log('data', comp);
-      const popup = comp.$children[0].popup;
+      const popup = vm.$children[0].popup;
+
       // default width popup = 626
       // default height popup = 436
+
       expect(popup.left).toBe(177); // 1000 /2 - ((626/2) + 10) = 177
       expect(popup.top).toBe(82); // 700 / 2 - ((436/2) + 50) = 82
       done();
     });
   });
 
-  xit('should get correct sharer url', () => {
-  });
+  it('all components are links', () => {
+    const vm = createComponent().$children[0];
 
-  xit('should open popup', () => {
-  });
-
-  xit('should set component aliases correctly', () => {
-    // const vm = createComponent();
-    // console.log(vm.components, vm.facebook);
+    for (var children in vm.$children) {
+      expect(vm.$children[children].$el.tagName).toBe('A');
+    }
   });
 
   // mixin tests
-  xit('should render sharing links correctly', () => {
+  it('should render sharing links correctly', () => {
     // not working in travis-ci yet
     const expectedShareNames = [
       'facebook',
       'twitter',
-      'linkedin'
+      'googleplus',
+      'pinterest',
+      'reddit',
+      'linkedin',
+      'whatsapp'
     ];
 
-    const vm = createComponent();
-    const iconLinks = vm.$el.querySelectorAll('.icon');
-
-    iconLinks.forEach((link, index) => {
-      expect(link.href.split('#')[1]).toBe(`share-${expectedShareNames[index]}`); // split to remove http://domain.com/#share-twitter
-    });
-  });
-
-  xit('should get attribute by key', (done) => {
-    // not working yet --> attributes not defined
-    const attr = {
-      'data-action': 'doSomething'
-    };
-    const propsData = {};
-    const propKeys = Object.keys(attr);
-    const vm = createComponent(propsData, attr);
-
-    Vue.nextTick(() => {
-      console.log('test', vm);
-      propKeys.forEach((key) => {
-        expect(vm.attributes(key)).toBe(attr[key]);
-      });
-      done();
+    [].forEach.call(createComponent().$el.querySelectorAll('.network'), function (node, index) {
+      if (expectedShareNames[index] === 'whatsapp') {
+        expect(node.href).toContain('whatsapp://');
+      } else {
+        expect(node.href.split('#')[1]).toBe(`share-${expectedShareNames[index]}`);
+      }
     });
   });
 });
