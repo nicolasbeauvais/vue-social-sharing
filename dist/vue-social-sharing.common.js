@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v1.1.1 
+ * vue-social-sharing v1.1.2 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -37,8 +37,7 @@ var $window = window;
 
 var networks = {
   facebook: {
-    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
-    stats: 'https://api.facebook.com/method/links.getStats?urls=@url&format=json'
+    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote'
   },
 
   twitter: {
@@ -46,8 +45,7 @@ var networks = {
   },
 
   googleplus: {
-    sharer: 'https://plus.google.com/share?url=@url',
-    stats: 'https://plusone.google.com/_/+1/fastbutton?url=@url'
+    sharer: 'https://plus.google.com/share?url=@url'
   },
 
   pinterest: {
@@ -281,7 +279,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '1.1.1';
+SocialSharing.version = '1.1.2';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
