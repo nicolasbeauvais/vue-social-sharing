@@ -33,7 +33,8 @@ var SocialSharingMixin = {
   }
 };
 
-var $window = window;
+var inBrowser = typeof window !== 'undefined';
+var $window = inBrowser ? window : null;
 
 var networks = {
   facebook: {
@@ -73,7 +74,7 @@ var SocialSharing = {
      */
     url: {
       type: String,
-      default: $window.location.href
+      default: inBrowser ? window.location.href : ''
     },
 
     /**
@@ -241,9 +242,13 @@ var SocialSharing = {
   },
 
   /**
-   * Sets default url if non is indicated.
+   * Sets popup default dimensions.
    */
   mounted: function () {
+    if (!inBrowser) {
+      return;
+    }
+
     // Allow for borders.
     this.popup.left = ($window.screen.width / 2) - ((this.popup.width / 2) + 10);
 
