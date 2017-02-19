@@ -1,6 +1,7 @@
 import SocialSharingMixin from './social-sharing-mixin';
 
-var $window = window;
+const inBrowser = typeof window !== 'undefined';
+var $window = inBrowser ? window : null;
 
 export function mockWindow (self) {
   $window = self || window; // mock window for unit testing
@@ -44,7 +45,7 @@ export default {
      */
     url: {
       type: String,
-      default: $window.location.href
+      default: inBrowser ? window.location.href : ''
     },
 
     /**
@@ -212,9 +213,13 @@ export default {
   },
 
   /**
-   * Sets default url if non is indicated.
+   * Sets popup default dimensions.
    */
   mounted: function () {
+    if (!inBrowser) {
+      return;
+    }
+
     // Allow for borders.
     this.popup.left = ($window.screen.width / 2) - ((this.popup.width / 2) + 10);
 
