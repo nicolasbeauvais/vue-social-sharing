@@ -12,6 +12,9 @@ A Vue.js component for sharing links to social networks
 
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
 ##### For Vue.js V2 use vue-social-sharing v1.x
+
+>Server side rendering support has been added on vue-social-sharing v2.0.0
+
 &nbsp;
 ##[Demo](https://nicolasbeauvais.github.io/vue-social-sharing/)
 &nbsp;
@@ -68,33 +71,27 @@ Vue.use(SocialSharing);
 ```html
 <social-sharing url="https://vuejs.org/" inline-template>
   <div>
-      <facebook>
+      <network network="facebook">
         <i class="fa fa-facebook"></i> Facebook
-      </facebook>
-
-      <twitter>
+      </network>
+      <network network="twitter">
         <i class="fa fa-twitter"></i> Twitter
-      </twitter>
-
-      <googleplus>
+      </network>
+      <network network="googleplus">
         <i class="fa fa-google-plus"></i> Google +
-      </googleplus>
-
-      <pinterest>
+      </network>
+      <network network="pinterest">
         <i class="fa fa-pinterest"></i> Pinterest
-      </pinterest>
-
-      <reddit>
+      </network>
+      <network network="reddit">
         <i class="fa fa-reddit"></i> Reddit
-      </reddit>
-
-      <linkedin>
+      </network>
+      <network network="linkedin">
         <i class="fa fa-linkedin"></i> LinkedIn
-      </linkedin>
-
-      <whatsapp>
+      </network>
+      <network network="whatsapp">
         <i class="fa fa-whatsapp"></i> Whatsapp
-      </whatsapp>
+      </network>
   </div>
 </social-sharing>
 ```
