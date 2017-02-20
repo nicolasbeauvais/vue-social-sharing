@@ -1,3 +1,7 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.1.2...2.0.0) (2017-02-20)
+- Add support for server side rendering
+
 <a name="1.1.2"></a>
 # [1.1.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.1.1...1.1.2) (2017-02-18)
 - Add media option for pinterest
