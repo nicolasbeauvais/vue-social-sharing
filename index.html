@@ -36,39 +36,39 @@ title: Vue social sharing
       <div>
         <ul class="networks">
           <li>
-            <facebook id="facebook">
+            <network network="facebook">
               <i class="fa fa-fw fa-facebook"></i> Facebook
-            </facebook>
+            </network>
           </li>
           <li>
-            <twitter id="twitter">
+            <network network="twitter">
               <i class="fa fa-fw fa-twitter"></i> Twitter
-            </twitter>
+            </network>
           </li>
           <li>
-            <googleplus id="google-plus">
+            <network network="google-plus">
               <i class="fa fa-fw fa-google-plus"></i> Google +
-            </googleplus>
+            </network>
           </li>
           <li>
-            <pinterest id="pinterest">
+            <network network="pinterest">
               <i class="fa fa-fw fa-pinterest"></i> Pinterest
-            </pinterest>
+            </network>
           </li>
           <li>
-            <reddit id="reddit">
+            <network network="reddit">
               <i class="fa fa-fw fa-reddit"></i> Reddit
-            </reddit>
+            </network>
           </li>
           <li>
-            <linkedin id="linkedin">
+            <network network="linkedin">
               <i class="fa fa-fw fa-linkedin"></i> LinkedIn
-            </linkedin>
+            </network>
           </li>
           <li>
-            <whatsapp id="whatsapp">
+            <network network="whatsapp">
               <i class="fa fa-fw fa-whatsapp"></i> Whatsapp
-            </whatsapp>
+            </network>
           </li>
         </ul>
       </div>
@@ -111,33 +111,27 @@ Vue.use(SocialSharing);
 {% highlight html %}
 <social-sharing url="https://vuejs.org/" inline-template>
   <div>
-    <facebook>
-      <i class="fa fa-facebook"></i> Facebook
-    </facebook>
-
-    <twitter>
-      <i class="fa fa-twitter"></i> Twitter
-    </twitter>
-
-    <googleplus>
-      <i class="fa fa-google-plus"></i> Google +
-    </googleplus>
-
-    <pinterest>
-      <i class="fa fa-pinterest"></i> Pinterest
-    </pinterest>
-
-    <reddit>
-      <i class="fa fa-reddit"></i> Reddit
-    </reddit>
-
-    <linkedin>
-      <i class="fa fa-linkedin"></i> LinkedIn
-    </linkedin>
-
-    <whatsapp>
-      <i class="fa fa-whatsapp"></i> Whatsapp
-    </whatsapp>
+    <network network="facebook">
+      <i class="fa fa-fw fa-facebook"></i> Facebook
+    </network>
+    <network network="twitter">
+      <i class="fa fa-fw fa-twitter"></i> Twitter
+    </network>
+    <network network="google-plus">
+      <i class="fa fa-fw fa-google-plus"></i> Google +
+    </network>
+    <network network="pinterest">
+      <i class="fa fa-fw fa-pinterest"></i> Pinterest
+    </network>
+    <network network="reddit">
+      <i class="fa fa-fw fa-reddit"></i> Reddit
+    </network>
+    <network network="linkedin">
+      <i class="fa fa-fw fa-linkedin"></i> LinkedIn
+    </network>
+    <network network="whatsapp">
+      <i class="fa fa-fw fa-whatsapp"></i> Whatsapp
+    </network>
   </div>
 </social-sharing>
 {% endhighlight %}

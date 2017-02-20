@@ -1,4 +1,6 @@
 .idea/
 dist/
 node_modules/
+test/
+coverage/
 yarn.lock
