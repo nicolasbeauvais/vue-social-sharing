@@ -1,70 +1,84 @@
 /*!
- * vue-social-sharing v1.1.2 
+ * vue-social-sharing v2.0.0 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
 
-var SocialSharingMixin = {
-  /**
-   * Mixin for popup link sharers.
-   */
-  popup: {
-    template: '<a :href="\'#share-\'+ network" @click.prevent="$parent.share(network)"><slot></slot></a>'
+var Networks = {
+  facebook: {
+    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
+    type: 'popup'
   },
 
-  /**
-   * Mixin for direct link sharers.
-   */
-  direct: {
-    template: '<a v-bind:href="$parent._getSharer(network)" :data-action="attributes(\'data-action\')" @click="$parent.touch(network)"><slot></slot></a>',
-    methods: {
-      /**
-       * Returns attribute value by key.
-       *
-       * @param key
-       */
-      attributes: function attributes (key) {
-        return this.attr !== undefined && this.attr[key] !== undefined
-          ? this.attr[key]
-          : undefined;
-      }
+  twitter: {
+    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser',
+    type: 'popup'
+  },
+
+  googleplus: {
+    sharer: 'https://plus.google.com/share?url=@url',
+    type: 'popup'
+  },
+
+  pinterest: {
+    sharer: 'https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title',
+    type: 'popup'
+  },
+
+  reddit: {
+    sharer: 'http://www.reddit.com/submit?url=@url&title=@title',
+    type: 'popup'
+  },
+
+  linkedin: {
+    sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description',
+    type: 'popup'
+  },
+
+  whatsapp: {
+    sharer: 'whatsapp://send?text=@url',
+    type: 'direct',
+    action: 'share/whatsapp/share'
+  }
+};
+
+var SocialSharingNetwork = {
+  functional: true,
+
+  props: {
+    network: {
+      type: String,
+      default: ''
     }
+  },
+
+  render: function render (createElement, context) {
+    var network = Networks[context.props.network];
+
+    return createElement('a', {
+      class: context.data.staticClass || null,
+      style: context.data.staticStyle || null,
+      attrs: {
+        id: context.data.attrs.id || null,
+        href: network.type === 'popup'
+          ? '#share-' + context.props.network
+          : context.parent._getSharer(context.props.network),
+        'data-action': network.type === 'popup' ? null : network.action
+      },
+      on: {
+        click: network.type === 'popup' ? function () {
+          context.parent.share(context.props.network);
+        } : function () {
+          context.parent.touch(context.props.network);
+        }
+      }
+    }, context.children);
   }
 };
 
 var inBrowser = typeof window !== 'undefined';
 var $window = inBrowser ? window : null;
-
-var networks = {
-  facebook: {
-    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote'
-  },
-
-  twitter: {
-    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser'
-  },
-
-  googleplus: {
-    sharer: 'https://plus.google.com/share?url=@url'
-  },
-
-  pinterest: {
-    sharer: 'https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title'
-  },
-
-  reddit: {
-    sharer: 'http://www.reddit.com/submit?url=@url&title=@title'
-  },
-
-  linkedin: {
-    sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description'
-  },
-
-  whatsapp: {
-    sharer: 'whatsapp://send?text=@url'
-  }
-};
 
 var SocialSharing = {
   props: {
@@ -156,7 +170,7 @@ var SocialSharing = {
        * Available sharing networks.
        * @param object
        */
-      networks: networks,
+      networks: Networks,
 
       /**
        * Popup settings.
@@ -260,40 +274,11 @@ var SocialSharing = {
    * Set component aliases for buttons and links.
    */
   components: {
-    'facebook': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'facebook' }; }
-    },
-    'twitter': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'twitter' }; }
-    },
-    'googleplus': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'googleplus' }; }
-    },
-    'pinterest': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'pinterest' }; }
-    },
-    'reddit': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'reddit' }; }
-    },
-    'linkedin': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'linkedin' }; }
-    },
-    'whatsapp': {
-      mixins: [SocialSharingMixin.direct],
-      data: function () {
-        return { network: 'whatsapp', attr: { 'data-action': 'share/whatsapp/share' }};
-      }
-    }
+    'network': SocialSharingNetwork
   }
 };
 
-SocialSharing.version = '1.1.2';
+SocialSharing.version = '2.0.0';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

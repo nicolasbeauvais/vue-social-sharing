@@ -1,39 +1,39 @@
 import Vue from 'vue';
 import SocialSharing, { mockWindow } from '../../src/social-sharing';
-import SocialSharingMixin from '../../src/social-sharing-mixin';
+import SocialSharingNetwork from '../../src/social-sharing-network';
+import Networks from '../../src/networks';
 
 describe('SocialSharing', () => {
-  const createComponent = (propsData = {}, attr = {}, mixins = SocialSharingMixin.popup) => {
+  const createComponent = (propsData = {}, attr = {}) => {
     const Ctor = Vue.extend({
       template: `
         <social-sharing url="https://vuejs.org/" title="The Progressive JavaScript Framework"
                  description="Intuitive, Fast and Composable MVVM for building interactive interfaces." inline-template>
           <div class="networks">
-            <facebook id="facebook" class="network">
+            <network network="facebook" id="facebook">
               <i class="fa fa-facebook"></i> Facebook
-            </facebook>
-            <twitter id="twitter" class="network">
+            </network>
+            <network network="twitter" id="twitter">
               <i class="fa fa-twitter"></i> Twitter
-            </twitter>
-            <googleplus id="google-plus" class="network">
+            </network>
+            <network network="googleplus" id="google-plus">
               <i class="fa fa-google-plus"></i> Google +
-            </googleplus>
-            <pinterest id="pinterest" class="network">
+            </network>
+            <network network="pinterest" id="pinterest">
               <i class="fa fa-pinterest"></i> Pinterest
-            </pinterest>
-            <reddit id="reddit" class="network">
+            </network>
+            <network network="reddit" id="reddit">
               <i class="fa fa-reddit"></i> Reddit
-            </reddit>
-            <linkedin id="linkedin" class="network">
+            </network>
+            <network network="linkedin" id="linkedin" class="test-class">
               <i class="fa fa-linkedin"></i> LinkedIn
-            </linkedin>
-            <whatsapp id="whatsapp" class="network">
+            </network>
+            <network network="whatsapp" id="whatsapp" style="color:#f00;">
               <i class="fa fa-whatsapp"></i> Whatsapp
-            </whatsapp>
+            </network>
           </div>
         </social-sharing>
       `,
-      mixins: [mixins],
       components: {
         SocialSharing
       }
@@ -59,7 +59,7 @@ describe('SocialSharing', () => {
   it('sets the correct default data', () => {
     expect(typeof SocialSharing.data).toBe('function');
     const defaultData = SocialSharing.data();
-    expect(typeof defaultData.networks).toBe('object');
+    expect(defaultData.networks).toBe(Networks);
   });
 
   // Calculates correct position of popup
@@ -75,7 +75,6 @@ describe('SocialSharing', () => {
     });
 
     const vm = createComponent();
-
     Vue.nextTick(() => {
       const popup = vm.$children[0].popup;
 
@@ -89,16 +88,20 @@ describe('SocialSharing', () => {
   });
 
   it('all components are links', () => {
-    const vm = createComponent().$children[0];
-
-    for (var children in vm.$children) {
-      expect(vm.$children[children].$el.tagName).toBe('A');
-    }
+    [].forEach.call(createComponent().$el.querySelectorAll('.networks > a'), function (node, index) {
+      expect(node.tagName).toBe('A');
+    });
   });
 
-  // mixin tests
+  it('create style attributes', () => {
+    expect(createComponent().$children[0].$el.querySelector('#whatsapp').style.color).toBe('rgb(255, 0, 0)');
+  });
+
+  it('create class attributes', () => {
+    expect(createComponent().$children[0].$el.querySelector('#linkedin').className).toBe('test-class');
+  });
+
   it('should render sharing links correctly', () => {
-    // not working in travis-ci yet
     const expectedShareNames = [
       'facebook',
       'twitter',
@@ -116,5 +119,17 @@ describe('SocialSharing', () => {
         expect(node.href.split('#')[1]).toBe(`share-${expectedShareNames[index]}`);
       }
     });
+  });
+
+  it('has a full list of networks', () => {
+    for (var network in Networks) {
+      expect(typeof Networks[network].sharer).toBe('string');
+      expect(Networks[network].type).toBe(network === 'whatsapp' ? 'direct' : 'popup');
+    }
+  });
+
+  it('setup a network correctly', () => {
+    expect(typeof SocialSharingNetwork.props).toBe('object');
+    expect(SocialSharingNetwork.functional).toBe(true);
   });
 });
