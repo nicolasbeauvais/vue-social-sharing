@@ -1,4 +1,5 @@
-import SocialSharingMixin from './social-sharing-mixin';
+import SocialSharingNetwork from './social-sharing-network';
+import Networks from './networks';
 
 const inBrowser = typeof window !== 'undefined';
 var $window = inBrowser ? window : null;
@@ -6,36 +7,6 @@ var $window = inBrowser ? window : null;
 export function mockWindow (self) {
   $window = self || window; // mock window for unit testing
 }
-
-export const networks = {
-  facebook: {
-    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote'
-  },
-
-  twitter: {
-    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser'
-  },
-
-  googleplus: {
-    sharer: 'https://plus.google.com/share?url=@url'
-  },
-
-  pinterest: {
-    sharer: 'https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title'
-  },
-
-  reddit: {
-    sharer: 'http://www.reddit.com/submit?url=@url&title=@title'
-  },
-
-  linkedin: {
-    sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description'
-  },
-
-  whatsapp: {
-    sharer: 'whatsapp://send?text=@url'
-  }
-};
 
 export default {
   props: {
@@ -127,7 +98,7 @@ export default {
        * Available sharing networks.
        * @param object
        */
-      networks,
+      networks: Networks,
 
       /**
        * Popup settings.
@@ -231,35 +202,6 @@ export default {
    * Set component aliases for buttons and links.
    */
   components: {
-    'facebook': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'facebook' }; }
-    },
-    'twitter': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'twitter' }; }
-    },
-    'googleplus': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'googleplus' }; }
-    },
-    'pinterest': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'pinterest' }; }
-    },
-    'reddit': {
-      mixins: [SocialSharingMixin.popup],
-      data: function () { return { network: 'reddit' }; }
-    },
-    'linkedin': {
-      mixins: [SocialSharingMixin.popup],
-      data: () => { return { network: 'linkedin' }; }
-    },
-    'whatsapp': {
-      mixins: [SocialSharingMixin.direct],
-      data: function () {
-        return { network: 'whatsapp', attr: { 'data-action': 'share/whatsapp/share' }};
-      }
-    }
+    'network': SocialSharingNetwork
   }
 };
