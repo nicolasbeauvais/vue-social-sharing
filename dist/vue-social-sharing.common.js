@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.0.0 
+ * vue-social-sharing v2.1.0 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -56,12 +56,12 @@ var SocialSharingNetwork = {
   render: function render (createElement, context) {
     var network = Networks[context.props.network];
 
-    return createElement('span', {
+    return createElement('a', {
       class: context.data.staticClass || null,
       style: context.data.staticStyle || null,
       attrs: {
         id: context.data.attrs.id || null,
-        'data-link': network.type === 'popup'
+        href: network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent._getSharer(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
@@ -217,7 +217,7 @@ var SocialSharing = {
      */
     share: function (network) {
       this._openSharer(this._getSharer(network));
-      this.$root.$emit('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -226,8 +226,7 @@ var SocialSharing = {
      * @param string network Social network key.
      */
     touch: function (network) {
-      window.open(this._getSharer(network) ,"_self");
-      this.$root.$emit('social_shares_click', network, this.url);
+      this.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -279,7 +278,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.0.0';
+SocialSharing.version = '2.1.0';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
