@@ -1,3 +1,7 @@
+<a name="2.1.1"></a>
+# [2.1.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.0...2.1.1) (2017-02-21)
+- Update version
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.0.0...2.1.0) (2017-02-21)
 - Use of span tag instead of a to prevent history change
