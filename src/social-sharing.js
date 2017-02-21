@@ -164,7 +164,7 @@ export default {
      * @param string network Social network key.
      */
     touch: function (network) {
-      window.open(this._getSharer(network) ,"_self");
+      window.open(this._getSharer(network), '_self');
       this.$root.$emit('social_shares_click', network, this.url);
     },
 
