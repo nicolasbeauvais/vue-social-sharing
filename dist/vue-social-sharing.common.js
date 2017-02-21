@@ -56,12 +56,12 @@ var SocialSharingNetwork = {
   render: function render (createElement, context) {
     var network = Networks[context.props.network];
 
-    return createElement('a', {
+    return createElement('span', {
       class: context.data.staticClass || null,
       style: context.data.staticStyle || null,
       attrs: {
         id: context.data.attrs.id || null,
-        href: network.type === 'popup'
+        'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent._getSharer(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
@@ -226,6 +226,7 @@ var SocialSharing = {
      * @param string network Social network key.
      */
     touch: function (network) {
+      window.open(this._getSharer(network) ,"_self");
       this.$root.$emit('social_shares_click', network, this.url);
     },
 
