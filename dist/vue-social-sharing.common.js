@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.0.0 
+ * vue-social-sharing v2.1.0 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -56,7 +56,7 @@ var SocialSharingNetwork = {
   render: function render (createElement, context) {
     var network = Networks[context.props.network];
 
-    return createElement('span', {
+    return createElement(context.parent.networkTag, {
       class: context.data.staticClass || null,
       style: context.data.staticStyle || null,
       attrs: {
@@ -155,12 +155,22 @@ var SocialSharing = {
       default: undefined
     },
 
-    /** Pinterest Media URL.
+    /**
+     * Pinterest Media URL.
      * Specifies the image/media to be used.
      */
     media: {
       type: String,
       default: ''
+    },
+
+    /**
+     * Network sub component tag.
+     * Default to span tag
+     */
+    networkTag: {
+      type: String,
+      default: 'span'
     }
   },
 
@@ -279,7 +289,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.0.0';
+SocialSharing.version = '2.1.0';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

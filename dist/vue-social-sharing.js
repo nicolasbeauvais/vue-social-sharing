@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.0.0 
+ * vue-social-sharing v2.1.0 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -60,12 +60,12 @@ var SocialSharingNetwork = {
   render: function render (createElement, context) {
     var network = Networks[context.props.network];
 
-    return createElement('a', {
+    return createElement(context.parent.networkTag, {
       class: context.data.staticClass || null,
       style: context.data.staticStyle || null,
       attrs: {
         id: context.data.attrs.id || null,
-        href: network.type === 'popup'
+        'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent._getSharer(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
@@ -159,12 +159,22 @@ var SocialSharing = {
       default: undefined
     },
 
-    /** Pinterest Media URL.
+    /**
+     * Pinterest Media URL.
      * Specifies the image/media to be used.
      */
     media: {
       type: String,
       default: ''
+    },
+
+    /**
+     * Network sub component tag.
+     * Default to span tag
+     */
+    networkTag: {
+      type: String,
+      default: 'span'
     }
   },
 
@@ -221,7 +231,7 @@ var SocialSharing = {
      */
     share: function (network) {
       this._openSharer(this._getSharer(network));
-      this.$emit('social_shares_click', network, this.url);
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -230,7 +240,8 @@ var SocialSharing = {
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$emit('social_shares_click', network, this.url);
+      window.open(this._getSharer(network) ,"_self");
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -282,7 +293,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.0.0';
+SocialSharing.version = '2.1.0';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

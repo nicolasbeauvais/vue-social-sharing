@@ -13,12 +13,12 @@ export default {
   render (createElement, context) {
     const network = Networks[context.props.network];
 
-    return createElement('a', {
+    return createElement(context.parent.networkTag, {
       class: context.data.staticClass || null,
       style: context.data.staticStyle || null,
       attrs: {
         id: context.data.attrs.id || null,
-        href: network.type === 'popup'
+        'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent._getSharer(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
