@@ -217,7 +217,7 @@ var SocialSharing = {
      */
     share: function (network) {
       this._openSharer(this._getSharer(network));
-      this.$emit('social_shares_click', network, this.url);
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -226,7 +226,7 @@ var SocialSharing = {
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$emit('social_shares_click', network, this.url);
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
