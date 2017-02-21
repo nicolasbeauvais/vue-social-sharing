@@ -1,3 +1,8 @@
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.0.0...2.1.0) (2017-02-21)
+- Use of span tag instead of a to prevent history change
+- Fix event emission on $root instance 
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.1.2...2.0.0) (2017-02-20)
 - Add support for server side rendering

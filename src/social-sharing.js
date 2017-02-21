@@ -83,12 +83,22 @@ export default {
       default: undefined
     },
 
-    /** Pinterest Media URL.
+    /**
+     * Pinterest Media URL.
      * Specifies the image/media to be used.
      */
     media: {
       type: String,
       default: ''
+    },
+
+    /**
+     * Network sub component tag.
+     * Default to span tag
+     */
+    networkTag: {
+      type: String,
+      default: 'span'
     }
   },
 
@@ -145,7 +155,7 @@ export default {
      */
     share: function (network) {
       this._openSharer(this._getSharer(network));
-      this.$emit('social_shares_click', network, this.url);
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -154,7 +164,8 @@ export default {
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$emit('social_shares_click', network, this.url);
+      window.open(this._getSharer(network) ,"_self");
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
