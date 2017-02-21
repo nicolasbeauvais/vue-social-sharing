@@ -65,7 +65,7 @@ var SocialSharingNetwork = {
       style: context.data.staticStyle || null,
       attrs: {
         id: context.data.attrs.id || null,
-        href: network.type === 'popup'
+        'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent._getSharer(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
@@ -221,7 +221,7 @@ var SocialSharing = {
      */
     share: function (network) {
       this._openSharer(this._getSharer(network));
-      this.$emit('social_shares_click', network, this.url);
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
@@ -230,7 +230,8 @@ var SocialSharing = {
      * @param string network Social network key.
      */
     touch: function (network) {
-      this.$emit('social_shares_click', network, this.url);
+      window.open(this._getSharer(network) ,"_self");
+      this.$root.$emit('social_shares_click', network, this.url);
     },
 
     /**
