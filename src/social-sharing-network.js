@@ -1,4 +1,4 @@
-import Networks from './networks';
+import Networks from './networks.json';
 
 export default {
   functional: true,

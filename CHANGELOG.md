@@ -1,3 +1,9 @@
+<a name="2.1.3"></a>
+# [2.1.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.2...2.1.3) (2017-03-18)
+- Add Weibo and VK
+- Refactor unit tests using loops
+- Convert networks.js to json format (network.json)
+
 <a name="2.1.2"></a>
 # [2.1.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.1...2.1.2) (2017-03-18)
 - Encode title / description / code to allow use of special chars
