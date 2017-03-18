@@ -1,7 +1,7 @@
 {
   "name": "vue-social-sharing",
   "description": "A Vue.js component for sharing links to social networks",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "author": {
     "name": "nicolasbeauvais",
     "email": "nicolasbeauvais1@gmail.com"
@@ -96,5 +96,8 @@
     "test:coveralls": "karma start config/karma.coveralls.conf.js",
     "test:e2e": "npm run build && node test/e2e/runner.js",
     "test:unit": "karma start config/karma.unit.conf.js"
+  },
+  "dependencies": {
+    "rollup-plugin-json": "^2.1.0"
   }
 }

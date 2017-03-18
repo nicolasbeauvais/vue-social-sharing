@@ -1,5 +1,5 @@
 import SocialSharingNetwork from './social-sharing-network';
-import Networks from './networks';
+import Networks from './networks.json';
 
 const inBrowser = typeof window !== 'undefined';
 var $window = inBrowser ? window : null;

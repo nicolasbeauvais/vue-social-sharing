@@ -1,46 +1,29 @@
 /*!
- * vue-social-sharing v2.1.2 
+ * vue-social-sharing v2.1.3 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
 
+var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote","type":"popup"};
+var googleplus = {"sharer":"https://plus.google.com/share?url=@url","type":"popup"};
+var linkedin = {"sharer":"https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description","type":"popup"};
+var pinterest = {"sharer":"https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title","type":"popup"};
+var reddit = {"sharer":"https://www.reddit.com/submit?url=@url&title=@title","type":"popup"};
+var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser","type":"popup"};
+var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
+var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
+var whatsapp = {"sharer":"whatsapp://send?text=@url","type":"direct","action":"share/whatsapp/share"};
 var Networks = {
-  facebook: {
-    sharer: 'https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote',
-    type: 'popup'
-  },
-
-  twitter: {
-    sharer: 'https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser',
-    type: 'popup'
-  },
-
-  googleplus: {
-    sharer: 'https://plus.google.com/share?url=@url',
-    type: 'popup'
-  },
-
-  pinterest: {
-    sharer: 'https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title',
-    type: 'popup'
-  },
-
-  reddit: {
-    sharer: 'http://www.reddit.com/submit?url=@url&title=@title',
-    type: 'popup'
-  },
-
-  linkedin: {
-    sharer: 'https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description',
-    type: 'popup'
-  },
-
-  whatsapp: {
-    sharer: 'whatsapp://send?text=@url',
-    type: 'direct',
-    action: 'share/whatsapp/share'
-  }
+	facebook: facebook,
+	googleplus: googleplus,
+	linkedin: linkedin,
+	pinterest: pinterest,
+	reddit: reddit,
+	twitter: twitter,
+	vk: vk,
+	weibo: weibo,
+	whatsapp: whatsapp
 };
 
 var SocialSharingNetwork = {
@@ -289,7 +272,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.1.2';
+SocialSharing.version = '2.1.3';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
