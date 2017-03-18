@@ -1,5 +1,9 @@
+<a name="2.1.2"></a>
+# [2.1.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.1...2.1.2) (2017-03-18)
+- Encode title / description / code to allow use of special chars
+
 <a name="2.1.1"></a>
-# [2.1.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.0...2.1.1) (2017-02-21)
+# [2.1.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.0...2.1.1) (2017-02-21)
 - Update version
 
 <a name="2.1.0"></a>
