@@ -212,10 +212,8 @@ export default {
     const width = $window.innerWidth ? $window.innerWidth : (document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width);
     const height = $window.innerHeight ? $window.innerHeight : (document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height);
 
-    console.log(width, this.popup.width, dualScreenLeft, height, this.popup.height, dualScreenTop);
     this.popup.left = ((width / 2) - (this.popup.width / 2)) + dualScreenLeft;
     this.popup.top = ((height / 2) - (this.popup.height / 2)) + dualScreenTop;
-    console.log(this.popup.left, this.popup.top);
   },
 
   /**
