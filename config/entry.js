@@ -1,5 +1,6 @@
 const replace = require('rollup-plugin-replace');
 const buble = require('rollup-plugin-buble');
+const json = require('rollup-plugin-json');
 const banner = require('./banner');
 const pack = require('../package.json');
 
@@ -46,6 +47,7 @@ function genConfig (opts) {
     banner: opts.banner,
     moduleName,
     plugins: [
+      json(),
       buble()
     ]
   };
