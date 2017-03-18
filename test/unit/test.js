@@ -69,9 +69,13 @@ describe('SocialSharing', () => {
         width: 1000,
         height: 700
       },
+      innerWidth: 1000,
+      innerHeight: 700,
       location: {
         href: window.location.href
-      }
+      },
+      screenLeft: 0,
+      screenTop: 0
     });
 
     const vm = createComponent();
@@ -81,8 +85,9 @@ describe('SocialSharing', () => {
       // default width popup = 626
       // default height popup = 436
 
-      expect(popup.left).toBe(177); // 1000 /2 - ((626/2) + 10) = 177
-      expect(popup.top).toBe(82); // 700 / 2 - ((436/2) + 50) = 82
+      console.log(popup.left, popup.top);
+      expect(popup.left).toBe(187); // 1000 / 2 - 626 / 2 = 187
+      expect(popup.top).toBe(132); // 700 / 2 - 436 / 2 = 132
       done();
     });
   });
