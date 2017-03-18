@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.1.3 
+ * vue-social-sharing v2.1.4 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -257,11 +257,20 @@ var SocialSharing = {
       return;
     }
 
-    // Allow for borders.
-    this.popup.left = ($window.screen.width / 2) - ((this.popup.width / 2) + 10);
+    /**
+     * Center the popup on dual screens
+     * http://stackoverflow.com/questions/4068373/center-a-popup-window-on-screen/32261263
+     */
+    var dualScreenLeft = $window.screenLeft !== undefined ? $window.screenLeft : screen.left;
+    var dualScreenTop = $window.screenTop !== undefined ? $window.screenTop : screen.top;
 
-    // Allow for title and status bars.
-    this.popup.top = ($window.screen.height / 2) - ((this.popup.height / 2) + 50);
+    var width = $window.innerWidth ? $window.innerWidth : (document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width);
+    var height = $window.innerHeight ? $window.innerHeight : (document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height);
+
+    console.log(width, this.popup.width, dualScreenLeft, height, this.popup.height, dualScreenTop);
+    this.popup.left = ((width / 2) - (this.popup.width / 2)) + dualScreenLeft;
+    this.popup.top = ((height / 2) - (this.popup.height / 2)) + dualScreenTop;
+    console.log(this.popup.left, this.popup.top);
   },
 
   /**
@@ -272,7 +281,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.1.3';
+SocialSharing.version = '2.1.4';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

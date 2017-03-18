@@ -1,3 +1,7 @@
+<a name="2.1.4"></a>
+# [2.1.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.3...2.1.4) (2017-03-18)
+- Center popup on dual screen
+
 <a name="2.1.3"></a>
 # [2.1.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.2...2.1.3) (2017-03-18)
 - Add Weibo and VK
