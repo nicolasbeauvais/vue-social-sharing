@@ -75,7 +75,7 @@ Vue.use(SocialSharing);
         <i class="fa fa-twitter"></i> Twitter
       </network>
       <network network="vk">
-        <i class="fa fa-vk"></i> VKontact
+        <i class="fa fa-vk"></i> VKontakte
       </network>
       <network network="weibo">
         <i class="fa fa-weibo"></i> Weibo
