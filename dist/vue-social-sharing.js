@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.1.1 
+ * vue-social-sharing v2.1.2 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -216,9 +216,9 @@ var SocialSharing = {
     _getSharer: function (network) {
       return this.networks[network].sharer
         .replace(/@url/g, encodeURIComponent(this.url))
-        .replace(/@title/g, this.title)
-        .replace(/@description/g, this.description)
-        .replace(/@quote/g, this.quote)
+        .replace(/@title/g, encodeURIComponent(this.title))
+        .replace(/@description/g, encodeURIComponent(this.description))
+        .replace(/@quote/g, encodeURIComponent(this.quote))
         .replace(/@hashtags/g, this.hashtags)
         .replace(/@media/g, this.media)
         .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
@@ -293,7 +293,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.1.1';
+SocialSharing.version = '2.1.2';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
