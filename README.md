@@ -1,5 +1,9 @@
 # vue-social-sharing
 
+<img src="https://simpleicons.org/icons/facebook.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/googleplus.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/linkedin.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/pinterest.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/reddit.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/twitter.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/vk.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/sinaweibo.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/whatsapp.svg" width="52" hspace="10">
+
+---
+
 [![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/releases)
 [![Build Status](https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
 [![Coverage Status](https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square)](https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master)
@@ -12,28 +16,9 @@ A Vue.js component for sharing links to social networks
 
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
 ##### For Vue.js V2 use vue-social-sharing v1.x
+##### For SSR support use vue-social-sharing v2.x
 
->Server side rendering support has been added on vue-social-sharing v2.0.0
-
-&nbsp;
-##[Demo](https://nicolasbeauvais.github.io/vue-social-sharing/)
-&nbsp;
-## Include support for:
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-facebook-1.png&amp;r=59&amp;g=89&amp;b=152" width="64">
-&nbsp;&nbsp;
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-twitter-1.png&amp;r=85&amp;g=172&amp;b=238" width="64">
-&nbsp;&nbsp;
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-google-plus-1.png&amp;r=211&amp;g=72&amp;b=54" width="64">
-&nbsp;&nbsp;
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-pinterest-1.png&amp;r=203&amp;g=32&amp;b=38" width="64">
-&nbsp;&nbsp;
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2016/png/iconmonstr-reddit-1.png&amp;r=255&amp;g=92&amp;b=6" width="64">
-&nbsp;&nbsp;
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2012/png/iconmonstr-linkedin-1.png&amp;r=0&amp;g=119&amp;b=181" width="64">
-&nbsp;&nbsp;
-<img src="http://iconmonstr.com/wp-content/g/gd/makefg.php?i=../assets/preview/2016/png/iconmonstr-whatsapp-1.png&amp;r=37&amp;g=211&amp;b=102" width="64">
-
----
+### [Demo](https://nicolasbeauvais.github.io/vue-social-sharing/)
 
 ## Installation
 
@@ -74,11 +59,11 @@ Vue.use(SocialSharing);
       <network network="facebook">
         <i class="fa fa-facebook"></i> Facebook
       </network>
-      <network network="twitter">
-        <i class="fa fa-twitter"></i> Twitter
-      </network>
       <network network="googleplus">
         <i class="fa fa-google-plus"></i> Google +
+      </network>
+      <network network="linkedin">
+        <i class="fa fa-linkedin"></i> LinkedIn
       </network>
       <network network="pinterest">
         <i class="fa fa-pinterest"></i> Pinterest
@@ -86,9 +71,15 @@ Vue.use(SocialSharing);
       <network network="reddit">
         <i class="fa fa-reddit"></i> Reddit
       </network>
-      <network network="linkedin">
-        <i class="fa fa-linkedin"></i> LinkedIn
+      <network network="twitter">
+        <i class="fa fa-twitter"></i> Twitter
       </network>
+      <network network="vk">
+        <i class="fa fa-vk"></i> VKontact
+      </network>
+      <network network="weibo">
+        <i class="fa fa-weibo"></i> Weibo
+      </network> 
       <network network="whatsapp">
         <i class="fa fa-whatsapp"></i> Whatsapp
       </network>
