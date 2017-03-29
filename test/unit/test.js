@@ -5,7 +5,7 @@ import Networks from '../../src/networks';
 
 describe('SocialSharing', () => {
   const createComponent = (propsData = {}, attr = {}) => {
-    const Ctor = Vue.extend({
+    const Comp = Vue.extend({
       template: `
         <social-sharing url="https://vuejs.org/" title="The Progressive JavaScript Framework"
                  description="Intuitive, Fast and Composable MVVM for building interactive interfaces." inline-template>
@@ -39,7 +39,7 @@ describe('SocialSharing', () => {
       }
     });
 
-    return new Ctor({
+    return new Comp({
       propsData,
       data () {
         return {
@@ -136,5 +136,17 @@ describe('SocialSharing', () => {
   it('setup a network correctly', () => {
     expect(typeof SocialSharingNetwork.props).toBe('object');
     expect(SocialSharingNetwork.functional).toBe(true);
+  });
+
+  it('it create a popup', () => {
+    const vm = createComponent();
+    const network = Object.keys(Networks)[0];
+
+    vm.$on('social_shares_open', (sharedNetwork, url) => {
+      expect(sharedNetwork).toBe(network);
+      expect(url).toBe('https://vuejs.org/');
+    });
+
+    vm.$children[0].share(network);
   });
 });

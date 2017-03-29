@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.1.4 
+ * vue-social-sharing v2.2.0 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -46,7 +46,7 @@ var SocialSharingNetwork = {
         id: context.data.attrs.id || null,
         'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
-          : context.parent._getSharer(context.props.network),
+          : context.parent.createSharingUrl(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
       },
       on: {
@@ -181,7 +181,8 @@ var SocialSharing = {
         height: 436,
         top: 0,
         left: 0,
-        window: undefined
+        window: undefined,
+        interval: null
       }
     };
   },
@@ -192,7 +193,7 @@ var SocialSharing = {
      *
      * @param network Social network key.
      */
-    _getSharer: function (network) {
+    createSharingUrl: function createSharingUrl (network) {
       return this.networks[network].sharer
         .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, encodeURIComponent(this.title))
@@ -208,9 +209,9 @@ var SocialSharing = {
      *
      * @param string network Social network key.
      */
-    share: function (network) {
-      this._openSharer(this._getSharer(network));
-      this.$root.$emit('social_shares_click', network, this.url);
+    share: function share (network) {
+      this.openSharer(network, this.createSharingUrl(network));
+      this.$root.$emit('social_shares_open', network, this.url);
     },
 
     /**
@@ -218,9 +219,9 @@ var SocialSharing = {
      *
      * @param string network Social network key.
      */
-    touch: function (network) {
-      window.open(this._getSharer(network), '_self');
-      this.$root.$emit('social_shares_click', network, this.url);
+    touch: function touch (network) {
+      window.open(this.createSharingUrl(network), '_self');
+      this.$root.$emit('social_shares_open', network, this.url);
     },
 
     /**
@@ -228,7 +229,16 @@ var SocialSharing = {
      *
      * @param string url Url to share.
      */
-    _openSharer: function (url) {
+    openSharer: function openSharer (network, url) {
+      var this$1 = this;
+
+      // If a popup window already exist it will be replaced, trigger a close event.
+      if (this.popup.window && this.popup.interval) {
+        clearInterval(this.popup.interval);
+        this.popup.window.close();// Force close (for Facebook)
+        this.$root.$emit('social_shares_change', network, this.url);
+      }
+
       this.popup.window = window.open(
         url,
         'sharer',
@@ -246,13 +256,24 @@ var SocialSharing = {
         ',location=' + (this.popup.location ? 'yes' : 'no') +
         ',directories=' + (this.popup.directories ? 'yes' : 'no')
       );
+
+      this.popup.window.focus();
+
+      // Create an interval to detect popup closing event
+      this.popup.interval = setInterval(function () {
+        if (this$1.popup.window.closed) {
+          clearInterval(this$1.popup.interval);
+          this$1.popup.window = undefined;
+          this$1.$root.$emit('social_shares_close', network, this$1.url);
+        }
+      }, 500);
     }
   },
 
   /**
    * Sets popup default dimensions.
    */
-  mounted: function () {
+  mounted: function mounted () {
     if (!inBrowser) {
       return;
     }
@@ -279,7 +300,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.1.4';
+SocialSharing.version = '2.2.0';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

@@ -101,6 +101,25 @@ Prop           | Data Type  | Default   | Description
 `twitter-user` | String     |           | Twitter user (Twitter only).
 `media`        | String     |           | Url to a media (Pinterest only).
 
+#### Available events
+
+Events are emitted on the vue $root instance:
+
+Name                   | Data                       | Description
+---------------------- | -------------------------- | --------------------------------------------------------------------------
+`social_shares_open`   | Network object, shared url | Fired when a sharing popup is open
+`social_shares_change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
+`social_shares_close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
+
+You can listen to a `vue-social-sharing` event by using the following code:
+```javascript
+Vue.$root.$on('social_shares_open', function (network, url) {
+  // your event code
+});
+```
+
+> Note that the `social_shares_close` event is not fired for Whatsapp.
+
 ## Feature request
 Feel free to open an issue to ask for a new social network support.
 

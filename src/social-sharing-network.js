@@ -20,7 +20,7 @@ export default {
         id: context.data.attrs.id || null,
         'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
-          : context.parent._getSharer(context.props.network),
+          : context.parent.createSharingUrl(context.props.network),
         'data-action': network.type === 'popup' ? null : network.action
       },
       on: {

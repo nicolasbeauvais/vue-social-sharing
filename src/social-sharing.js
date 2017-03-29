@@ -126,7 +126,8 @@ export default {
         height: 436,
         top: 0,
         left: 0,
-        window: undefined
+        window: undefined,
+        interval: null
       }
     };
   },
@@ -137,7 +138,7 @@ export default {
      *
      * @param network Social network key.
      */
-    _getSharer: function (network) {
+    createSharingUrl (network) {
       return this.networks[network].sharer
         .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, encodeURIComponent(this.title))
@@ -153,9 +154,9 @@ export default {
      *
      * @param string network Social network key.
      */
-    share: function (network) {
-      this._openSharer(this._getSharer(network));
-      this.$root.$emit('social_shares_click', network, this.url);
+    share (network) {
+      this.openSharer(network, this.createSharingUrl(network));
+      this.$root.$emit('social_shares_open', network, this.url);
     },
 
     /**
@@ -163,9 +164,9 @@ export default {
      *
      * @param string network Social network key.
      */
-    touch: function (network) {
-      window.open(this._getSharer(network), '_self');
-      this.$root.$emit('social_shares_click', network, this.url);
+    touch (network) {
+      window.open(this.createSharingUrl(network), '_self');
+      this.$root.$emit('social_shares_open', network, this.url);
     },
 
     /**
@@ -173,7 +174,14 @@ export default {
      *
      * @param string url Url to share.
      */
-    _openSharer: function (url) {
+    openSharer (network, url) {
+      // If a popup window already exist it will be replaced, trigger a close event.
+      if (this.popup.window && this.popup.interval) {
+        clearInterval(this.popup.interval);
+        this.popup.window.close();// Force close (for Facebook)
+        this.$root.$emit('social_shares_change', network, this.url);
+      }
+
       this.popup.window = window.open(
         url,
         'sharer',
@@ -191,13 +199,24 @@ export default {
         ',location=' + (this.popup.location ? 'yes' : 'no') +
         ',directories=' + (this.popup.directories ? 'yes' : 'no')
       );
+
+      this.popup.window.focus();
+
+      // Create an interval to detect popup closing event
+      this.popup.interval = setInterval(() => {
+        if (this.popup.window.closed) {
+          clearInterval(this.popup.interval);
+          this.popup.window = undefined;
+          this.$root.$emit('social_shares_close', network, this.url);
+        }
+      }, 500);
     }
   },
 
   /**
    * Sets popup default dimensions.
    */
-  mounted: function () {
+  mounted () {
     if (!inBrowser) {
       return;
     }

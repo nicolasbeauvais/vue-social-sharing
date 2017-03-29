@@ -1,3 +1,9 @@
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.5...2.2.0) (2017-03-29)
+- Internal methods refactor
+- Rename `social_shares_click` event to `social_shares_open`
+- Add `social_shares_change` and `social_shares_close` event
+
 <a name="2.1.5"></a>
 # [2.1.5](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.4...2.1.5) (2017-03-18)
 - Vue 2.2.4 compatibility
