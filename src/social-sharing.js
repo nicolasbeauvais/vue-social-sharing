@@ -100,7 +100,7 @@ export default {
       type: String,
       default: 'span'
     },
-    
+
     /**
      * Before open window hook: useful to execute async tasks before sharing
      */
