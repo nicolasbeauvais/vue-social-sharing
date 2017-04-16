@@ -15,8 +15,7 @@
 A Vue.js component for sharing links to social networks
 
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
-##### For Vue.js V2 use vue-social-sharing v1.x
-##### For SSR support use vue-social-sharing v2.x
+##### For SSR and Vue.js 2 support use vue-social-sharing v2.x
 
 ### [Demo](https://nicolasbeauvais.github.io/vue-social-sharing/)
 
