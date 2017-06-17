@@ -1,3 +1,7 @@
+<a name="2.2.1"></a>
+# [2.2.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.2...2.2.1) (2017-06-17)
+- Add telegram
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.1.5...2.2.0) (2017-03-29)
 - Internal methods refactor
