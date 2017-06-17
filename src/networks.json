@@ -43,5 +43,10 @@
     "sharer": "whatsapp://send?text=@url",
     "type": "direct",
     "action": "share/whatsapp/share"
+  },
+
+  "telegram": {
+    "sharer": "https://t.me/share/url?url=@url",
+    "type": "popup"
   }
 }
