@@ -17,7 +17,6 @@ describe('SocialSharing', () => {
               <i class="fa fa-twitter"></i> Twitter
             </network>
             <network network="googleplus" id="google-plus">
-            <network network="googleplus" id="google-plus">
               <i class="fa fa-google-plus"></i> Google +
             </network>
             <network network="pinterest" id="pinterest">
@@ -34,6 +33,12 @@ describe('SocialSharing', () => {
             </network>
             <network network="telegram" id="telegram">
               <i class="fa fa-telegram"></i> Telegram
+            </network>
+            <network network="line" id="line">
+              Line
+            </network>
+            <network network="skype" id="skype">
+              <i class="fa fa-skype"></i> Skype
             </network>
           </div>
         </social-sharing>
@@ -119,7 +124,9 @@ describe('SocialSharing', () => {
       'reddit',
       'linkedin',
       'whatsapp',
-      'telegram'
+      'telegram',
+      'line',
+      'skype'
     ];
 
     [].forEach.call(createComponent().$el.querySelectorAll('.network'), function (node, index) {
