@@ -35,6 +35,12 @@ describe('SocialSharing', () => {
             <network network="telegram" id="telegram">
               <i class="fa fa-telegram"></i> Telegram
             </network>
+            <network network="line" id="line">
+              Line
+            </network>
+            <network network="skype" id="skype">
+              <i class="fa fa-skype"></i> Skype
+            </network>
           </div>
         </social-sharing>
       `,
