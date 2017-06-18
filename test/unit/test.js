@@ -125,7 +125,9 @@ describe('SocialSharing', () => {
       'reddit',
       'linkedin',
       'whatsapp',
-      'telegram'
+      'telegram',
+      'line',
+      'skype'
     ];
 
     [].forEach.call(createComponent().$el.querySelectorAll('.network'), function (node, index) {
