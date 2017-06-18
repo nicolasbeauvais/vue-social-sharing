@@ -40,13 +40,23 @@
   },
 
   "whatsapp": {
-    "sharer": "whatsapp://send?text=@url",
+    "sharer": "whatsapp://send?text=@description%0D%0A@url",
     "type": "direct",
     "action": "share/whatsapp/share"
   },
 
   "telegram": {
-    "sharer": "https://t.me/share/url?url=@url",
+    "sharer": "https://t.me/share/url?url=@description%0D%0A@url",
+    "type": "popup"
+  },
+
+  "line": {
+    "sharer": "http://line.me/R/msg/text/?@description%0D%0A@url",
+    "type": "popup"
+  },
+
+  "skype": {
+    "sharer": "https://web.skype.com/share?url=@description%0D%0A@url",
     "type": "popup"
   }
 }
