@@ -17,6 +17,7 @@ describe('SocialSharing', () => {
               <i class="fa fa-twitter"></i> Twitter
             </network>
             <network network="googleplus" id="google-plus">
+            <network network="googleplus" id="google-plus">
               <i class="fa fa-google-plus"></i> Google +
             </network>
             <network network="pinterest" id="pinterest">
