@@ -10,7 +10,9 @@ module.exports = {
       'VKontakte',
       'Weibo',
       'Whatsapp',
-      'Telegram'
+      'Telegram',
+      'Line',
+      'Skype'
     ];
 
     browser.url('http://localhost:8080/examples/vue2-example.html');
