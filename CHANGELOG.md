@@ -1,5 +1,9 @@
+<a name="2.2.2"></a>
+# [2.2.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.1...2.2.2) (2017-06-19)
+- Add Skype & Line
+
 <a name="2.2.1"></a>
-# [2.2.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.2...2.2.1) (2017-06-17)
+# [2.2.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.0...2.2.1) (2017-06-17)
 - Add telegram
 
 <a name="2.2.0"></a>
