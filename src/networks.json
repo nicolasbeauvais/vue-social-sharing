@@ -46,7 +46,7 @@
   },
 
   "telegram": {
-    "sharer": "https://t.me/share/url?url=@description%0D%0A@url",
+    "sharer": "https://t.me/share/url?url=@url&text=@description",
     "type": "popup"
   },
 
