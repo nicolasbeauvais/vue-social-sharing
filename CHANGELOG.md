@@ -1,3 +1,7 @@
+<a name="2.2.3"></a>
+# [2.2.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.2...2.2.3) (2017-06-21)
+- Fix telegram sharing
+
 <a name="2.2.2"></a>
 # [2.2.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.1...2.2.2) (2017-06-19)
 - Add Skype & Line
@@ -37,7 +41,7 @@
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.0.0...2.1.0) (2017-02-21)
 - Use of span tag instead of a to prevent history change
-- Fix event emission on $root instance 
+- Fix event emission on $root instance
 
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.1.2...2.0.0) (2017-02-20)
@@ -54,7 +58,7 @@
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/1.0.0...1.1.0) (2017-01-18)
 - Fix development build to avoid loading 2 vuejs instance on users production env
-- Improve the use of the vue.js 2 API to respect the same component syntax used in v0.0.4 
+- Improve the use of the vue.js 2 API to respect the same component syntax used in v0.0.4
 
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/0.0.4...1.0.0) (2017-01-12)
