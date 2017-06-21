@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.2.2 
+ * vue-social-sharing v2.2.3 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -18,7 +18,7 @@ var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&h
 var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
 var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
 var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
-var telegram = {"sharer":"https://t.me/share/url?url=@description%0D%0A@url","type":"popup"};
+var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
 var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
 var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
 var Networks = {
@@ -310,7 +310,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.2';
+SocialSharing.version = '2.2.3';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
