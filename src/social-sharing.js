@@ -99,6 +99,14 @@ export default {
     networkTag: {
       type: String,
       default: 'span'
+    },
+
+    /**
+     * Before open window hook: useful to execute async tasks before sharing
+     */
+    beforeOpen: {
+      type: Function,
+      default: Promise.resolve
     }
   },
 
@@ -155,8 +163,12 @@ export default {
      * @param string network Social network key.
      */
     share (network) {
-      this.openSharer(network, this.createSharingUrl(network));
-      this.$root.$emit('social_shares_open', network, this.url);
+      this.openSharer(network, '');
+      this.beforeOpen()
+        .then(() => {
+          this.popup.window.location = this.createSharingUrl(this.url);
+          this.$root.$emit('social_shares_open', network, this.url);
+        });
     },
 
     /**
