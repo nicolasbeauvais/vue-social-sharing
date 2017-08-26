@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.2.3 
+ * vue-social-sharing v2.2.4 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -17,6 +17,7 @@ var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"d
 var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
 var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
 var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
+var odnoklassniki = {"sharer":"https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description","type":"popup"};
 var Networks = {
 	facebook: facebook,
 	googleplus: googleplus,
@@ -29,7 +30,8 @@ var Networks = {
 	whatsapp: whatsapp,
 	telegram: telegram,
 	line: line,
-	skype: skype
+	skype: skype,
+	odnoklassniki: odnoklassniki
 };
 
 var SocialSharingNetwork = {
@@ -306,7 +308,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.3';
+SocialSharing.version = '2.2.4';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

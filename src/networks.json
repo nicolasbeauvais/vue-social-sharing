@@ -58,5 +58,10 @@
   "skype": {
     "sharer": "https://web.skype.com/share?url=@description%0D%0A@url",
     "type": "popup"
+  },
+
+  "odnoklassniki": {
+    "sharer": "https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description",
+    "type": "popup"
   }
 }

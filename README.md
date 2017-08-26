@@ -1,6 +1,6 @@
 # vue-social-sharing
 
-<img src="https://simpleicons.org/icons/facebook.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/googleplus.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/linkedin.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/pinterest.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/reddit.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/twitter.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/vk.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/sinaweibo.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/whatsapp.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/telegram.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/skype.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/line.svg" width="52" hspace="10">
+<img src="https://simpleicons.org/icons/facebook.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/googleplus.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/linkedin.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/pinterest.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/reddit.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/twitter.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/vk.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/sinaweibo.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/whatsapp.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/telegram.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/skype.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/odnoklassniki.svg" width="52" hspace="10">
 
 ---
 
@@ -61,14 +61,26 @@ Vue.use(SocialSharing);
       <network network="googleplus">
         <i class="fa fa-google-plus"></i> Google +
       </network>
+      <network network="line">
+        <i class="fa fa-line"></i> Line
+      </network>
       <network network="linkedin">
         <i class="fa fa-linkedin"></i> LinkedIn
+      </network>
+      <network network="odnoklassniki">
+        <i class="fa fa-odnoklassniki"></i> Odnoklassniki
       </network>
       <network network="pinterest">
         <i class="fa fa-pinterest"></i> Pinterest
       </network>
       <network network="reddit">
         <i class="fa fa-reddit"></i> Reddit
+      </network>
+      <network network="skype">
+        <i class="fa fa-skype"></i> Skype
+      </network>
+      <network network="telegram">
+        <i class="fa fa-telegram"></i> Telegram
       </network>
       <network network="twitter">
         <i class="fa fa-twitter"></i> Twitter
