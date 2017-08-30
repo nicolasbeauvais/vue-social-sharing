@@ -1,6 +1,6 @@
 import SocialSharing from './social-sharing';
 
-SocialSharing.version = '2.2.4';
+SocialSharing.version = '2.2.5';
 
 SocialSharing.install = (Vue) => {
   Vue.component('social-sharing', SocialSharing);
