@@ -10,15 +10,23 @@ describe('SocialSharing', () => {
         <social-sharing url="https://vuejs.org/" title="The Progressive JavaScript Framework"
                  description="Intuitive, Fast and Composable MVVM for building interactive interfaces." inline-template>
           <div class="networks">
+            <network network="email" id="email">
+              <i class="fa fa-envelope"></i> Email
+            </network>
             <network network="facebook" id="facebook">
               <i class="fa fa-facebook"></i> Facebook
             </network>
-            <network network="twitter" id="twitter">
-              <i class="fa fa-twitter"></i> Twitter
-            </network>
-            <network network="googleplus" id="google-plus">
-            <network network="googleplus" id="google-plus">
+            <network network="googleplus" id="googleplus">
               <i class="fa fa-google-plus"></i> Google +
+            </network>
+            <network network="line" id="line">
+              <i class="fa fa-line"></i> Line
+            </network>
+            <network network="linkedin" id="linkedin" class="test-class">
+              <i class="fa fa-linkedin"></i> LinkedIn
+            </network>
+            <network network="odnoklassniki" id="odnoklassniki">
+              <i class="fa fa-odnoklassniki"></i> Odnoklassniki
             </network>
             <network network="pinterest" id="pinterest">
               <i class="fa fa-pinterest"></i> Pinterest
@@ -26,20 +34,23 @@ describe('SocialSharing', () => {
             <network network="reddit" id="reddit">
               <i class="fa fa-reddit"></i> Reddit
             </network>
-            <network network="linkedin" id="linkedin" class="test-class">
-              <i class="fa fa-linkedin"></i> LinkedIn
-            </network>
-            <network network="whatsapp" id="whatsapp" style="color:#f00;">
-              <i class="fa fa-whatsapp"></i> Whatsapp
+            <network network="skype" id="skype">
+              <i class="fa fa-skype"></i> Skype
             </network>
             <network network="telegram" id="telegram">
               <i class="fa fa-telegram"></i> Telegram
             </network>
-            <network network="line" id="line">
-              Line
+            <network network="twitter" id="twitter">
+              <i class="fa fa-twitter"></i> Twitter
             </network>
-            <network network="skype" id="skype">
-              <i class="fa fa-skype"></i> Skype
+            <network network="vk" id="vk">
+              <i class="fa fa-vk"></i> VKontakte
+            </network>
+            <network network="weibo" id="weibo">
+              <i class="fa fa-weibo"></i> Weibo
+            </network> 
+            <network network="whatsapp" id="whatsapp" style="color:#f00;">
+              <i class="fa fa-whatsapp"></i> Whatsapp
             </network>
           </div>
         </social-sharing>
@@ -118,16 +129,18 @@ describe('SocialSharing', () => {
 
   it('should render sharing links correctly', () => {
     const expectedShareNames = [
+      'email',
       'facebook',
-      'twitter',
       'googleplus',
+      'line',
+      'linkedin',
+      'odnoklassniki',
       'pinterest',
       'reddit',
-      'linkedin',
-      'whatsapp',
+      'skype',
       'telegram',
-      'line',
-      'skype'
+      'twitter',
+      'whatsapp'
     ];
 
     [].forEach.call(createComponent().$el.querySelectorAll('.network'), function (node, index) {
@@ -142,7 +155,7 @@ describe('SocialSharing', () => {
   it('has a full list of networks', () => {
     for (var network in Networks) {
       expect(typeof Networks[network].sharer).toBe('string');
-      expect(Networks[network].type).toBe(network === 'whatsapp' ? 'direct' : 'popup');
+      expect(Networks[network].type).toBe(['whatsapp', 'email'].indexOf(network) > -1 ? 'direct' : 'popup');
     }
   });
 
