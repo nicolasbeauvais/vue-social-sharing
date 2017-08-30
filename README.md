@@ -1,6 +1,6 @@
 # vue-social-sharing
 
-<img src="https://simpleicons.org/icons/facebook.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/googleplus.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/linkedin.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/pinterest.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/reddit.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/twitter.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/vk.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/sinaweibo.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/whatsapp.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/telegram.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/skype.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/odnoklassniki.svg" width="52" hspace="10">
+<img src="https://simpleicons.org/icons/gmail.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/facebook.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/googleplus.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/linkedin.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/pinterest.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/reddit.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/twitter.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/vk.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/sinaweibo.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/whatsapp.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/telegram.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/skype.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/odnoklassniki.svg" width="52" hspace="10">
 
 ---
 
@@ -55,6 +55,9 @@ Vue.use(SocialSharing);
 ```html
 <social-sharing url="https://vuejs.org/" inline-template>
   <div>
+      <network network="email">
+          <i class="fa fa-envelope"></i> Email
+      </network>
       <network network="facebook">
         <i class="fa fa-facebook"></i> Facebook
       </network>

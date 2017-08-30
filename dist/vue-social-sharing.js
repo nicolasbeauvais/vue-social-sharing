@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.2.4 
+ * vue-social-sharing v2.2.5 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -9,33 +9,35 @@
 	(global.VueSocialSharing = factory());
 }(this, (function () { 'use strict';
 
+var email = {"sharer":"mailto:?subject=@title&body=@description","type":"direct"};
 var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote","type":"popup"};
 var googleplus = {"sharer":"https://plus.google.com/share?url=@url","type":"popup"};
+var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
 var linkedin = {"sharer":"https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description","type":"popup"};
+var odnoklassniki = {"sharer":"https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description","type":"popup"};
 var pinterest = {"sharer":"https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title","type":"popup"};
 var reddit = {"sharer":"https://www.reddit.com/submit?url=@url&title=@title","type":"popup"};
+var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
+var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
 var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser","type":"popup"};
 var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
 var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
 var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
-var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
-var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
-var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
-var odnoklassniki = {"sharer":"https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description","type":"popup"};
 var Networks = {
+	email: email,
 	facebook: facebook,
 	googleplus: googleplus,
+	line: line,
 	linkedin: linkedin,
+	odnoklassniki: odnoklassniki,
 	pinterest: pinterest,
 	reddit: reddit,
+	skype: skype,
+	telegram: telegram,
 	twitter: twitter,
 	vk: vk,
 	weibo: weibo,
-	whatsapp: whatsapp,
-	telegram: telegram,
-	line: line,
-	skype: skype,
-	odnoklassniki: odnoklassniki
+	whatsapp: whatsapp
 };
 
 var SocialSharingNetwork = {
@@ -312,7 +314,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.4';
+SocialSharing.version = '2.2.5';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
