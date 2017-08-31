@@ -53,7 +53,13 @@ Vue.use(SocialSharing);
 ### Using the social sharing component
 
 ```html
-<social-sharing url="https://vuejs.org/" inline-template>
+ <social-sharing url="https://vuejs.org/"
+                      title="The Progressive JavaScript Framework"
+                      description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
+                      quote="Vue is a progressive framework for building user interfaces."
+                      hashtags="vuejs,javascript,framework"
+                      twitter-user="vuejs"
+                      inline-template>
   <div>
       <network network="email">
           <i class="fa fa-envelope"></i> Email
