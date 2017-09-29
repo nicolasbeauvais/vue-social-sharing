@@ -68,5 +68,10 @@
     "sharer": "whatsapp://send?text=@description%0D%0A@url",
     "type": "direct",
     "action": "share/whatsapp/share"
+  },
+  
+  "sms": {
+    "sharer": "sms:?body=@description",
+    "type": "direct"
   }
 }
