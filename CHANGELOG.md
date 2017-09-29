@@ -1,3 +1,7 @@
+<a name="2.2.6"></a>
+# [2.2.6](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.5...2.2.6) (2017-09-29)
+- Add SMS
+
 <a name="2.2.5"></a>
 # [2.2.5](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.4...2.2.5) (2017-08-30)
 - Add Email
