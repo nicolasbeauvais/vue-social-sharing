@@ -155,7 +155,7 @@ describe('SocialSharing', () => {
   it('has a full list of networks', () => {
     for (var network in Networks) {
       expect(typeof Networks[network].sharer).toBe('string');
-      expect(Networks[network].type).toBe(['whatsapp', 'email'].indexOf(network) > -1 ? 'direct' : 'popup');
+      expect(Networks[network].type).toBe(['whatsapp', 'email', 'sms'].indexOf(network) > -1 ? 'direct' : 'popup');
     }
   });
 
