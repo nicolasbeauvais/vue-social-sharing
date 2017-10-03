@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.2.6 
+ * vue-social-sharing v2.2.7 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -9,7 +9,7 @@
 	(global.VueSocialSharing = factory());
 }(this, (function () { 'use strict';
 
-var email = {"sharer":"mailto:?subject=@title&body=@description","type":"direct"};
+var email = {"sharer":"mailto:?subject=@title&body=@url%0D%0A%0D%0A@description","type":"direct"};
 var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote","type":"popup"};
 var googleplus = {"sharer":"https://plus.google.com/share?url=@url","type":"popup"};
 var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
@@ -19,11 +19,11 @@ var pinterest = {"sharer":"https://pinterest.com/pin/create/button/?url=@url&med
 var reddit = {"sharer":"https://www.reddit.com/submit?url=@url&title=@title","type":"popup"};
 var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
 var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
-var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser","type":"popup"};
+var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags&via=@twitteruser","type":"popup"};
 var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
 var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
 var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
-var sms = {"sharer":"sms:?body=@description","type":"direct"};
+var sms = {"sharer":"sms:?body=@url%20@description","type":"direct"};
 var Networks = {
 	email: email,
 	facebook: facebook,
@@ -316,7 +316,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.6';
+SocialSharing.version = '2.2.7';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
