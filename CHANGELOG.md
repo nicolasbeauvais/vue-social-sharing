@@ -1,3 +1,8 @@
+<a name="2.2.7"></a>
+# [2.2.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.6...2.2.7) (2017-10-03)
+- Add link to SMS and Email sharing
+- Fix twitter sharing (missing "via=")
+
 <a name="2.2.6"></a>
 # [2.2.6](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.5...2.2.6) (2017-09-29)
 - Add SMS

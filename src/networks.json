@@ -50,7 +50,7 @@
   },
 
   "twitter": {
-    "sharer": "https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser",
+    "sharer": "https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags&via=@twitteruser",
     "type": "popup"
   },
 
