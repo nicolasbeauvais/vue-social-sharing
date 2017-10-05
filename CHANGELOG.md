@@ -1,3 +1,7 @@
+<a name="2.2.8"></a>
+# [2.2.8](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.7...2.2.8) (2017-10-05)
+- Revert fix twitter sharing
+
 <a name="2.2.7"></a>
 # [2.2.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.6...2.2.7) (2017-10-03)
 - Add link to SMS and Email sharing
