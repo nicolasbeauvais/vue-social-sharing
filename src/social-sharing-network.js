@@ -14,8 +14,10 @@ export default {
     const network = Networks[context.props.network];
 
     return createElement(context.parent.networkTag, {
-      class: context.data.staticClass || null,
-      style: context.data.staticStyle || null,
+      staticClass: context.data.staticClass || null,
+      staticStyle: context.data.staticStyle || null,
+      class: context.data.class || null,
+      style: context.data.style || null,
       attrs: {
         id: context.data.attrs.id || null,
         'data-link': network.type === 'popup'
