@@ -1,3 +1,7 @@
+<a name="2.2.10"></a>
+# [2.2.10](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.9...2.2.10) (2017-10-09)
+- Fix dist
+
 <a name="2.2.9"></a>
 # [2.2.9](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.8...2.2.9) (2017-10-09)
 - Allow v-bind usage for classes and styles on the network component
