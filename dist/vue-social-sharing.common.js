@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.2.9 
+ * vue-social-sharing v2.2.10 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -52,8 +52,10 @@ var SocialSharingNetwork = {
     var network = Networks[context.props.network];
 
     return createElement(context.parent.networkTag, {
-      class: context.data.staticClass || null,
-      style: context.data.staticStyle || null,
+      staticClass: context.data.staticClass || null,
+      staticStyle: context.data.staticStyle || null,
+      class: context.data.class || null,
+      style: context.data.style || null,
       attrs: {
         id: context.data.attrs.id || null,
         'data-link': network.type === 'popup'
@@ -312,7 +314,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.9';
+SocialSharing.version = '2.2.10';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
