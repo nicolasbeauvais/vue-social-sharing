@@ -126,22 +126,38 @@ Prop           | Data Type  | Default   | Description
 
 #### Available events
 
-Events are emitted on the vue $root instance:
+Events are emitted on the vue $root instance and on the local instance:
 
+$root instance events:
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
 `social_shares_open`   | Network object, shared url | Fired when a sharing popup is open
 `social_shares_change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
 `social_shares_close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
 
-You can listen to a `vue-social-sharing` event by using the following code:
+You can listen to a `vue-social-sharing` $root event by using the following code:
 ```javascript
 Vue.$root.$on('social_shares_open', function (network, url) {
   // your event code
 });
 ```
 
-> Note that the `social_shares_close` event is not fired for Whatsapp.
+Local instance events:
+Name                   | Data                       | Description
+---------------------- | -------------------------- | --------------------------------------------------------------------------
+`open`   | Network object, shared url | Fired when a sharing popup is open
+`change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
+`close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
+
+You can listen to a `vue-social-sharing` local event by using the following code:
+```html
+<some-component>
+    <social-sharing @open="open()" @close="close()">
+    </social-sharing>
+</some-component>
+```
+
+> Note that the `social_shares_close` event is not fired for the Whatsapp, SMS and Email sharers.
 
 ## Feature request
 Feel free to open an issue to ask for a new social network support.

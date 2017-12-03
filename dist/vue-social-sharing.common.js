@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.2.10 
+ * vue-social-sharing v2.2.11 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -50,6 +50,10 @@ var SocialSharingNetwork = {
 
   render: function render (createElement, context) {
     var network = Networks[context.props.network];
+
+    if (!network) {
+      return console.warn(("Network " + (context.props.network) + " does not exist"));
+    }
 
     return createElement(context.parent.networkTag, {
       staticClass: context.data.staticClass || null,
@@ -226,6 +230,7 @@ var SocialSharing = {
     share: function share (network) {
       this.openSharer(network, this.createSharingUrl(network));
       this.$root.$emit('social_shares_open', network, this.url);
+      this.$emit('open', network, this.url);
     },
 
     /**
@@ -236,6 +241,7 @@ var SocialSharing = {
     touch: function touch (network) {
       window.open(this.createSharingUrl(network), '_self');
       this.$root.$emit('social_shares_open', network, this.url);
+      this.$emit('open', network, this.url);
     },
 
     /**
@@ -251,6 +257,7 @@ var SocialSharing = {
         clearInterval(this.popup.interval);
         this.popup.window.close();// Force close (for Facebook)
         this.$root.$emit('social_shares_change', network, this.url);
+        this.$emit('change', network, this.url);
       }
 
       this.popup.window = window.open(
@@ -279,6 +286,7 @@ var SocialSharing = {
           clearInterval(this$1.popup.interval);
           this$1.popup.window = undefined;
           this$1.$root.$emit('social_shares_close', network, this$1.url);
+          this$1.$emit('close', network, this$1.url);
         }
       }, 500);
     }
@@ -314,7 +322,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.10';
+SocialSharing.version = '2.2.11';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

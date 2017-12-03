@@ -1,3 +1,8 @@
+<a name="2.2.11"></a>
+# [2.2.11](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.10...2.2.11) (2017-12-03)
+- Merge #61 - Add local events
+- Silently fail when trying to use a nonexistent network
+
 <a name="2.2.10"></a>
 # [2.2.10](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.9...2.2.10) (2017-10-09)
 - Fix dist
