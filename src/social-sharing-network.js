@@ -1,5 +1,3 @@
-import Networks from './networks.json';
-
 export default {
   functional: true,
 
@@ -10,8 +8,8 @@ export default {
     }
   },
 
-  render (createElement, context) {
-    const network = Networks[context.props.network];
+  render: (createElement, context) => {
+    const network = context.parent._data.baseNetworks[context.props.network];
 
     if (!network) {
       return console.warn(`Network ${context.props.network} does not exist`);

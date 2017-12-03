@@ -1,3 +1,7 @@
+<a name="2.3.1"></a>
+# [2.3.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.11...2.3.1) (2017-12-03)
+- Possibility to add custom networks or override existing ones
+
 <a name="2.2.11"></a>
 # [2.2.11](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.10...2.2.11) (2017-12-03)
 - Merge #61 - Add local events

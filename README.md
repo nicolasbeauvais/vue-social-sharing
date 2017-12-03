@@ -159,6 +159,41 @@ You can listen to a `vue-social-sharing` local event by using the following code
 
 > Note that the `social_shares_close` event is not fired for the Whatsapp, SMS and Email sharers.
 
+## Extending the network list
+
+Since version `2.3.1` you can extend and override the list of available networks. You can see a working example of the feature in the `examples/vue2-example.html` file:
+
+```html
+<social-sharing ...:networks="overriddenNetworks" inline-template>
+    <div>
+        <network network="custom">
+            Custom network
+        </network>
+    </div>
+</social-sharing>
+
+<script>
+    ...
+    
+    new Vue({
+      data: {
+        overriddenNetworks: {
+          "custom": {
+            "sharer": "https://mycustomdomain.com",
+            "type": "popup"
+          },
+        }
+      }
+    });
+</script>
+```
+There are two available network types:
+
+Type                   | Effect                    
+---------------------- | --------------------------
+`popup`   | Open the sharing link in a new popup
+`direct` | Open directly the sharing link (suitable for mobile apps sharing, emails, sms, ...)
+
 ## Feature request
 Feel free to open an issue to ask for a new social network support.
 
