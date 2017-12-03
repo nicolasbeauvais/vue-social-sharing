@@ -27,6 +27,7 @@
                       quote="Vue is a progressive framework for building user interfaces."
                       hashtags="vuejs,javascript,framework"
                       twitter-user="vuejs"
+                      :networks="overriddenNetworks"
                       v-cloak inline-template>
         <div>
           <ul>
@@ -100,6 +101,11 @@
                 <i class="fa fa-fw fa-odnoklassniki"></i> Ok
               </network>
             </li>
+            <li>
+              <network network="test" id="test">
+                <i class="fa fa-fw fa-warning"></i> Test custom network
+              </network>
+            </li>
           </ul>
         </div>
       </social-sharing>
@@ -109,7 +115,14 @@
 
       new Vue({
         el: '#app',
-        data: {}
+        data: {
+          overriddenNetworks: {
+            "test": {
+              "sharer": "https://google.com",
+              "type": "popup"
+            },
+          }
+        }
       });
     </script>
   </body>

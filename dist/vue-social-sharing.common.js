@@ -1,42 +1,13 @@
 /*!
- * vue-social-sharing v2.2.11 
+ * vue-social-sharing v2.3.1 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
 
-var email = {"sharer":"mailto:?subject=@title&body=@url%0D%0A%0D%0A@description","type":"direct"};
-var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote","type":"popup"};
-var googleplus = {"sharer":"https://plus.google.com/share?url=@url","type":"popup"};
-var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
-var linkedin = {"sharer":"https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description","type":"popup"};
-var odnoklassniki = {"sharer":"https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description","type":"popup"};
-var pinterest = {"sharer":"https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title","type":"popup"};
-var reddit = {"sharer":"https://www.reddit.com/submit?url=@url&title=@title","type":"popup"};
-var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
-var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
-var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser","type":"popup"};
-var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
-var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
-var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
-var sms = {"sharer":"sms:?body=@url%20@description","type":"direct"};
-var Networks = {
-	email: email,
-	facebook: facebook,
-	googleplus: googleplus,
-	line: line,
-	linkedin: linkedin,
-	odnoklassniki: odnoklassniki,
-	pinterest: pinterest,
-	reddit: reddit,
-	skype: skype,
-	telegram: telegram,
-	twitter: twitter,
-	vk: vk,
-	weibo: weibo,
-	whatsapp: whatsapp,
-	sms: sms
-};
+function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
+
+var Vue = _interopDefault(require('vue'));
 
 var SocialSharingNetwork = {
   functional: true,
@@ -48,8 +19,8 @@ var SocialSharingNetwork = {
     }
   },
 
-  render: function render (createElement, context) {
-    var network = Networks[context.props.network];
+  render: function (createElement, context) {
+    var network = context.parent._data.baseNetworks[context.props.network];
 
     if (!network) {
       return console.warn(("Network " + (context.props.network) + " does not exist"));
@@ -76,6 +47,39 @@ var SocialSharingNetwork = {
       }
     }, context.children);
   }
+};
+
+var email = {"sharer":"mailto:?subject=@title&body=@url%0D%0A%0D%0A@description","type":"direct"};
+var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote","type":"popup"};
+var googleplus = {"sharer":"https://plus.google.com/share?url=@url","type":"popup"};
+var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
+var linkedin = {"sharer":"https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description","type":"popup"};
+var odnoklassniki = {"sharer":"https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description","type":"popup"};
+var pinterest = {"sharer":"https://pinterest.com/pin/create/button/?url=@url&media=@media&description=@title","type":"popup"};
+var reddit = {"sharer":"https://www.reddit.com/submit?url=@url&title=@title","type":"popup"};
+var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
+var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
+var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser","type":"popup"};
+var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
+var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
+var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
+var sms = {"sharer":"sms:?body=@url%20@description","type":"direct"};
+var BaseNetworks = {
+	email: email,
+	facebook: facebook,
+	googleplus: googleplus,
+	line: line,
+	linkedin: linkedin,
+	odnoklassniki: odnoklassniki,
+	pinterest: pinterest,
+	reddit: reddit,
+	skype: skype,
+	telegram: telegram,
+	twitter: twitter,
+	vk: vk,
+	weibo: weibo,
+	whatsapp: whatsapp,
+	sms: sms
 };
 
 var inBrowser = typeof window !== 'undefined';
@@ -172,6 +176,17 @@ var SocialSharing = {
     networkTag: {
       type: String,
       default: 'span'
+    },
+
+    /**
+     * Additional or overridden networks.
+     * Default to BaseNetworks
+     */
+    networks: {
+      type: Object,
+      default: function () {
+        return {};
+      }
     }
   },
 
@@ -181,7 +196,7 @@ var SocialSharing = {
        * Available sharing networks.
        * @param object
        */
-      networks: Networks,
+      baseNetworks: BaseNetworks,
 
       /**
        * Popup settings.
@@ -212,7 +227,7 @@ var SocialSharing = {
      * @param network Social network key.
      */
     createSharingUrl: function createSharingUrl (network) {
-      return this.networks[network].sharer
+      return this.baseNetworks[network].sharer
         .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, encodeURIComponent(this.title))
         .replace(/@description/g, encodeURIComponent(this.description))
@@ -229,6 +244,7 @@ var SocialSharing = {
      */
     share: function share (network) {
       this.openSharer(network, this.createSharingUrl(network));
+
       this.$root.$emit('social_shares_open', network, this.url);
       this.$emit('open', network, this.url);
     },
@@ -240,6 +256,7 @@ var SocialSharing = {
      */
     touch: function touch (network) {
       window.open(this.createSharingUrl(network), '_self');
+
       this.$root.$emit('social_shares_open', network, this.url);
       this.$emit('open', network, this.url);
     },
@@ -255,7 +272,9 @@ var SocialSharing = {
       // If a popup window already exist it will be replaced, trigger a close event.
       if (this.popup.window && this.popup.interval) {
         clearInterval(this.popup.interval);
+
         this.popup.window.close();// Force close (for Facebook)
+
         this.$root.$emit('social_shares_change', network, this.url);
         this.$emit('change', network, this.url);
       }
@@ -284,12 +303,21 @@ var SocialSharing = {
       this.popup.interval = setInterval(function () {
         if (this$1.popup.window.closed) {
           clearInterval(this$1.popup.interval);
+
           this$1.popup.window = undefined;
+
           this$1.$root.$emit('social_shares_close', network, this$1.url);
           this$1.$emit('close', network, this$1.url);
         }
       }, 500);
     }
+  },
+
+  /**
+   * Merge base networks list with user's list
+   */
+  beforeMount: function beforeMount () {
+    this.baseNetworks = Vue.util.extend(this.baseNetworks, this.networks);
   },
 
   /**
@@ -322,7 +350,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.2.11';
+SocialSharing.version = '2.3.1';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);

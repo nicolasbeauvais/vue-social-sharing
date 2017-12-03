@@ -80,7 +80,7 @@ describe('SocialSharing', () => {
   it('sets the correct default data', () => {
     expect(typeof SocialSharing.data).toBe('function');
     const defaultData = SocialSharing.data();
-    expect(defaultData.networks).toBe(Networks);
+    expect(defaultData.baseNetworks).toBe(Networks);
   });
 
   // Calculates correct position of popup
