@@ -126,9 +126,8 @@ Prop           | Data Type  | Default   | Description
 
 #### Available events
 
-Events are emitted on the vue $root instance and on the local instance:
+Events are emitted on the vue $root instance:
 
-$root instance events:
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
 `social_shares_open`   | Network object, shared url | Fired when a sharing popup is open
@@ -142,7 +141,8 @@ Vue.$root.$on('social_shares_open', function (network, url) {
 });
 ```
 
-Local instance events:
+And on the Local Vue-social-sharing instance:
+
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
 `open`   | Network object, shared url | Fired when a sharing popup is open
@@ -152,7 +152,7 @@ Name                   | Data                       | Description
 You can listen to a `vue-social-sharing` local event by using the following code:
 ```html
 <some-component>
-    <social-sharing @open="open()" @close="close()">
+    <social-sharing @open="open()" @change="change()" @close="close()">
     </social-sharing>
 </some-component>
 ```
