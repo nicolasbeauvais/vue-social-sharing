@@ -157,6 +157,7 @@ export default {
     share (network) {
       this.openSharer(network, this.createSharingUrl(network));
       this.$root.$emit('social_shares_open', network, this.url);
+      this.$emit('open', network, this.url);
     },
 
     /**
@@ -167,6 +168,7 @@ export default {
     touch (network) {
       window.open(this.createSharingUrl(network), '_self');
       this.$root.$emit('social_shares_open', network, this.url);
+      this.$emit('open', network, this.url);
     },
 
     /**
@@ -180,6 +182,7 @@ export default {
         clearInterval(this.popup.interval);
         this.popup.window.close();// Force close (for Facebook)
         this.$root.$emit('social_shares_change', network, this.url);
+        this.$emit('change', network, this.url);
       }
 
       this.popup.window = window.open(
@@ -208,6 +211,7 @@ export default {
           clearInterval(this.popup.interval);
           this.popup.window = undefined;
           this.$root.$emit('social_shares_close', network, this.url);
+          this.$emit('close', network, this.url);
         }
       }, 500);
     }
