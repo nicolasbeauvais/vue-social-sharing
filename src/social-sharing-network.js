@@ -13,6 +13,10 @@ export default {
   render (createElement, context) {
     const network = Networks[context.props.network];
 
+    if (!network) {
+      return console.warn(`Network ${context.props.network} does not exist`);
+    }
+
     return createElement(context.parent.networkTag, {
       staticClass: context.data.staticClass || null,
       staticStyle: context.data.staticStyle || null,
