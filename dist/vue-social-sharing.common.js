@@ -60,6 +60,7 @@ var reddit = {"sharer":"https://www.reddit.com/submit?url=@url&title=@title","ty
 var skype = {"sharer":"https://web.skype.com/share?url=@description%0D%0A@url","type":"popup"};
 var telegram = {"sharer":"https://t.me/share/url?url=@url&text=@description","type":"popup"};
 var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&hashtags=@hashtags@twitteruser","type":"popup"};
+var viber = {"sharer":"viber://forward?text=@url @description","type":"direct"};
 var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
 var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
 var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
@@ -76,6 +77,7 @@ var BaseNetworks = {
 	skype: skype,
 	telegram: telegram,
 	twitter: twitter,
+	viber: viber,
 	vk: vk,
 	weibo: weibo,
 	whatsapp: whatsapp,

@@ -7,6 +7,7 @@ module.exports = {
       'Pinterest',
       'Reddit',
       'Twitter',
+      'Viber',
       'VKontakte',
       'Weibo',
       'Whatsapp',

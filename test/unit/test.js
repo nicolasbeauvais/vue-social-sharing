@@ -43,6 +43,9 @@ describe('SocialSharing', () => {
             <network network="twitter" id="twitter">
               <i class="fa fa-twitter"></i> Twitter
             </network>
+            <network network="viber" id="viber">
+              <i class="fa fa-phone-square"></i> Viber
+            </network>
             <network network="vk" id="vk">
               <i class="fa fa-vk"></i> VKontakte
             </network>
@@ -154,8 +157,10 @@ describe('SocialSharing', () => {
 
   it('has a full list of networks', () => {
     for (var network in Networks) {
+      const expectedType = ['whatsapp', 'email', 'sms', 'viber'].indexOf(network) > -1 ? 'direct' : 'popup';
+
       expect(typeof Networks[network].sharer).toBe('string');
-      expect(Networks[network].type).toBe(['whatsapp', 'email', 'sms'].indexOf(network) > -1 ? 'direct' : 'popup');
+      expect(Networks[network].type).toBe(expectedType);
     }
   });
 
