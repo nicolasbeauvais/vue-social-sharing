@@ -54,6 +54,11 @@
     "type": "popup"
   },
 
+  "viber": {
+    "sharer": "viber://forward?text=@url @description",
+    "type": "direct"
+  },
+
   "vk": {
     "sharer": "https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true",
     "type": "popup"

@@ -1,3 +1,7 @@
+<a name="2.3.2"></a>
+# [2.3.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.2...2.3.2) (2017-12-04)
+- Add Viber
+
 <a name="2.3.1"></a>
 # [2.3.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.2.11...2.3.1) (2017-12-03)
 - Possibility to add custom networks or override existing ones
