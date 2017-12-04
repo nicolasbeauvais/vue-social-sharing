@@ -1,5 +1,5 @@
 <a name="2.3.2"></a>
-# [2.3.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.2...2.3.2) (2017-12-04)
+# [2.3.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.1...2.3.2) (2017-12-04)
 - Add Viber
 
 <a name="2.3.1"></a>
