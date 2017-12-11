@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.3.1 
+ * vue-social-sharing v2.3.3 
  * (c) 2017 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -352,7 +352,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.3.1';
+SocialSharing.version = '2.3.3';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
