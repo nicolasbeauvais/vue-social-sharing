@@ -19,7 +19,14 @@ export default {
       type: String,
       default: inBrowser ? window.location.href : ''
     },
-
+    /**
+     * will render.
+     * @var bool
+    */
+    willRender: {
+      type: Boolean,
+      default: false
+    },
     /**
      * Sharing title, if available by network.
      * @var string
