@@ -16,7 +16,7 @@ export default {
       return console.warn(`Network ${context.props.network} does not exist`);
     }
 
-    if (!!willrender) {
+    if (willrender) {
       return createElement(context.parent.networkTag, {
         staticClass: context.data.staticClass || null,
         staticStyle: context.data.staticStyle || null,
