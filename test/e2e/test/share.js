@@ -7,6 +7,7 @@ function verifySharePopup (expectedUrl) {
 
     this.verify.equal(result.value.length, 2, 'There should be an open window popup');
     this.switchWindow(newWindow);
+    this.waitForElementVisible('body', 5000);
     this.verify.urlContains(expectedUrl);
   };
 }
@@ -14,7 +15,7 @@ function verifySharePopup (expectedUrl) {
 const Tests = {};
 
 for (const network in Networks) {
-  if (Networks[network].type === 'direct') {
+  if (Networks[network].type === 'direct' || network === 'googleplus') {
     continue;
   }
 

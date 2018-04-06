@@ -109,7 +109,6 @@ describe('SocialSharing', () => {
       // default width popup = 626
       // default height popup = 436
 
-      console.log(popup.left, popup.top);
       expect(popup.left).toBe(187); // 1000 / 2 - 626 / 2 = 187
       expect(popup.top).toBe(132); // 700 / 2 - 436 / 2 = 132
       done();
