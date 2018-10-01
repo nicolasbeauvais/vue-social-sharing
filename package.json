@@ -52,7 +52,6 @@
     "rollup-plugin-replace": "^1.1.0",
     "selenium-server": "2.53.1",
     "uglify-js": "^2.6.1",
-    "vue": "^2.2.4",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
   },
@@ -98,6 +97,7 @@
     "test:unit": "karma start config/karma.unit.conf.js"
   },
   "dependencies": {
+    "vue": "^2.2.4",
     "rollup-plugin-json": "^2.1.0"
   }
 }
