@@ -162,10 +162,10 @@ You can listen to a `vue-social-sharing` local event by using the following code
 
 ## Extending the network list
 
-Since version `2.3.1` you can extend and override the list of available networks. You can see a working example of the feature in the `examples/vue2-example.html` file:
+Since version `2.3.1` you can extend and override the list of available networks by passing the additional networks as attribute. You can see a working example of the feature in the `examples/vue2-example.html` file:
 
 ```html
-<social-sharing ...:networks="overriddenNetworks" inline-template>
+<social-sharing :networks="overriddenNetworks" inline-template>
     <div>
         <network network="custom">
             Custom network
