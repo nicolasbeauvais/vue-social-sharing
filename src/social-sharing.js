@@ -156,7 +156,7 @@ export default {
         .replace(/@title/g, encodeURIComponent(this.title))
         .replace(/@description/g, encodeURIComponent(this.description))
         .replace(/@quote/g, encodeURIComponent(this.quote))
-        .replace(/@hashtags/g, this.encodeFacebookHashtags(this.hashtags))
+        .replace(/@hashtags/g, this.encodeFacebookHashtags(network, this.hashtags))
         .replace(/@media/g, this.media)
         .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
     },
