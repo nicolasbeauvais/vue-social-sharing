@@ -156,11 +156,19 @@ export default {
         .replace(/@title/g, encodeURIComponent(this.title))
         .replace(/@description/g, encodeURIComponent(this.description))
         .replace(/@quote/g, encodeURIComponent(this.quote))
-        .replace(/@hashtags/g, this.hashtags)
+        .replace(/@hashtags/g, this.encodeFacebookHashtags(this.hashtags))
         .replace(/@media/g, this.media)
         .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
     },
-
+    /**
+     * encode hash tag for facebook url
+     * @param  network  to check if the current network is facebbok
+     * @param  hashtags all hashtags specified
+     * @return          encoded hashtag [only the first one because of facebook policy]
+     */
+    encodeFacebookHashtags(network,hashtags) {
+      return network === 'facebook' ? '%23'+hashtags : hashtags;
+    },
     /**
      * Shares URL in specified network.
      *
