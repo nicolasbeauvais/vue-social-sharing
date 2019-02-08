@@ -166,8 +166,8 @@ export default {
      * @param  hashtags all hashtags specified
      * @return          encoded hashtag [only the first one because of facebook policy]
      */
-    encodeFacebookHashtags(network,hashtags) {
-      return network === 'facebook' ? '%23'+hashtags : hashtags;
+    encodeFacebookHashtags (network, hashtags) {
+      return network === 'facebook' ? '%23' + hashtags : hashtags;
     },
     /**
      * Shares URL in specified network.
