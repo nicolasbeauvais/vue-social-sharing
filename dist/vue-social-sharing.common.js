@@ -1,6 +1,6 @@
 /*!
  * vue-social-sharing v2.3.3 
- * (c) 2018 nicolasbeauvais
+ * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
 'use strict';
@@ -50,7 +50,7 @@ var SocialSharingNetwork = {
 };
 
 var email = {"sharer":"mailto:?subject=@title&body=@url%0D%0A%0D%0A@description","type":"direct"};
-var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote","type":"popup"};
+var facebook = {"sharer":"https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote&hashtag=@hashtags","type":"popup"};
 var googleplus = {"sharer":"https://plus.google.com/share?url=@url","type":"popup"};
 var line = {"sharer":"http://line.me/R/msg/text/?@description%0D%0A@url","type":"popup"};
 var linkedin = {"sharer":"https://www.linkedin.com/shareArticle?mini=true&url=@url&title=@title&summary=@description","type":"popup"};
@@ -234,11 +234,19 @@ var SocialSharing = {
         .replace(/@title/g, encodeURIComponent(this.title))
         .replace(/@description/g, encodeURIComponent(this.description))
         .replace(/@quote/g, encodeURIComponent(this.quote))
-        .replace(/@hashtags/g, this.hashtags)
+        .replace(/@hashtags/g, this.encodeFacebookHashtags(network, this.hashtags))
         .replace(/@media/g, this.media)
         .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
     },
-
+    /**
+     * encode hash tag for facebook url
+     * @param  network  to check if the current network is facebbok
+     * @param  hashtags all hashtags specified
+     * @return          encoded hashtag [only the first one because of facebook policy]
+     */
+    encodeFacebookHashtags: function encodeFacebookHashtags (network, hashtags) {
+      return network === 'facebook' ? '%23' + hashtags : hashtags;
+    },
     /**
      * Shares URL in specified network.
      *
