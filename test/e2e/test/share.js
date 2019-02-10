@@ -25,7 +25,7 @@ for (const network in Networks) {
     browser
       .url('http://localhost:8080/examples/vue2-example.html')
       .click(`#${network}`)
-      .windowHandles(verifySharePopup(`${parsedUrl.hostname}`))
+      .windowHandles(verifySharePopup(`${parsedUrl.hostname}`.replace('www.', '')))
       .end();
   };
 }
