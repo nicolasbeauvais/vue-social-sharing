@@ -1,3 +1,7 @@
+<a name="2.3.4"></a>
+# [2.3.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.3...2.3.4) (2019-02-11)
+- Add support for facebook hashtags (PR #120)
+
 <a name="2.3.3"></a>
 # [2.3.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.2...2.3.3) (2017-12-11)
 - Tag 2.3.3
