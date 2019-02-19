@@ -1,18 +1,26 @@
-# vue-social-sharing
+<p align="center">
+  <h1>Vue Social Sharing</h1>
+</p>
 
-<img src="https://simpleicons.org/icons/facebook.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/googleplus.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/linkedin.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/pinterest.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/reddit.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/twitter.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/viber.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/vk.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/sinaweibo.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/whatsapp.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/telegram.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/skype.svg" width="52" hspace="10"><img src="https://simpleicons.org/icons/odnoklassniki.svg" width="52" hspace="10">
+<p align="center">
+  <img width="800" src="https://user-images.githubusercontent.com/2951704/53009272-701a5700-343b-11e9-83e5-b05f81fe59d7.png">
+</p>
 
 ---
 
-[![Release](https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/releases)
-[![Build Status](https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://travis-ci.org/nicolasbeauvais/vue-social-sharing)
-[![Coverage Status](https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square)](https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master)
-[![Downloads](https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-square)](https://www.npmjs.com/package/vue-social-sharing)
-[![License](https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square)](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE)
-[![vue1](https://img.shields.io/badge/vue-1.x-brightgreen.svg)](https://vuejs.org/)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+<p align="center">
+<a href="https://github.com/nicolasbeauvais/vue-social-sharing/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Release"></a>
+<a href="https://travis-ci.org/nicolasbeauvais/vue-social-sharing"><img src="https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master"><img src="https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square" alt="Coverage Status"></a>
+<a href="https://www.npmjs.com/package/vue-social-sharing"><img src="https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-square" alt="Downloads"></a>
+<a href="https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="License"></a>
+<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-1.x-brightgreen.svg" alt="Vue 1"></a>
+<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="Vue 2"></a>
+</p>
 
-A Vue.js component for sharing links to social networks
+<p align="center">
+<h3>A Vue.js component for sharing links on major social networks. Less than 2kb gziped.</h3>
+</p>
 
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
 ##### For SSR and Vue.js 2 support use vue-social-sharing v2.x
