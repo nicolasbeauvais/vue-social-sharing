@@ -1,3 +1,9 @@
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.4...2.4.0) (2019-02-19)
+- Fix facebook hashtags
+- Move rollup-plugin-json to devDependencies
+- Improve readme
+
 <a name="2.3.4"></a>
 # [2.3.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.3...2.3.4) (2019-02-11)
 - Add support for facebook hashtags (PR #120)
