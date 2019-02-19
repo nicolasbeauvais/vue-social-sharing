@@ -1,12 +1,9 @@
-<p align="center">
-  <h1>Vue Social Sharing</h1>
-</p>
+<h1 align="center">Vue Social Sharing</h1>
+
 
 <p align="center">
   <img width="800" src="https://user-images.githubusercontent.com/2951704/53009272-701a5700-343b-11e9-83e5-b05f81fe59d7.png">
 </p>
-
----
 
 <p align="center">
 <a href="https://github.com/nicolasbeauvais/vue-social-sharing/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Release"></a>
@@ -18,9 +15,11 @@
 <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="Vue 2"></a>
 </p>
 
-<p align="center">
-<h3>A Vue.js component for sharing links on major social networks. Less than 2kb gziped.</h3>
-</p>
+<h3 align="center">A Vue.js component for sharing links on major social networks. Less than 2kb gziped.</h3>
+
+
+---
+
 
 ##### For Vue.js prior to < V2 use vue-social-sharing v0.x
 ##### For SSR and Vue.js 2 support use vue-social-sharing v2.x
