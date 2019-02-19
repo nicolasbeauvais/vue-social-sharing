@@ -120,10 +120,15 @@ Prop           | Data Type  | Default   | Description
 `title`        | String     |           | Sharing title (when available).
 `description`  | String     |           | Sharing description (when available).
 `quote`        | String     |           | Facebook quote (Facebook only).
-`hashtags`     | String     |           | A list of comma-separated hashtags (Twitter only).
+`hashtags`     | String     |           | A list of comma-separated hashtags (Twitter and Facebook).
 `twitter-user` | String     |           | Twitter user (Twitter only).
 `media`        | String     |           | Url to a media (Pinterest only).
 `network-tag`   | String     | "span"    | Tag the network component should render.
+
+<aside class="notice">
+  Facebook only accept one hashtag. If you define multiple hashtags, only the first one will be passed to facebook
+</aside>
+
 
 #### Available events
 

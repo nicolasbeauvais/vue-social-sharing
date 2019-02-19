@@ -3,7 +3,7 @@ import BaseNetworks from './networks.json';
 import Vue from 'vue';
 
 const inBrowser = typeof window !== 'undefined';
-var $window = inBrowser ? window : null;
+let $window = inBrowser ? window : null;
 
 export function mockWindow (self) {
   $window = self || window; // mock window for unit testing
@@ -156,23 +156,27 @@ export default {
         .replace(/@title/g, encodeURIComponent(this.title))
         .replace(/@description/g, encodeURIComponent(this.description))
         .replace(/@quote/g, encodeURIComponent(this.quote))
-        .replace(/@hashtags/g, this.encodeFacebookHashtags(network, this.hashtags))
+        .replace(/@hashtags/g, this.generateHashtags(network, this.hashtags))
         .replace(/@media/g, this.media)
         .replace(/@twitteruser/g, this.twitterUser ? '&via=' + this.twitterUser : '');
     },
     /**
-     * encode hash tag for facebook url
-     * @param  network  to check if the current network is facebbok
-     * @param  hashtags all hashtags specified
-     * @return          encoded hashtag [only the first one because of facebook policy]
+     * Encode hashtags for the specified social network.
+     *
+     * @param  network Social network key
+     * @param  hashtags All hashtags specified
      */
-    encodeFacebookHashtags (network, hashtags) {
-      return network === 'facebook' ? '%23' + hashtags : hashtags;
+    generateHashtags (network, hashtags) {
+      if (network === 'facebook') {
+        return '%23' + hashtags.split(',')[0];
+      }
+
+      return hashtags;
     },
     /**
      * Shares URL in specified network.
      *
-     * @param string network Social network key.
+     * @param network Social network key.
      */
     share (network) {
       this.openSharer(network, this.createSharingUrl(network));
@@ -184,7 +188,7 @@ export default {
     /**
      * Touches network and emits click event.
      *
-     * @param string network Social network key.
+     * @param network Social network key.
      */
     touch (network) {
       window.open(this.createSharingUrl(network), '_self');
@@ -196,7 +200,8 @@ export default {
     /**
      * Opens sharer popup.
      *
-     * @param string url Url to share.
+     * @param network Social network key
+     * @param url Url to share.
      */
     openSharer (network, url) {
       // If a popup window already exist it will be replaced, trigger a close event.
