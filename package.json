@@ -1,7 +1,7 @@
 {
   "name": "vue-social-sharing",
   "description": "A Vue.js component for sharing links to social networks",
-  "version": "2.3.4",
+  "version": "2.4.0",
   "author": {
     "name": "nicolasbeauvais",
     "email": "nicolasbeauvais1@gmail.com"
@@ -53,7 +53,8 @@
     "selenium-server": "2.53.1",
     "uglify-js": "^2.6.1",
     "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "rollup-plugin-json": "^2.1.0"
   },
   "files": [
     "dist/vue-social-sharing.js",
@@ -97,7 +98,6 @@
     "test:unit": "karma start config/karma.unit.conf.js"
   },
   "dependencies": {
-    "vue": "^2.2.4",
-    "rollup-plugin-json": "^2.1.0"
+    "vue": "^2.2.4"
   }
 }
