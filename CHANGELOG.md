@@ -1,3 +1,7 @@
+<a name="2.4.1"></a>
+# [2.4.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.0...2.4.1) (2019-02-20)
+- Fix issue #123
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.3.4...2.4.0) (2019-02-19)
 - Fix facebook hashtags
