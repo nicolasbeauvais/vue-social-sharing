@@ -167,9 +167,8 @@ export default {
      * @param  hashtags All hashtags specified
      */
     generateHashtags (network, hashtags) {
-      const hashes = hashtags.split(',');
-      if (network === 'facebook' && hashes.length > 0) {
-        return '%23' + hashes[0];
+      if (network === 'facebook' && hashtags.length > 0) {
+        return '%23' + hashtags.split(',')[0];
       }
 
       return hashtags;
