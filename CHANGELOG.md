@@ -1,3 +1,7 @@
+<a name="2.4.2"></a>
+# [2.4.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.1...2.4.2) (2019-02-21)
+- Fix build
+
 <a name="2.4.1"></a>
 # [2.4.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.0...2.4.1) (2019-02-20)
 - Fix issue #123
