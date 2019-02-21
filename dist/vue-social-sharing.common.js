@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.4.1 
+ * vue-social-sharing v2.4.2 
  * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -245,7 +245,7 @@ var SocialSharing = {
      * @param  hashtags All hashtags specified
      */
     generateHashtags: function generateHashtags (network, hashtags) {
-      if (network === 'facebook') {
+      if (network === 'facebook' && hashtags.length > 0) {
         return '%23' + hashtags.split(',')[0];
       }
 
@@ -365,7 +365,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.4.1';
+SocialSharing.version = '2.4.2';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
