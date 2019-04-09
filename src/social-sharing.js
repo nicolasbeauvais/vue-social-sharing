@@ -205,16 +205,17 @@ export default {
      */
     openSharer (network, url) {
       // If a popup window already exist it will be replaced, trigger a close event.
-      if (this.popup.window && this.popup.interval) {
+      let popupWindow = null;
+      if (popupWindow && this.popup.interval) {
         clearInterval(this.popup.interval);
 
-        this.popup.window.close();// Force close (for Facebook)
+        popupWindow.close();// Force close (for Facebook)
 
         this.$root.$emit('social_shares_change', network, this.url);
         this.$emit('change', network, this.url);
       }
 
-      this.popup.window = window.open(
+      popupWindow = window.open(
         url,
         'sharer',
         'status=' + (this.popup.status ? 'yes' : 'no') +
@@ -232,14 +233,14 @@ export default {
         ',directories=' + (this.popup.directories ? 'yes' : 'no')
       );
 
-      this.popup.window.focus();
+      popupWindow.focus();
 
       // Create an interval to detect popup closing event
       this.popup.interval = setInterval(() => {
-        if (this.popup.window.closed) {
+        if (popupWindow.closed) {
           clearInterval(this.popup.interval);
 
-          this.popup.window = undefined;
+          popupWindow = undefined;
 
           this.$root.$emit('social_shares_close', network, this.url);
           this.$emit('close', network, this.url);
