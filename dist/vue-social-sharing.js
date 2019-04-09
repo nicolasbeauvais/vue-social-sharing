@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.4.2 
+ * vue-social-sharing v2.4.3 
  * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -287,16 +287,17 @@ var SocialSharing = {
       var this$1 = this;
 
       // If a popup window already exist it will be replaced, trigger a close event.
-      if (this.popup.window && this.popup.interval) {
+      var popupWindow = null;
+      if (popupWindow && this.popup.interval) {
         clearInterval(this.popup.interval);
 
-        this.popup.window.close();// Force close (for Facebook)
+        popupWindow.close();// Force close (for Facebook)
 
         this.$root.$emit('social_shares_change', network, this.url);
         this.$emit('change', network, this.url);
       }
 
-      this.popup.window = window.open(
+      popupWindow = window.open(
         url,
         'sharer',
         'status=' + (this.popup.status ? 'yes' : 'no') +
@@ -314,14 +315,14 @@ var SocialSharing = {
         ',directories=' + (this.popup.directories ? 'yes' : 'no')
       );
 
-      this.popup.window.focus();
+      popupWindow.focus();
 
       // Create an interval to detect popup closing event
       this.popup.interval = setInterval(function () {
-        if (this$1.popup.window.closed) {
+        if (popupWindow.closed) {
           clearInterval(this$1.popup.interval);
 
-          this$1.popup.window = undefined;
+          popupWindow = undefined;
 
           this$1.$root.$emit('social_shares_close', network, this$1.url);
           this$1.$emit('close', network, this$1.url);
@@ -367,7 +368,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.4.2';
+SocialSharing.version = '2.4.3';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
