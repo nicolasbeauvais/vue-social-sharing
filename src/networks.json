@@ -78,5 +78,10 @@
   "sms": {
     "sharer": "sms:?body=@url%20@description",
     "type": "direct"
+  },
+
+  "sms_ios": {
+    "sharer": "sms:;body=@url%20@description",
+    "type": "direct"
   }
 }
