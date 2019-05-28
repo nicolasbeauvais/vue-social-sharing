@@ -22,6 +22,7 @@ export default {
       style: context.data.style || null,
       attrs: {
         id: context.data.attrs.id || null,
+        tabindex: context.data.attrs.tabindex || 0,
         'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent.createSharingUrl(context.props.network),
