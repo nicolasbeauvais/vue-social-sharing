@@ -1,3 +1,9 @@
+<a name="2.4.4"></a>
+# [2.4.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.3...2.4.4) (2019-05-29)
+- Update Whatsapp share url to use API
+- Fix IOS SMS sharing format (using ; instead of ?)
+- Add tabindex attribute
+
 <a name="2.4.3"></a>
 # [2.4.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.2...2.4.3) (2019-04-09)
 - Fix IE11 popup.window bug
