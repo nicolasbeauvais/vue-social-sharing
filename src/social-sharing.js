@@ -151,6 +151,12 @@ export default {
      * @param network Social network key.
      */
     createSharingUrl (network) {
+      const ua = navigator.userAgent.toLowerCase();
+
+      if (network === 'sms' && (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1)) {
+        network += '_ios';
+      }
+
       return this.baseNetworks[network].sharer
         .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, encodeURIComponent(this.title))
