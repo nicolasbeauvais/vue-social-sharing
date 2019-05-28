@@ -156,7 +156,7 @@ describe('SocialSharing', () => {
 
   it('has a full list of networks', () => {
     for (var network in Networks) {
-      const expectedType = ['whatsapp', 'email', 'sms', 'viber'].indexOf(network) > -1 ? 'direct' : 'popup';
+      const expectedType = ['email', 'sms', 'sms_ios', 'viber'].indexOf(network) > -1 ? 'direct' : 'popup';
 
       expect(typeof Networks[network].sharer).toBe('string');
       expect(Networks[network].type).toBe(expectedType);

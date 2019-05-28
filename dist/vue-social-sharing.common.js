@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.4.3 
+ * vue-social-sharing v2.4.4 
  * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -33,6 +33,7 @@ var SocialSharingNetwork = {
       style: context.data.style || null,
       attrs: {
         id: context.data.attrs.id || null,
+        tabindex: context.data.attrs.tabindex || 0,
         'data-link': network.type === 'popup'
           ? '#share-' + context.props.network
           : context.parent.createSharingUrl(context.props.network),
@@ -63,8 +64,9 @@ var twitter = {"sharer":"https://twitter.com/intent/tweet?text=@title&url=@url&h
 var viber = {"sharer":"viber://forward?text=@url @description","type":"direct"};
 var vk = {"sharer":"https://vk.com/share.php?url=@url&title=@title&description=@description&image=@media&noparse=true","type":"popup"};
 var weibo = {"sharer":"http://service.weibo.com/share/share.php?url=@url&title=@title","type":"popup"};
-var whatsapp = {"sharer":"whatsapp://send?text=@description%0D%0A@url","type":"direct","action":"share/whatsapp/share"};
+var whatsapp = {"sharer":"https://api.whatsapp.com/send?text=@description%0D%0A@url","type":"popup","action":"share/whatsapp/share"};
 var sms = {"sharer":"sms:?body=@url%20@description","type":"direct"};
+var sms_ios = {"sharer":"sms:;body=@url%20@description","type":"direct"};
 var BaseNetworks = {
 	email: email,
 	facebook: facebook,
@@ -81,7 +83,8 @@ var BaseNetworks = {
 	vk: vk,
 	weibo: weibo,
 	whatsapp: whatsapp,
-	sms: sms
+	sms: sms,
+	sms_ios: sms_ios
 };
 
 var inBrowser = typeof window !== 'undefined';
@@ -229,6 +232,12 @@ var SocialSharing = {
      * @param network Social network key.
      */
     createSharingUrl: function createSharingUrl (network) {
+      var ua = navigator.userAgent.toLowerCase();
+
+      if (network === 'sms' && (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1)) {
+        network += '_ios';
+      }
+
       return this.baseNetworks[network].sharer
         .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, encodeURIComponent(this.title))
@@ -366,7 +375,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.4.3';
+SocialSharing.version = '2.4.4';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
