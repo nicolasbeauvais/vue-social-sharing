@@ -1,3 +1,7 @@
+<a name="2.4.5"></a>
+# [2.4.5](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.4...2.4.5) (2019-05-31)
+- Fix IOS Twitter sharing with empty hashtags
+
 <a name="2.4.4"></a>
 # [2.4.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.3...2.4.4) (2019-05-29)
 - Update Whatsapp share url to use API

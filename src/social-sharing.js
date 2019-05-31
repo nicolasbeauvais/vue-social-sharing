@@ -153,11 +153,25 @@ export default {
     createSharingUrl (network) {
       const ua = navigator.userAgent.toLowerCase();
 
+      /**
+       * On IOS, SMS sharing link need a special formating
+       * Source: https://weblog.west-wind.com/posts/2013/Oct/09/Prefilling-an-SMS-on-Mobile-Devices-with-the-sms-Uri-Scheme#Body-only
+        */
       if (network === 'sms' && (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1)) {
         network += '_ios';
       }
 
-      return this.baseNetworks[network].sharer
+      const url = this.baseNetworks[network].sharer;
+
+      /**
+       * On IOS, Twitter sharing shouldn't include a hashtag parameter if the hashtag value is empty
+       * Source: https://github.com/nicolasbeauvais/vue-social-sharing/issues/143
+        */
+      if (network === 'twitter' && this.hashtags.length === 0) {
+        url.replace('&hashtags=@hashtags', '');
+      }
+
+      return url
         .replace(/@url/g, encodeURIComponent(this.url))
         .replace(/@title/g, encodeURIComponent(this.title))
         .replace(/@description/g, encodeURIComponent(this.description))
