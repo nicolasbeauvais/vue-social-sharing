@@ -15,7 +15,7 @@
 <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="Vue 2"></a>
 </p>
 
-<h3 align="center">A Vue.js component for sharing links on major social networks. Less than 2kb gziped.</h3>
+<h3 align="center">A Vue.js component for sharing links on major social networks. Less than 2kb gzipped.</h3>
 
 
 ---
