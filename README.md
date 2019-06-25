@@ -7,7 +7,7 @@
 
 <p align="center">
 <a href="https://github.com/nicolasbeauvais/vue-social-sharing/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Release"></a>
-<a href="https://travis-ci.org/nicolasbeauvais/vue-social-sharing"><img src="https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Build Status"></a>
+<a href="https://travis-ci.org/nicolasbeauvais/vue-social-sharing"><img src="https://img.shields.io/travis/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square" alt="Build Status"></a>
 <a href="https://coveralls.io/github/nicolasbeauvais/vue-social-sharing?branch=master"><img src="https://img.shields.io/coveralls/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square" alt="Coverage Status"></a>
 <a href="https://www.npmjs.com/package/vue-social-sharing"><img src="https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-square" alt="Downloads"></a>
 <a href="https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="License"></a>
