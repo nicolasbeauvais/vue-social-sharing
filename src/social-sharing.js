@@ -161,14 +161,14 @@ export default {
         network += '_ios';
       }
 
-      const url = this.baseNetworks[network].sharer;
+      let url = this.baseNetworks[network].sharer;
 
       /**
        * On IOS, Twitter sharing shouldn't include a hashtag parameter if the hashtag value is empty
        * Source: https://github.com/nicolasbeauvais/vue-social-sharing/issues/143
         */
       if (network === 'twitter' && this.hashtags.length === 0) {
-        url.replace('&hashtags=@hashtags', '');
+        url = url.replace('&hashtags=@hashtags', '');
       }
 
       return url
