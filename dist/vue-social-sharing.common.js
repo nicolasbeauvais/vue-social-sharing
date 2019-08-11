@@ -1,5 +1,5 @@
 /*!
- * vue-social-sharing v2.4.5 
+ * vue-social-sharing v2.4.6 
  * (c) 2019 nicolasbeauvais
  * Released under the MIT License.
  */
@@ -249,7 +249,7 @@ var SocialSharing = {
        * Source: https://github.com/nicolasbeauvais/vue-social-sharing/issues/143
         */
       if (network === 'twitter' && this.hashtags.length === 0) {
-        url.replace('&hashtags=@hashtags', '');
+        url = url.replace('&hashtags=@hashtags', '');
       }
 
       return url
@@ -389,7 +389,7 @@ var SocialSharing = {
   }
 };
 
-SocialSharing.version = '2.4.5';
+SocialSharing.version = '2.4.6';
 
 SocialSharing.install = function (Vue) {
   Vue.component('social-sharing', SocialSharing);
