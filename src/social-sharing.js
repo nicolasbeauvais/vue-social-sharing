@@ -257,7 +257,7 @@ export default {
 
       // Create an interval to detect popup closing event
       this.popup.interval = setInterval(() => {
-        if (popupWindow.closed) {
+        if (!popupWindow || popupWindow.closed) {
           clearInterval(this.popup.interval);
 
           popupWindow = undefined;
