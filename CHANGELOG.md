@@ -1,3 +1,7 @@
+<a name="2.4.7"></a>
+# [2.4.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.6...2.4.7) (2019-11-07)
+- Fix undefined popup error
+
 <a name="2.4.6"></a>
 # [2.4.6](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.5...2.4.6) (2019-08-11)
 - Fix IOS Twitter sharing with empty hashtags, again
