@@ -1,6 +1,6 @@
 /*!
  * vue-social-sharing v2.4.7 
- * (c) 2019 nicolasbeauvais
+ * (c) 2020 nicolasbeauvais
  * Released under the MIT License.
  */
 (function (global, factory) {
@@ -234,7 +234,7 @@ var SocialSharing = {
      * @param network Social network key.
      */
     createSharingUrl: function createSharingUrl (network) {
-      var ua = navigator.userAgent.toLowerCase();
+      var ua = typeof navigator !== "undefined" ? navigator.userAgent.toLowerCase() : '';
 
       /**
        * On IOS, SMS sharing link need a special formating

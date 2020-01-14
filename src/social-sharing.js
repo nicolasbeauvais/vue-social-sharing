@@ -151,7 +151,7 @@ export default {
      * @param network Social network key.
      */
     createSharingUrl (network) {
-      const ua = navigator.userAgent.toLowerCase();
+      const ua = typeof navigator !== "undefined" ? navigator.userAgent.toLowerCase() : '';
 
       /**
        * On IOS, SMS sharing link need a special formating
