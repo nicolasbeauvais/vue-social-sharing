@@ -302,6 +302,7 @@ export default {
    * Set component aliases for buttons and links.
    */
   components: {
-    'network': SocialSharingNetwork
+    'network': SocialSharingNetwork,
+    'social-sharing-network': SocialSharingNetwork,
   }
 };
