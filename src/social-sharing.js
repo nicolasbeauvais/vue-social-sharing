@@ -303,6 +303,6 @@ export default {
    */
   components: {
     'network': SocialSharingNetwork,
-    'social-sharing-network': SocialSharingNetwork,
+    'social-sharing-network': SocialSharingNetwork
   }
 };
