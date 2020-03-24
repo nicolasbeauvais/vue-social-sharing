@@ -97,7 +97,7 @@
     "test:e2e": "npm run build && node test/e2e/runner.js",
     "test:unit": "karma start config/karma.unit.conf.js"
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^2.2.4"
   }
 }
