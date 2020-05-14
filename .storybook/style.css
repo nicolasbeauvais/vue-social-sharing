@@ -1,0 +1,46 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#share-network-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+a[class^="share-network-"] {
+  flex: none;
+  color: #FFFFFF;
+  background-color: #333;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px 10px 0;
+}
+
+a[class^="share-network-"] .fah {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  flex: 0 1 auto;
+}
+
+a[class^="share-network-"] span {
+  padding: 0 10px;
+  flex: 1 1 0%;
+  font-weight: 500;
+}
+
+a.share-network-twitter {
+  background-color: #1da1f2;
+}
+
+a.share-network-fakeblock {
+  background-color: #41b883;
+}

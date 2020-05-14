@@ -1,24 +1,22 @@
+## Creating multiple Share Network link with dynamic data
+
+```html
 <template>
-  <div>
-    <h1>Vue Social Sharing Demo</h1>
-    <div class="share-network-list">
-      <ShareNetwork
-        v-for="network in networks"
-        :network="network.network"
-        :key="network.key"
-        :style="{backgroundColor: network.color}"
-        :url="sharing.url"
-        :title="sharing.title"
-        :description="sharing.description"
-        :quote="sharing.quote"
-        :hashtags="sharing.hashtags"
-        :twitterUser="sharing.twitterUser"
-      >
-        <i :class="'fab fah fa-lg ' + network.icon"></i>
-        <span>{{ network.name }}</span>
-      </ShareNetwork>
-    </div>
-  </div>
+  <ShareNetwork
+    v-for="network in networks"
+    :network="network.network"
+    :key="network.key"
+    :style="{backgroundColor: network.color}"
+    :url="sharing.url"
+    :title="sharing.title"
+    :description="sharing.description"
+    :quote="sharing.quote"
+    :hashtags="sharing.hashtags"
+    :twitterUser="sharing.twitterUser"
+  >
+    <i :class="'fab fah fa-lg ' + network.icon"></i>
+    <span>{{ network.name }}</span>
+  </ShareNetwork>
 </template>
 
 <script>
@@ -50,59 +48,9 @@ export default {
         { network: 'fakeblock', name: 'Custom Network', icon: 'fa-vuejs', color: '#41b883' }
       ]
     }
-  },
-
-  created () {
-    // Load font awesome
-    const fa = document.createElement('script')
-    fa.src = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/brands.min.js'
-    document.head.appendChild(fa)
   }
 }
 </script>
+```
 
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-
-  h1 {
-    text-align: center;
-    margin: 50px 0 80px;
-  }
-
-  .share-network-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  a[class^="share-network-"] {
-    flex: none;
-    color: #FFFFFF;
-    background-color: #333;
-    border-radius: 3px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin: 0 10px 10px 0;
-  }
-
-  a[class^="share-network-"] .fah {
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    flex: 0 1 auto;
-  }
-
-  a[class^="share-network-"] span {
-    padding: 0 10px;
-    flex: 1 1 0%;
-    font-weight: 500;
-  }
-</style>
+[Vue Social Sharing on GitHub](https://github.com/nicolasbeauvais/vue-social-sharing)
