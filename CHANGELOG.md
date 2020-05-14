@@ -1,3 +1,8 @@
+<a name="3.0.0-beta.1"></a>
+# [3.0.0-beta.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.7...3.0.0-beta.1) (2020-05-15)
+- Improved Readme.md
+
+
 <a name="2.4.7"></a>
 # [2.4.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.6...2.4.7) (2019-11-07)
 - Fix undefined popup error

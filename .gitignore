@@ -1,13 +1,3 @@
-.idea
-lib
-coverage
-dist/*.gz
-docs/_book
-test/e2e/report
-test/e2e/screenshots
 node_modules
-.DS_Store
-*.log
-*.swp
-*~
-yarn.lock
+npm-debug.log
+*.bak

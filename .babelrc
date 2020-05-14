@@ -1,4 +1,5 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["babel-plugin-espower"]
+  "presets": ["@babel/preset-env"],
+  "plugins": ["@babel/plugin-transform-runtime", "@babel/plugin-proposal-class-properties"],
+  "comments": false
 }
