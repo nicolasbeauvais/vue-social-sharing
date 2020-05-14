@@ -15,16 +15,24 @@
 <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="Vue 2"></a>
 </p>
 
-<h3 align="center">A Vue.js component for sharing links on major social networks. Less than 2kb gzipped.</h3>
-
+<h3 align="center">Vue.js renderless components for sharing links on major social networks</h3>
+<h4 align="center">Less than 2.5kb gzipped</h4>
 
 ---
 
-
-##### For Vue.js prior to < V2 use vue-social-sharing v0.x
-##### For SSR and Vue.js 2 support use vue-social-sharing v2.x
+##### For Vue.js prior to v2.x use vue-social-sharing v0.x
+##### For Vue.js v2.x support use vue-social-sharing v2.x
+##### For SSR and Vue.js v3.x support use vue-social-sharing v3.x
 
 ### [Demo](https://nicolasbeauvais.github.io/vue-social-sharing/)
+
+### What is a renderless component?
+
+Renderless components give you the highest possible control over your markup and styling. This means that `vue-social-sharing` ship with minimal HTML and no CSS to let you adapt the look and feel of the components to your needs. You can learn more about renderless components in [this blog article](https://adamwathan.me/renderless-components-in-vuejs/) by [@adamwathan](https://github.com/adamwathan).
+
+### Understanding social sharing
+
+Before using this package it is important to understand how Social Network handle sharing links on their platform. When you share a link on a Social Network, the Social Network will crawl the link to detect [Open Graph meta tags](https://ogp.me/). If you share links that do not contain Open Graph meta tags, the Social Network will not be able to display a rich content for your link. You can refer to the [Available properties](https://github.com/nicolasbeauvais/vue-social-sharing#available-properties) section of the documentation to check which Social Network accept properties without Open Graph tags.  
 
 ## Installation
 
@@ -46,7 +54,7 @@ bower install vue-social-sharing
 ##### Browserify / Webpack
 
 ```javascript
-var SocialSharing = require('vue-social-sharing');
+import VueSocialSharing from 'vue-social-sharing'
 
 Vue.use(SocialSharing);
 ```
@@ -54,68 +62,40 @@ Vue.use(SocialSharing);
 ##### HTML
 
 ```html
-<script src="/dist/vue-social-sharing.min.js"></script>
+<script src="/dist/vue-social-sharing.js"></script>
 ```
 
-### Using the social sharing component
+### Using the Share Network component
 
 ```html
- <social-sharing url="https://vuejs.org/"
-                      title="The Progressive JavaScript Framework"
-                      description="Intuitive, Fast and Composable MVVM for building interactive interfaces."
-                      quote="Vue is a progressive framework for building user interfaces."
-                      hashtags="vuejs,javascript,framework"
-                      twitter-user="vuejs"
-                      inline-template>
-  <div>
-      <network network="email">
-          <i class="fa fa-envelope"></i> Email
-      </network>
-      <network network="facebook">
-        <i class="fa fa-facebook"></i> Facebook
-      </network>
-      <network network="googleplus">
-        <i class="fa fa-google-plus"></i> Google +
-      </network>
-      <network network="line">
-        <i class="fa fa-line"></i> Line
-      </network>
-      <network network="linkedin">
-        <i class="fa fa-linkedin"></i> LinkedIn
-      </network>
-      <network network="odnoklassniki">
-        <i class="fa fa-odnoklassniki"></i> Odnoklassniki
-      </network>
-      <network network="pinterest">
-        <i class="fa fa-pinterest"></i> Pinterest
-      </network>
-      <network network="reddit">
-        <i class="fa fa-reddit"></i> Reddit
-      </network>
-      <network network="skype">
-        <i class="fa fa-skype"></i> Skype
-      </network>
-      <network network="sms">
-        <i class="fa fa-commenting-o"></i> SMS
-      </network>
-      <network network="telegram">
-        <i class="fa fa-telegram"></i> Telegram
-      </network>
-      <network network="twitter">
-        <i class="fa fa-twitter"></i> Twitter
-      </network>
-      <network network="vk">
-        <i class="fa fa-vk"></i> VKontakte
-      </network>
-      <network network="weibo">
-        <i class="fa fa-weibo"></i> Weibo
-      </network> 
-      <network network="whatsapp">
-        <i class="fa fa-whatsapp"></i> Whatsapp
-      </network>
-  </div>
-</social-sharing>
+<ShareNetwork
+    network="facebook"
+    url="https://news.vuejs.org/issues/180"
+    title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+    description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+    quote="The hot reload is so fast it\'s near instant. - Evan You"
+    hashtags="vuejs,vite"
+  >
+    Share on Facebook
+</ShareNetwork>
 ```
+
+#### Available Networks
+
+- Facebook
+- Line
+- LinkedIn
+- Odnoklassniki
+- Pinterest
+- Reddit
+- Skype
+- Telegram
+- Twitter
+- Viber
+- Vk
+- Weibo
+- Whatsapp
+- Custom
 
 #### Available properties
 
@@ -130,7 +110,7 @@ Prop           | Data Type  | Default   | Description
 `hashtags`     | String     |           | A list of comma-separated hashtags (Twitter and Facebook).
 `twitter-user` | String     |           | Twitter user (Twitter only).
 `media`        | String     |           | Url to a media (Pinterest only).
-`network-tag`   | String     | "span"    | Tag the network component should render.
+`tag`   | String     | "a"    | Tag the network component should render.
 
 <aside class="notice">
   Facebook only accept one hashtag. If you define multiple hashtags, only the first one will be passed to facebook
@@ -139,22 +119,22 @@ Prop           | Data Type  | Default   | Description
 
 #### Available events
 
-Events are emitted on the vue $root instance:
+Events that are emitted on the vue $root instance:
 
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
-`social_shares_open`   | Network object, shared url | Fired when a sharing popup is open
-`social_shares_change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
-`social_shares_close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
+`share_network_open`   | Network object, shared url | Fired when a sharing popup is open
+`share_network_change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
+`share_network_close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
 
 You can listen to a `vue-social-sharing` $root event by using the following code:
 ```javascript
-Vue.$root.$on('social_shares_open', function (network, url) {
+Vue.$root.$on('share_network_open', function (network, url) {
   // your event code
 });
 ```
 
-And on the Local Vue-social-sharing instance:
+Events that are emitted on the local `vue-social-sharing` instance:
 
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
@@ -162,56 +142,48 @@ Name                   | Data                       | Description
 `change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
 `close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
 
-You can listen to a `vue-social-sharing` local event by using the following code:
+You can listen to a `ShareNetwork` local event by using the following code:
 ```html
-<some-component>
-    <social-sharing @open="open()" @change="change()" @close="close()">
-    </social-sharing>
-</some-component>
+<ShareNetwork @open="open()" @change="change()" @close="close()" />
 ```
 
-> Note that the `social_shares_close` event is not fired for the Whatsapp, SMS and Email sharers.
+> Note that the `share_network_close` event will not be fired for the WhatsApp, SMS and Email sharers.
 
 ## Extending the network list
 
-Since version `2.3.1` you can extend and override the list of available networks by passing the additional networks as attribute. You can see a working example of the feature in the `examples/vue2-example.html` file:
+In version `3.x` you can extend and override the list of available networks. You can see a working example of the feature in the `examples/index.js` file:
 
-```html
-<social-sharing :networks="overriddenNetworks" inline-template>
-    <div>
-        <network network="custom">
-            Custom network
-        </network>
-    </div>
-</social-sharing>
+```javascript
+import Vue from 'vue'
+import VueSocialSharing from '@/vue-social-sharing'
 
-<script>
-    ...
-    
-    new Vue({
-      data: {
-        overriddenNetworks: {
-          "custom": {
-            "sharer": "https://mycustomdomain.com",
-            "type": "popup"
-          },
-        }
-      }
-    });
-</script>
+Vue.use(VueSocialSharing, {
+  networks: {
+    fakeblock: {
+      sharer: 'https://fakeblock.com/share?url=@url&title=@title',
+      type: 'popup'
+    }
+  }
+})
+
+
+new Vue({
+  el: '#app',
+})
 ```
-There are two available network types:
+
+You can choose between two behavior type while defining a custom network:
 
 Type                   | Effect                    
 ---------------------- | --------------------------
 `popup`   | Open the sharing link in a new popup
-`direct` | Open directly the sharing link (suitable for mobile apps sharing, emails, sms, ...)
+`direct` | Open the sharing link directly (suitable for mobile apps sharing, emails, sms, ...)
 
 ## Feature request
 Feel free to open an issue to ask for a new social network support.
 
 ## Changelog
-Details changes for each release are documented in the [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/CHANGELOG.md).
+Detailed changes for each release can be found in [CHANGELOG.md](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/CHANGELOG.md).
 
 ## Issues
 Please make sure to read the [Issue Reporting Checklist](https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
