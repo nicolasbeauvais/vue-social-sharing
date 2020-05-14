@@ -1,8 +1,28 @@
-import { configure } from '@storybook/vue'
+import Vue from 'vue'
+import { configure, storiesOf } from '@storybook/vue'
+import VueSocialSharing from '../src/vue-social-sharing'
+import './style.css';
+import StaticData from './stories/static-data'
+import DynamicData from './stories/dynamic-data'
+import CustomShareNetwork from './stories/custom-share-network'
+import MultipleShareNetworks from './stories/multiple-share-networks'
+
+Vue.use(VueSocialSharing, {
+  networks: {
+    fakeblock: {
+      sharer: 'https://fakeblock.com/share?url=@url&title=@title',
+      type: 'popup'
+    }
+  }
+})
+
+const stories = storiesOf('VueSocialSharing', module)
 
 function loadStories () {
-  require('./stories.js')
-  // You can require as many stories as you need.
+  stories.add(StaticData.name, StaticData.code, StaticData.params)
+  stories.add(DynamicData.name, DynamicData.code, DynamicData.params)
+  stories.add(CustomShareNetwork.name, CustomShareNetwork.code, CustomShareNetwork.params)
+  stories.add(MultipleShareNetworks.name, MultipleShareNetworks.code, MultipleShareNetworks.params)
 }
 
 configure(loadStories, module)
