@@ -8,53 +8,53 @@ describe('SocialSharing', () => {
     const Comp = Vue.extend({
       template: `
         <social-sharing url="https://vuejs.org/" title="The Progressive JavaScript Framework"
-                 description="Intuitive, Fast and Composable MVVM for building interactive interfaces." inline-template>
+                 description="Intuitive, Fast and Composable MVVM for building interactive interfaces.">
           <div class="networks">
-            <network network="email" id="email">
+            social-sharing-network network="email" id="email">
               <i class="fa fa-envelope"></i> Email
-            </network>
-            <network network="facebook" id="facebook">
+            </social-sharing-network>
+            <social-sharing-network network="facebook" id="facebook">
               <i class="fa fa-facebook"></i> Facebook
-            </network>
-            <network network="googleplus" id="googleplus">
+            </social-sharing-network>
+            <social-sharing-network network="googleplus" id="googleplus">
               <i class="fa fa-google-plus"></i> Google +
-            </network>
-            <network network="line" id="line">
+            </social-sharing-network>
+            <social-sharing-network network="line" id="line">
               <i class="fa fa-line"></i> Line
-            </network>
-            <network network="linkedin" id="linkedin" class="test-class">
+            </social-sharing-network>
+            <social-sharing-network network="linkedin" id="linkedin" class="test-class">
               <i class="fa fa-linkedin"></i> LinkedIn
-            </network>
-            <network network="odnoklassniki" id="odnoklassniki">
+            </social-sharing-network>
+            <social-sharing-network network="odnoklassniki" id="odnoklassniki">
               <i class="fa fa-odnoklassniki"></i> Odnoklassniki
-            </network>
-            <network network="pinterest" id="pinterest">
+            </social-sharing-network>
+            <social-sharing-network network="pinterest" id="pinterest">
               <i class="fa fa-pinterest"></i> Pinterest
-            </network>
-            <network network="reddit" id="reddit">
+            </social-sharing-network>
+            <social-sharing-network network="reddit" id="reddit">
               <i class="fa fa-reddit"></i> Reddit
-            </network>
-            <network network="skype" id="skype">
+            </social-sharing-network>
+            <social-sharing-network network="skype" id="skype">
               <i class="fa fa-skype"></i> Skype
-            </network>
-            <network network="telegram" id="telegram">
+            </social-sharing-network>
+            <social-sharing-network network="telegram" id="telegram">
               <i class="fa fa-telegram"></i> Telegram
-            </network>
-            <network network="twitter" id="twitter">
+            </social-sharing-network>
+            <social-sharing-network network="twitter" id="twitter">
               <i class="fa fa-twitter"></i> Twitter
-            </network>
-            <network network="viber" id="viber">
+            </social-sharing-network>
+            <social-sharing-network network="viber" id="viber">
               <i class="fa fa-phone-square"></i> Viber
-            </network>
-            <network network="vk" id="vk">
+            </social-sharing-network>
+            <social-sharing-network network="vk" id="vk">
               <i class="fa fa-vk"></i> VKontakte
-            </network>
-            <network network="weibo" id="weibo">
+            </social-sharing-network>
+            <social-sharing-network network="weibo" id="weibo">
               <i class="fa fa-weibo"></i> Weibo
-            </network> 
-            <network network="whatsapp" id="whatsapp" style="color:#f00;">
+            </social-sharing-network> 
+            <social-sharing-network network="whatsapp" id="whatsapp" style="color:#f00;">
               <i class="fa fa-whatsapp"></i> Whatsapp
-            </network>
+            </social-sharing-network>
           </div>
         </social-sharing>
       `,

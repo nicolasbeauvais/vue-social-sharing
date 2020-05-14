@@ -1,6 +1,4 @@
-import SocialSharingNetwork from './social-sharing-network';
 import BaseNetworks from './networks.json';
-import Vue from 'vue';
 
 const inBrowser = typeof window !== 'undefined';
 let $window = inBrowser ? window : null;
@@ -9,7 +7,35 @@ export function mockWindow (self) {
   $window = self || window; // mock window for unit testing
 }
 
-export default {
+/**
+ * @typedef {object} NetworkData
+ * @property {string} sharer
+ * @property {string} type
+ */
+
+ /**
+  * @typedef {{[network: string]: NetworkData}} Netowrks
+  */
+
+const popupSettings = {
+  status: false,
+  resizable: true,
+  toolbar: false,
+  menubar: false,
+  scrollbars: false,
+  location: false,
+  directories: false,
+  width: 626,
+  height: 436,
+  top: 0,
+  left: 0,
+  window: undefined,
+  /** @type {number|null} */
+  interval: null
+};
+
+const SocialSharing = {
+  name: 'SocialSharing',
   props: {
     /**
      * URL to share.
@@ -99,56 +125,46 @@ export default {
      */
     networkTag: {
       type: String,
-      default: 'span'
+      default: 'a'
     },
 
     /**
      * Additional or overridden networks.
      * Default to BaseNetworks
+     *
+     * @type {import('vue').PropOptions<Netowrks>}
      */
     networks: {
       type: Object,
-      default: function () {
-        return {};
-      }
+      default: null
     }
   },
 
   data () {
     return {
       /**
-       * Available sharing networks.
-       * @param object
-       */
-      baseNetworks: BaseNetworks,
-
-      /**
        * Popup settings.
-       * @param object
+       * @type {typeof popupSettings}
        */
-      popup: {
-        status: false,
-        resizable: true,
-        toolbar: false,
-        menubar: false,
-        scrollbars: false,
-        location: false,
-        directories: false,
-        width: 626,
-        height: 436,
-        top: 0,
-        left: 0,
-        window: undefined,
-        interval: null
-      }
+      popup: Object.assign({}, popupSettings)
     };
+  },
+
+  computed: {
+    /**
+     * Available sharing networks.
+     * @returns {Netowrks}
+     */
+    baseNetworks () {
+      return Object.assign({}, BaseNetworks, this.networks);
+    }
   },
 
   methods: {
     /**
      * Returns generated sharer url.
      *
-     * @param network Social network key.
+     * @param {string} network Social network key.
      */
     createSharingUrl (network) {
       const ua = navigator.userAgent.toLowerCase();
@@ -183,8 +199,8 @@ export default {
     /**
      * Encode hashtags for the specified social network.
      *
-     * @param  network Social network key
-     * @param  hashtags All hashtags specified
+     * @param {string} network Social network key
+     * @param {string} hashtags All hashtags specified separated by comma
      */
     generateHashtags (network, hashtags) {
       if (network === 'facebook' && hashtags.length > 0) {
@@ -196,7 +212,7 @@ export default {
     /**
      * Shares URL in specified network.
      *
-     * @param network Social network key.
+     * @param {string} network Social network key.
      */
     share (network) {
       this.openSharer(network, this.createSharingUrl(network));
@@ -208,7 +224,7 @@ export default {
     /**
      * Touches network and emits click event.
      *
-     * @param network Social network key.
+     * @param {string} network Social network key.
      */
     touch (network) {
       window.open(this.createSharingUrl(network), '_self');
@@ -220,11 +236,13 @@ export default {
     /**
      * Opens sharer popup.
      *
-     * @param network Social network key
-     * @param url Url to share.
+     * @param {string} network Social network key
+     * @param {string} url Url to share.
      */
     openSharer (network, url) {
+      this.setDefaultDimentionsForPopup();
       // If a popup window already exist it will be replaced, trigger a close event.
+      /** @type {Window|null} */
       let popupWindow = null;
       if (popupWindow && this.popup.interval) {
         clearInterval(this.popup.interval);
@@ -253,55 +271,68 @@ export default {
         ',directories=' + (this.popup.directories ? 'yes' : 'no')
       );
 
-      popupWindow.focus();
+      if (popupWindow) {
+        popupWindow.focus();
+      }
 
       // Create an interval to detect popup closing event
       this.popup.interval = setInterval(() => {
         if (!popupWindow || popupWindow.closed) {
           clearInterval(this.popup.interval);
 
-          popupWindow = undefined;
+          popupWindow = null;
 
           this.$root.$emit('social_shares_close', network, this.url);
           this.$emit('close', network, this.url);
         }
       }, 500);
-    }
-  },
+    },
 
-  /**
-   * Merge base networks list with user's list
-   */
-  beforeMount () {
-    this.baseNetworks = Vue.util.extend(this.baseNetworks, this.networks);
-  },
-
-  /**
-   * Sets popup default dimensions.
-   */
-  mounted () {
-    if (!inBrowser) {
-      return;
-    }
+    setDefaultDimentionsForPopup () {
+      if (!inBrowser || !$window) {
+        return;
+      }
 
     /**
      * Center the popup on dual screens
      * http://stackoverflow.com/questions/4068373/center-a-popup-window-on-screen/32261263
      */
-    const dualScreenLeft = $window.screenLeft !== undefined ? $window.screenLeft : screen.left;
-    const dualScreenTop = $window.screenTop !== undefined ? $window.screenTop : screen.top;
+      const dualScreenLeft = $window.screenLeft !== undefined ? $window.screenLeft : $window.screenX;
+      const dualScreenTop = $window.screenTop !== undefined ? $window.screenTop : $window.screenY;
 
-    const width = $window.innerWidth ? $window.innerWidth : (document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width);
-    const height = $window.innerHeight ? $window.innerHeight : (document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height);
+      const width = $window.innerWidth ? $window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+      const height = $window.innerHeight ? $window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
 
-    this.popup.left = ((width / 2) - (this.popup.width / 2)) + dualScreenLeft;
-    this.popup.top = ((height / 2) - (this.popup.height / 2)) + dualScreenTop;
+      const systemZoom = width / $window.screen.availWidth;
+      const left = (width - this.popup.width) / 2 / systemZoom + dualScreenLeft;
+      const top = (height - this.popup.height) / 2 / systemZoom + dualScreenTop;
+      this.popup.left = left;
+      this.popup.top = top;
+    }
   },
 
-  /**
-   * Set component aliases for buttons and links.
-   */
-  components: {
-    'network': SocialSharingNetwork
+  provide () {
+    const networks = this.baseNetworks;
+    const tag = this.networkTag;
+    return {
+      networks,
+      tag,
+      createSharingUrl: this.createSharingUrl,
+      share: this.share,
+      touch: this.touch
+    };
+  },
+  render () {
+    const networks = this.baseNetworks;
+    const tag = this.networkTag;
+    return this.$scopedSlots.default({
+      networks,
+      tag,
+      createSharingUrl: this.createSharingUrl,
+      share: this.share,
+      touch: this.touch
+    });
   }
 };
+
+export default SocialSharing;

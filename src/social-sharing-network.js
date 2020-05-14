@@ -1,6 +1,9 @@
-export default {
-  functional: true,
+import BaseNetworks from './networks.json';
 
+const warnNoParent = () => console.warn('SocialSharingNetwork should be child of SocialSharing');
+
+const SocialSharingNetwork = {
+  name: 'SocialSharingNetwork',
   props: {
     network: {
       type: String,
@@ -8,33 +11,54 @@ export default {
     }
   },
 
-  render: (createElement, context) => {
-    const network = context.parent._data.baseNetworks[context.props.network];
+  inject: {
+    'networks': {
+      default: Object.assign({}, BaseNetworks)
+    },
+
+    'tag': {
+      default: 'a'
+    },
+    'createSharingUrl': {
+      default: warnNoParent
+    },
+    'share': {
+      default: warnNoParent
+    },
+    'touch': {
+      default: warnNoParent
+    }
+  },
+  render (createElement) {
+    const network = this.networks[this.network];
 
     if (!network) {
-      return console.warn(`Network ${context.props.network} does not exist`);
+      console.warn(`Network ${this.network} does not exist`);
+      return createElement(this.tag);
     }
-
-    return createElement(context.parent.networkTag, {
-      staticClass: context.data.staticClass || null,
-      staticStyle: context.data.staticStyle || null,
-      class: context.data.class || null,
-      style: context.data.style || null,
-      attrs: {
-        id: context.data.attrs.id || null,
-        tabindex: context.data.attrs.tabindex || 0,
-        'data-link': network.type === 'popup'
-          ? '#share-' + context.props.network
-          : context.parent.createSharingUrl(context.props.network),
-        'data-action': network.type === 'popup' ? null : network.action
-      },
+    const attrs = {
+      'data-link': network.type === 'popup'
+        ? '#share-' + this.network
+        : this.createSharingUrl(this.network),
+      'data-action': network.type === 'popup' ? null : network.action
+    };
+    if (this.tag === 'a') {
+      attrs.href = this.createSharingUrl(this.network);
+    }
+    return createElement(this.tag, {
+      attrs,
       on: {
-        click: network.type === 'popup' ? () => {
-          context.parent.share(context.props.network);
-        } : () => {
-          context.parent.touch(context.props.network);
+        click: (event) => {
+          event.preventDefault();
+          if (network.type === 'popup') {
+            this.share(this.network);
+          } else {
+            this.touch(this.network);
+          }
         }
       }
-    }, context.children);
+    }, this.$slots.default);
   }
 };
+
+export default SocialSharingNetwork;

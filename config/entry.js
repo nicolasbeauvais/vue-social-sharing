@@ -3,7 +3,7 @@ const buble = require('rollup-plugin-buble');
 const json = require('rollup-plugin-json');
 const banner = require('./banner');
 const pack = require('../package.json');
-
+const babel = require('rollup-plugin-babel');
 function toUpper (_, c) {
   return c ? c.toUpperCase() : '';
 }
@@ -45,10 +45,12 @@ function genConfig (opts) {
     dest: opts.dest,
     format: opts.format,
     banner: opts.banner,
+    exports: 'named',
     moduleName,
     plugins: [
       json(),
-      buble()
+      buble(),
+      babel()
     ]
   };
 
