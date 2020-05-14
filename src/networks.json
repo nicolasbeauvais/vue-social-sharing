@@ -9,11 +9,6 @@
     "type": "popup"
   },
 
-  "googleplus": {
-    "sharer": "https://plus.google.com/share?url=@url",
-    "type": "popup"
-  },
-
   "line": {
     "sharer": "http://line.me/R/msg/text/?@description%0D%0A@url",
     "type": "popup"
