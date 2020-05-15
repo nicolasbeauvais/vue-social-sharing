@@ -55,6 +55,14 @@ import VueSocialSharing from 'vue-social-sharing'
 Vue.use(SocialSharing);
 ```
 
+##### Nuxt
+```javascript
+// In your nuxt.config.js file:
+modules: [
+  'vue-social-sharing/nuxt'
+]
+```
+
 ##### HTML
 
 ```html
@@ -162,7 +170,6 @@ Vue.use(VueSocialSharing, {
   }
 })
 
-
 new Vue({
   el: '#app',
 })
@@ -174,6 +181,22 @@ Type                   | Effect
 ---------------------- | --------------------------
 `popup`   | Open the sharing link in a new popup
 `direct` | Open the sharing link directly (suitable for mobile apps sharing, emails, sms, ...)
+
+## Extending the network list in Nuxt
+
+You can extend the list of available networks directly in your `nuxt.config.js` file:
+```javascript
+modules: [
+  ['vue-social-sharing/nuxt', {
+    networks: {
+      fakeblock: {
+        sharer: 'https://fakeblock.com/share?url=@url&title=@title',
+        type: 'popup'
+      }
+    }
+  }],
+]
+```
 
 ## Feature request
 Feel free to open an issue to ask for a new social network support.
