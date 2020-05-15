@@ -42,9 +42,6 @@ yarn add vue-social-sharing
 
 # NPM
 npm install --save vue-social-sharing
-
-# Bower
-bower install vue-social-sharing
 ```
 
 ## Usage
