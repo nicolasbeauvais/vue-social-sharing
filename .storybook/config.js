@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { configure, storiesOf } from '@storybook/vue'
 import VueSocialSharing from '../src/vue-social-sharing'
-import './style.css';
+import './style.css'
 import StaticData from './stories/static-data'
 import DynamicData from './stories/dynamic-data'
 import CustomShareNetwork from './stories/custom-share-network'

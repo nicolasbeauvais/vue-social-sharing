@@ -14,7 +14,7 @@ export default {
           <span>Custom Network</span>
         </ShareNetwork>
       </div>
-      `,
+      `
   }),
   params: {
     notes: customShareNetwork
