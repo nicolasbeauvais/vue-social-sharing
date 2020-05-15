@@ -1,3 +1,7 @@
+<a name="3.0.0-beta.2"></a>
+# [3.0.0-beta.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.1...3.0.0-beta.2) (2020-05-16)
+- Fix Nuxt support
+
 <a name="3.0.0-beta.1"></a>
 # [3.0.0-beta.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/2.4.7...3.0.0-beta.1) (2020-05-15)
 - Complete rewrite of the package
