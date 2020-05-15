@@ -148,7 +148,7 @@ Name                   | Data                       | Description
 
 You can listen to a `ShareNetwork` local event by using the following code:
 ```html
-<ShareNetwork @open="open()" @change="change()" @close="close()" />
+<ShareNetwork @open="open" @change="change" @close="close" />
 ```
 
 > Note that the `share_network_close` event will not be fired for the WhatsApp, SMS and Email sharers.
