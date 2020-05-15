@@ -1,3 +1,10 @@
+const inBrowser = typeof window !== 'undefined'
+let $window = inBrowser ? window : null
+
+export function mockWindow (self) {
+  $window = self || window // mock window for unit testing
+}
+
 export default {
   name: 'ShareNetwork',
 
@@ -97,6 +104,27 @@ export default {
         interval: null
       }
     }
+  },
+
+  mounted () {
+    if (!inBrowser) return
+
+    /**
+     * Center the popup on dual screens
+     * http://stackoverflow.com/questions/4068373/center-a-popup-window-on-screen/32261263
+     */
+    const multiScreenLeft = $window.screenLeft !== undefined ? $window.screenLeft : $window.screenX
+    const multiScreenTop = $window.screenTop !== undefined ? $window.screenTop : $window.screenY
+
+    const width = $window.innerWidth ? $window.innerWidth : (document.documentElement.clientWidth ? document.documentElement.clientWidth : $window.screenX)
+    const height = $window.innerHeight ? $window.innerHeight : (document.documentElement.clientHeight ? document.documentElement.clientHeight : $window.screenY)
+
+    const systemZoom = width / $window.screen.availWidth
+    const left = (width - this.popup.width) / 2 / systemZoom + multiScreenLeft
+    const top = (height - this.popup.height) / 2 / systemZoom + multiScreenTop
+
+    this.popup.left = left
+    this.popup.top = top
   },
 
   computed: {
@@ -204,7 +232,7 @@ export default {
         this.$emit('change', this.computedNetwork, this.url)
       }
 
-      this.popup.window = window.open(
+      this.popup.window = $window.open(
         this.sharingUrl,
         'sharer',
         'status=' + (this.popup.status ? 'yes' : 'no') +
@@ -229,7 +257,7 @@ export default {
         if (!this.popup.window || this.popup.window.closed) {
           clearInterval(this.popup.interval)
 
-          this.popup.window = undefined
+          this.popup.window = null
 
           this.$root.$emit('share_network_close', this.computedNetwork, this.url)
           this.$emit('close', this.computedNetwork, this.url)
