@@ -82,7 +82,7 @@ describe('SocialSharing', () => {
   })
 
   it('can have attributes', () => {
-    const shareNetwork = mountShareNetwork({ attrs: { style: 'test'}})
+    const shareNetwork = mountShareNetwork({ attrs: { style: 'test' }})
     expect(shareNetwork.attributes().style).toBe('test')
   })
 
