@@ -1,5 +1,8 @@
 module.exports = {
   root: true,
+  'env': {
+    'jest/globals': true
+  },
   parser: 'vue-eslint-parser',
   parserOptions: {
     'parser': 'babel-eslint',
@@ -10,6 +13,7 @@ module.exports = {
     'vue'
   ],
   plugins: [
-    'vue'
+    'vue',
+    'jest'
   ]
 }
