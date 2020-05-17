@@ -76,7 +76,7 @@
   },
 
   "sms_ios": {
-    "sharer": "sms:;body=@url%20@description",
+    "sharer": "sms:&body=@url%20@description",
     "type": "direct"
   }
 }
