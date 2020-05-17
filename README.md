@@ -19,10 +19,6 @@
 
 ---
 
-##### For Vue.js prior to v2.x use vue-social-sharing v0.x
-##### For Vue.js v2.x support use vue-social-sharing v2.x
-##### For SSR and Vue.js v3.x support use vue-social-sharing v3.x
-
 ### [Demo](https://nicolasbeauvais.github.io/vue-social-sharing/)
 
 ### What is a renderless component?
