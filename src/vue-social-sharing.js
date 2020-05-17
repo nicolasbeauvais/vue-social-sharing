@@ -1,7 +1,7 @@
 import AvailableNetworks from './networks.json'
-import ShareNetwork from './components/share-network'
+import ShareNetwork from './share-network'
 
-export default class VueSocialSharing {
+class VueSocialSharing {
   options = {
     networks: AvailableNetworks
   }
@@ -20,3 +20,7 @@ VueSocialSharing.install = (Vue, options) => {
 
   Vue.prototype.$SocialSharing = instance
 }
+
+export default VueSocialSharing
+
+export { ShareNetwork }

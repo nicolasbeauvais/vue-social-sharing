@@ -1,3 +1,5 @@
+import AvailableNetworks from './networks.json'
+
 const inBrowser = typeof window !== 'undefined'
 let $window = inBrowser ? window : null
 
@@ -128,6 +130,10 @@ export default {
   },
 
   computed: {
+    availableNetworks () {
+      return this.$SocialSharing ? this.$SocialSharing.options.networks : AvailableNetworks
+    },
+
     /**
      * Network object for this component.
      */
@@ -143,7 +149,7 @@ export default {
         networkName += '_ios'
       }
 
-      return this.$SocialSharing.options.networks[networkName]
+      return this.availableNetworks[networkName]
     },
 
     /**
@@ -184,7 +190,7 @@ export default {
   },
 
   render: function (createElement) {
-    if (!Object.prototype.hasOwnProperty.call(this.$SocialSharing.options.networks, this.network)) {
+    if (!Object.prototype.hasOwnProperty.call(this.availableNetworks, this.network)) {
       throw new Error(`Network ${this.network} does not exist`)
     }
 
