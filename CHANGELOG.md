@@ -1,3 +1,9 @@
+<a name="3.0.0-beta.3"></a>
+# [3.0.0-beta.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.2...3.0.0-beta.3) (2020-05-17)
+- Make ShareNetwork component tree shakable
+- Fix IOS SMS sharing link
+- Update Whatsapp sharing link
+
 <a name="3.0.0-beta.2"></a>
 # [3.0.0-beta.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.1...3.0.0-beta.2) (2020-05-16)
 - Fix Nuxt support

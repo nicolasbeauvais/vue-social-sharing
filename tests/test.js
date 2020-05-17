@@ -1,6 +1,6 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import VueSocialSharing from './../src/vue-social-sharing'
-import ShareNetwork, { mockWindow } from './../src/components/share-network'
+import ShareNetwork, { mockWindow } from './../src/share-network'
 import AvailableNetworks from './../src/networks.json'
 
 const customNetworks = {
