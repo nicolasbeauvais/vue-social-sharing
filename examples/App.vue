@@ -1,5 +1,8 @@
 <template>
   <div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/brands.min.css" integrity="sha256-wfbbsQFYKnizQi/WLPXS3wVDu0Dpi2yUQpZBDsb2H1s=" crossorigin="anonymous" />
+
     <h1>Vue Social Sharing Demo</h1>
     <div class="share-network-list">
       <ShareNetwork
@@ -50,13 +53,6 @@ export default {
         { network: 'fakeblock', name: 'Custom Network', icon: 'fa-vuejs', color: '#41b883' }
       ]
     }
-  },
-
-  created () {
-    // Load font awesome
-    const fa = document.createElement('script')
-    fa.src = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/brands.min.js'
-    document.head.appendChild(fa)
   }
 }
 </script>
