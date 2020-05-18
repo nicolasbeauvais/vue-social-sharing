@@ -1,3 +1,8 @@
+<a name="3.0.0-beta.4"></a>
+# [3.0.0-beta.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.3...3.0.0-beta.4) (2020-05-19)
+- Make shared properties more consistent between networks
+- Improved Readme.md
+
 <a name="3.0.0-beta.3"></a>
 # [3.0.0-beta.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.2...3.0.0-beta.3) (2020-05-17)
 - Make ShareNetwork component tree shakable

@@ -1,6 +1,6 @@
 {
   "name": "vue-social-sharing",
-  "version": "3.0.0-beta.3",
+  "version": "3.0.0-beta.4",
   "description": "A Vue.js component for sharing links to social networks",
   "author": "Nicolas Beauvais <nicolas@bvs.email>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
     "build-storybook": "build-storybook -c .storybook -o docs",
     "example": "poi -s examples/index.js",
-    "release": "conventional-github-releaser -p angular && npm publish"
+    "release": "yarn run lint && yarn run test && yarn run build && yarn run build-storybook && conventional-github-releaser -p angular && npm publish"
   },
   "repository": {
     "type": "git",
