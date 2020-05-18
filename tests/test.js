@@ -14,7 +14,14 @@ const localVue = createLocalVue()
 localVue.use(VueSocialSharing, { networks: customNetworks })
 
 function mountShareNetwork (data = {}) {
-  if (!data.propsData) data.propsData = { network: 'facebook', url: 'http://vuejs.org/' }
+  if (!data.propsData) {
+    data.propsData = {
+      network: 'facebook',
+      url: 'http://vuejs.org/',
+      title: 'The Progressive JavaScript Framework'
+    }
+  }
+
   if (!data.attrs) data.attrs = {}
 
   return mount(ShareNetwork, {
@@ -92,7 +99,13 @@ describe('SocialSharing', () => {
 
   it('compute the correct network', () => {
     for (const network in localVue.prototype.$SocialSharing.options.networks) {
-      const component = mountShareNetwork({ propsData: { network, url: 'http://vuejs.org/' }})
+      const component = mountShareNetwork({
+        propsData: {
+          network,
+          url: 'http://vuejs.org/',
+          title: 'The Progressive JavaScript Framework'
+        }
+      })
       expect(component.vm.computedNetwork).toBe(localVue.prototype.$SocialSharing.options.networks[network])
     }
   })
@@ -101,7 +114,13 @@ describe('SocialSharing', () => {
     for (const network in localVue.prototype.$SocialSharing.options.networks) {
       if (network === 'sms_ios') return
 
-      const component = mountShareNetwork({ propsData: { network, url: 'http://vuejs.org/' }})
+      const component = mountShareNetwork({
+        propsData: {
+          network,
+          url: 'http://vuejs.org/',
+          title: 'The Progressive JavaScript Framework'
+        }
+      })
       const sharer = localVue.prototype.$SocialSharing.options.networks[network].sharer
       const url = component.vm.sharingUrl.substr(0, component.vm.sharingUrl.indexOf('?'))
 

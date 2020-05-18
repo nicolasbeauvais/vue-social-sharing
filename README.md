@@ -80,42 +80,136 @@ modules: [
 </ShareNetwork>
 ```
 
-#### Available Networks
+#### Available networks and properties
 
-- Facebook
-- Line
-- LinkedIn
-- Odnoklassniki
-- Pinterest
-- Reddit
-- Skype
-- Telegram
-- Twitter
-- Viber
-- Vk
-- Weibo
-- Whatsapp
-- Custom
+The `url` and `title` properties are the only one required for all networks.
 
-#### Available properties
+### General properties
 
-List of available props to use in the component:
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`tag`          | String     | HTML tag used to render the network component. Default to "a" tag.
 
-Prop           | Data Type  | Default   | Description
+###### Email
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared as the email subject.
+`url`          | String     | Shared in the email content.
+`description`  | String     | Shared in the email content after the url.
+
+###### Facebook
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`description`  | String     | Description of the shared content.
+`quote`        | String     | A quote from the shared content.
+`hashtags`     | String     | A list of comma-separated hashtags, only the first one will used by Facebook.
+
+###### Line
+
+Name           | Data Type  | Default   | Description
 -------------- | ---------- | --------- | -----------
-`url`          | String     | current   | URL to share.
-`title`        | String     |           | Sharing title (when available).
-`description`  | String     |           | Sharing description (when available).
-`quote`        | String     |           | Facebook quote (Facebook only).
-`hashtags`     | String     |           | A list of comma-separated hashtags (Twitter and Facebook).
-`twitter-user` | String     |           | Twitter user (Twitter only).
-`media`        | String     |           | Url to a media (Pinterest only).
-`tag`   | String     | "a"    | Tag the network component should render.
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
 
-<aside class="notice">
-  Facebook only accept one hashtag. If you define multiple hashtags, only the first one will be passed to facebook
-</aside>
+###### LinkedIn
 
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`description`  | String     | Description of the shared content.
+
+###### Odnoklassniki
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
+###### Pinterest
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`media`        | String     | URL of an image describing the content.
+
+###### Reddit
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
+###### Skype
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
+
+###### SMS
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
+
+###### Telegram
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
+
+###### Twitter
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`hashtags`     | String     | A list of comma-separated hashtags.
+`twitter-user` | String     | Twitter user to mention.
+
+###### Viber
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
+
+###### VK
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`description`  | String     | Description of the shared content.
+`media`        | String     | URL of an image describing the content.
+
+###### Weibo
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
+###### WhatsApp
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
 
 #### Available events
 

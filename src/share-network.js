@@ -20,7 +20,7 @@ export default {
     },
 
     /**
-     * URL to share.
+     * URL of the content to share.
      */
     url: {
       type: String,
@@ -28,15 +28,15 @@ export default {
     },
 
     /**
-     * Sharing title, if available for the selected network.
+     * Title of the content to share.
      */
     title: {
       type: String,
-      default: ''
+      required: true
     },
 
     /**
-     * Sharing description, if available for the selected network.
+     * Description of the content to share.
      */
     description: {
       type: String,
@@ -69,7 +69,7 @@ export default {
     },
 
     /**
-     * Specifies the image/media to be used, used for Pinterest
+     * Media to share, used for Pinterest
      */
     media: {
       type: String,
