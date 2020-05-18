@@ -1,6 +1,6 @@
 {
   "email": {
-    "sharer": "mailto:?subject=@title&body=@url%0D%0A%0D%0A@description",
+    "sharer": "mailto:?subject=@title&body=@url%0D%0A@description",
     "type": "direct"
   },
 
@@ -10,7 +10,7 @@
   },
 
   "line": {
-    "sharer": "http://line.me/R/msg/text/?@description%0D%0A@url",
+    "sharer": "http://line.me/R/msg/text/?@title%0D%0A@url%0D%0A@description",
     "type": "popup"
   },
 
@@ -20,7 +20,7 @@
   },
 
   "odnoklassniki": {
-    "sharer": "https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@description",
+    "sharer": "https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@url&st.comments=@title",
     "type": "popup"
   },
 
@@ -35,12 +35,22 @@
   },
 
   "skype": {
-    "sharer": "https://web.skype.com/share?url=@description%0D%0A@url",
+    "sharer": "https://web.skype.com/share?url=@title%0D%0A@url%0D%0A@description",
     "type": "popup"
   },
 
+  "sms": {
+    "sharer": "sms:?body=@title%0D%0A@url%0D%0A@description",
+    "type": "direct"
+  },
+
+  "sms_ios": {
+    "sharer": "sms:&body=@title%0D%0A@url%0D%0A@description",
+    "type": "direct"
+  },
+
   "telegram": {
-    "sharer": "https://t.me/share/url?url=@url&text=@description",
+    "sharer": "https://t.me/share/url?url=@url&text=@title%0D%0A@description",
     "type": "popup"
   },
 
@@ -50,7 +60,7 @@
   },
 
   "viber": {
-    "sharer": "viber://forward?text=@url @description",
+    "sharer": "viber://forward?text=@title%0D%0A@url%0D%0A@description",
     "type": "direct"
   },
 
@@ -65,18 +75,8 @@
   },
 
   "whatsapp": {
-    "sharer": "https://wa.me/?text=@description%0D%0A@url",
+    "sharer": "https://wa.me/?text=@title%0D%0A@url%0D%0A@description",
     "type": "popup",
     "action": "share/whatsapp/share"
-  },
-
-  "sms": {
-    "sharer": "sms:?body=@url%20@description",
-    "type": "direct"
-  },
-
-  "sms_ios": {
-    "sharer": "sms:&body=@url%20@description",
-    "type": "direct"
   }
 }
