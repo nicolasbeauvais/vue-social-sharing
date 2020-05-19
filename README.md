@@ -1,6 +1,6 @@
 <h1 align="center">Vue Social Sharing</h1>
-<h3 align="center">A Vue.js renderless components for sharing links on major social networks</h3>
-<h4 align="center">Less than 2.5kb gzipped</h4>
+<h4 align="center">A renderless components for sharing links on major social networks</h4>
+<h5 align="center">Less than 2.5kb gzipped</h5>
 
 <p align="center">
   <img width="580" src="https://user-images.githubusercontent.com/2951704/82338944-c33bda80-99ed-11ea-89e4-2cc49e9ed966.png">
