@@ -1,3 +1,23 @@
+<a name="3.0.0-beta.5"></a>
+# [3.0.0-beta.5](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.4...3.0.0-beta.5) (2020-05-19)
+- Add share to Baidu
+- Add share to Buffer
+- Add share to EverNote
+- Add share to Flipboard
+- Add share to HackerNews
+- Add share to InstaPaper
+- Add share to Pocket
+- Add share to Quora
+- Add share to StumbleUpon
+- Add share to Tumblr
+- Add share to Wordpress
+- Add share to Xing
+- Fix Whatsapp sharing link
+- Reduce bundle size
+- Simplify network schema in src/network.js
+- Events now send the network key as the first parameter
+- Improved Readme.md
+
 <a name="3.0.0-beta.4"></a>
 # [3.0.0-beta.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.3...3.0.0-beta.4) (2020-05-19)
 - Make shared properties more consistent between networks
