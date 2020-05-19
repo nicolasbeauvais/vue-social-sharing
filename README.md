@@ -90,6 +90,20 @@ Name           | Data Type  | Description
 -------------- | ---------- | -----------
 `tag`          | String     | HTML tag used to render the network component. Default to "a" tag.
 
+###### Baidu
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
+###### Buffer
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
 ###### Email
 
 Name           | Data Type  | Description
@@ -97,6 +111,13 @@ Name           | Data Type  | Description
 `title`        | String     | Shared as the email subject.
 `url`          | String     | Shared in the email content.
 `description`  | String     | Shared in the email content after the url.
+
+###### EverNote
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
 
 ###### Facebook
 
@@ -107,6 +128,28 @@ Name           | Data Type  | Description
 `description`  | String     | Description of the shared content.
 `quote`        | String     | A quote from the shared content.
 `hashtags`     | String     | A list of comma-separated hashtags, only the first one will used by Facebook.
+
+###### FlipBoard
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
+###### HackerNews
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
+###### InstaPaper
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`description`  | String     | Description of the shared content.
 
 ###### Line
 
@@ -139,6 +182,13 @@ Name           | Data Type  | Description
 `title`        | String     | Title of the shared content.
 `media`        | String     | URL of an image describing the content.
 
+###### Pocket
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
 ###### Reddit
 
 Name           | Data Type  | Description
@@ -162,6 +212,13 @@ Name           | Data Type  | Description
 `url`          | String     | Shared in the message content after the title.
 `description`  | String     | Shared in the message content after the url.
 
+###### StumbleUpon
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+
 ###### Telegram
 
 Name           | Data Type  | Description
@@ -169,6 +226,14 @@ Name           | Data Type  | Description
 `title`        | String     | Shared in the message content.
 `url`          | String     | Shared in the message content after the title.
 `description`  | String     | Shared in the message content after the url.
+
+###### Tumblr
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`description`  | String     | Description of the shared content.
 
 ###### Twitter
 
@@ -202,6 +267,7 @@ Name           | Data Type  | Description
 -------------- | ---------- | -----------
 `url`          | String     | URL of the shared content.
 `title`        | String     | Title of the shared content.
+`media`        | String     | URL of an image describing the content.
 
 ###### WhatsApp
 
@@ -210,6 +276,22 @@ Name           | Data Type  | Description
 `title`        | String     | Shared in the message content.
 `url`          | String     | Shared in the message content after the title.
 `description`  | String     | Shared in the message content after the url.
+
+###### Wordpress
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
+`description`  | String     | Description of the shared content.
+`media`        | String     | URL of an image describing the content.
+
+###### Xing
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`url`          | String     | URL of the shared content.
+`title`        | String     | Title of the shared content.
 
 #### Available events
 
