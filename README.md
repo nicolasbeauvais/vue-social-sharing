@@ -299,9 +299,9 @@ Events that are emitted on the vue $root instance:
 
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
-`share_network_open`   | Network object, shared url | Fired when a sharing popup is open
-`share_network_change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
-`share_network_close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
+`share_network_open`   | Network name, shared url   | Fired when a sharing popup is open
+`share_network_change` | Network name, shared url   | Fired when the user open a new sharing popup while another is already open
+`share_network_close`  | Network name, shared url   | Fired when a sharing popup is closed or changed by another popup
 
 You can listen to a `vue-social-sharing` $root event by using the following code:
 ```javascript
@@ -314,9 +314,9 @@ Events that are emitted on the local `vue-social-sharing` instance:
 
 Name                   | Data                       | Description
 ---------------------- | -------------------------- | --------------------------------------------------------------------------
-`open`   | Network object, shared url | Fired when a sharing popup is open
-`change` | Network object, shared url | Fired when the user open a new sharing popup while another is already open
-`close`  | Network object, shared url | Fired when a sharing popup is closed or changed by another popup
+`open`   | Network name, shared url | Fired when a sharing popup is open
+`change` | Network name, shared url | Fired when the user open a new sharing popup while another is already open
+`close`  | Network name, shared url | Fired when a sharing popup is closed or changed by another popup
 
 You can listen to a `ShareNetwork` local event by using the following code:
 ```html
@@ -335,10 +335,7 @@ import VueSocialSharing from '@/vue-social-sharing'
 
 Vue.use(VueSocialSharing, {
   networks: {
-    fakeblock: {
-      sharer: 'https://fakeblock.com/share?url=@url&title=@title',
-      type: 'popup'
-    }
+    fakeblock: 'https://fakeblock.com/share?url=@url&title=@title'
   }
 })
 
@@ -347,13 +344,6 @@ new Vue({
 })
 ```
 
-You can choose between two behavior type while defining a custom network:
-
-Type                   | Effect                    
----------------------- | --------------------------
-`popup`   | Open the sharing link in a new popup
-`direct` | Open the sharing link directly (suitable for mobile apps sharing, emails, sms, ...)
-
 ## Extending the network list in Nuxt
 
 You can extend the list of available networks directly in your `nuxt.config.js` file:
@@ -361,10 +351,7 @@ You can extend the list of available networks directly in your `nuxt.config.js` 
 modules: [
   ['vue-social-sharing/nuxt', {
     networks: {
-      fakeblock: {
-        sharer: 'https://fakeblock.com/share?url=@url&title=@title',
-        type: 'popup'
-      }
+      fakeblock: 'https://fakeblock.com/share?url=@url&title=@title'
     }
   }],
 ]

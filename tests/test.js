@@ -1,13 +1,24 @@
 import { createLocalVue, mount } from '@vue/test-utils'
 import VueSocialSharing from './../src/vue-social-sharing'
 import ShareNetwork, { mockWindow } from './../src/share-network'
-import AvailableNetworks from './../src/networks.json'
+import AvailableNetworks from '../src/networks'
 
 const customNetworks = {
-  fakeblock: {
-    sharer: 'https://fakeblock.com/share?url=@url&title=@title',
-    type: 'popup'
-  }
+  fakeblock: 'https://fakeblock.com/share?url=@url&title=@title'
+}
+const fakeWindow = {
+  location: {
+    href: 'https://test.com'
+  },
+  screen: {
+    width: 1000,
+    height: 700,
+    availWidth: 1000
+  },
+  innerWidth: 1000,
+  innerHeight: 700,
+  screenLeft: 0,
+  screenTop: 0
 }
 
 const localVue = createLocalVue()
@@ -60,28 +71,17 @@ describe('SocialSharing', () => {
 
   // Calculates correct position of popup
   it('calculates correct popup position', () => {
-    mockWindow({
-      screen: {
-        width: 1000,
-        height: 700,
-        availWidth: 1000
-      },
-      innerWidth: 1000,
-      innerHeight: 700,
-      location: {
-        href: window.location.href
-      },
-      screenLeft: 0,
-      screenTop: 0
-    })
+    mockWindow(fakeWindow)
 
-    const popup = mountShareNetwork().vm.popup
+    const vm = mountShareNetwork().vm
+
+    vm.resizePopup()
 
     // default width popup = 626
     // default height popup = 436
 
-    expect(popup.left).toBe(187) // 1000 / 2 - 626 / 2 = 187
-    expect(popup.top).toBe(132) // 700 / 2 - 436 / 2 = 132
+    expect(vm.popup.left).toBe(187) // 1000 / 2 - 626 / 2 = 187
+    expect(vm.popup.top).toBe(132) // 700 / 2 - 436 / 2 = 132
   })
 
   it('create component with a link tag', () => {
@@ -106,7 +106,7 @@ describe('SocialSharing', () => {
           title: 'The Progressive JavaScript Framework'
         }
       })
-      expect(component.vm.computedNetwork).toBe(localVue.prototype.$SocialSharing.options.networks[network])
+      expect(component.vm.rawLink).toBe(localVue.prototype.$SocialSharing.options.networks[network])
     }
   })
 
@@ -121,10 +121,10 @@ describe('SocialSharing', () => {
           title: 'The Progressive JavaScript Framework'
         }
       })
-      const sharer = localVue.prototype.$SocialSharing.options.networks[network].sharer
-      const url = component.vm.sharingUrl.substr(0, component.vm.sharingUrl.indexOf('?'))
+      const rawLink = localVue.prototype.$SocialSharing.options.networks[network]
+      const url = component.vm.shareLink.substr(0, component.vm.shareLink.indexOf('?'))
 
-      expect(url).toBe(sharer.substr(0, sharer.indexOf('?')))
+      expect(url).toBe(rawLink.substr(0, rawLink.indexOf('?')))
     }
   })
 
@@ -133,8 +133,9 @@ describe('SocialSharing', () => {
     let popupCreated = false
 
     mockWindow({
+      ...fakeWindow,
       open: (url, sharer) => {
-        expect(url).toBe(shareNetwork.vm.sharingUrl)
+        expect(url).toBe(shareNetwork.vm.shareLink)
         expect(sharer).toBe('sharer')
 
         popupCreated = true

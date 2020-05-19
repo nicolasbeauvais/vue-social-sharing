@@ -9,10 +9,7 @@ import MultipleShareNetworks from './stories/multiple-share-networks'
 
 Vue.use(VueSocialSharing, {
   networks: {
-    fakeblock: {
-      sharer: 'https://fakeblock.com/share?url=@url&title=@title',
-      type: 'popup'
-    }
+    fakeblock: 'https://fakeblock.com/share?url=@url&title=@title'
   }
 })
 

@@ -15,5 +15,8 @@ module.exports = {
   plugins: [
     'vue',
     'jest'
-  ]
+  ],
+  rules: {
+    camelcase: 'off'
+  }
 }
