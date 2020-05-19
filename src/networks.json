@@ -1,11 +1,41 @@
 {
+  "baidu": {
+    "sharer": "http://cang.baidu.com/do/add?iu=@url&it=@title",
+    "type": "popup"
+  },
+
+  "buffer": {
+    "sharer": "https://bufferapp.com/add?text=@title&url=@url",
+    "type": "popup"
+  },
+
   "email": {
     "sharer": "mailto:?subject=@title&body=@url%0D%0A@description",
     "type": "direct"
   },
 
+  "evernote": {
+    "sharer": "https://www.evernote.com/clip.action?url=@url&title=@title",
+    "type": "popup"
+  },
+
   "facebook": {
     "sharer": "https://www.facebook.com/sharer/sharer.php?u=@url&title=@title&description=@description&quote=@quote&hashtag=@hashtags",
+    "type": "popup"
+  },
+
+  "flipboard": {
+    "sharer": "https://share.flipboard.com/bookmarklet/popout?v=2&url=@url&title=@title",
+    "type": "popup"
+  },
+
+  "hackernews": {
+    "sharer": "https://news.ycombinator.com/submitlink?u=@url&t=@title",
+    "type": "popup"
+  },
+
+  "instapaper": {
+    "sharer": "http://www.instapaper.com/edit?url=@url&title=@title&description=@description",
     "type": "popup"
   },
 
@@ -29,6 +59,16 @@
     "type": "popup"
   },
 
+  "pocket": {
+    "sharer": "https://getpocket.com/save?url=@url&title=@title",
+    "type": "popup"
+  },
+
+  "quora": {
+    "sharer": "https://www.quora.com/share?url=@url&title=@title",
+    "type": "popup"
+  },
+
   "reddit": {
     "sharer": "https://www.reddit.com/submit?url=@url&title=@title",
     "type": "popup"
@@ -49,8 +89,18 @@
     "type": "direct"
   },
 
+  "stumbleupon": {
+    "sharer": "https://www.stumbleupon.com/submit?url=@url&title=@title",
+    "type": "popup"
+  },
+
   "telegram": {
     "sharer": "https://t.me/share/url?url=@url&text=@title%0D%0A@description",
+    "type": "popup"
+  },
+
+  "tumblr": {
+    "sharer": "https://www.tumblr.com/share/link?url=@url&name=@title&description=@description",
     "type": "popup"
   },
 
@@ -70,7 +120,7 @@
   },
 
   "weibo": {
-    "sharer": "http://service.weibo.com/share/share.php?url=@url&title=@title",
+    "sharer": "http://service.weibo.com/share/share.php?url=@url&title=@title&pic=@media",
     "type": "popup"
   },
 
@@ -78,5 +128,15 @@
     "sharer": "https://wa.me/?text=@title%0D%0A@url%0D%0A@description",
     "type": "popup",
     "action": "share/whatsapp/share"
-  }
+  },
+
+  "wordpress": {
+    "sharer": "https://wordpress.com/press-this.php?u=@url&t=@title&s=@description&i=@media",
+    "type": "popup"
+  },
+
+   "xing": {
+     "sharer": "https://www.xing.com/app/user?op=share&url=@url&title=@title",
+     "type": "popup"
+   }
 }
