@@ -1,9 +1,12 @@
 <h1 align="center">Vue Social Sharing</h1>
-
+<h3 align="center">A Vue.js renderless components for sharing links on major social networks</h3>
+<h4 align="center">Less than 2.5kb gzipped</h4>
 
 <p align="center">
-  <img width="722" src="https://user-images.githubusercontent.com/2951704/82338944-c33bda80-99ed-11ea-89e4-2cc49e9ed966.png">
+  <img width="580" src="https://user-images.githubusercontent.com/2951704/82338944-c33bda80-99ed-11ea-89e4-2cc49e9ed966.png">
 </p>
+
+<br>
 
 <p align="center">
 <a href="https://github.com/nicolasbeauvais/vue-social-sharing/releases"><img src="https://img.shields.io/github/release/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="Release"></a>
@@ -14,9 +17,6 @@
 <a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg?style=flat-square" alt="Vue 2"></a>
 <a href="https://bundlephobia.com/result?p=vue-social-sharing"><img src="https://img.shields.io/bundlephobia/minzip/vue-social-sharing?color=green&label=gzip&style=flat-square" alt="gzip size"></a>
 </p>
-
-<h3 align="center">Vue.js renderless components for sharing links on major social networks</h3>
-<h4 align="center">Less than 2.5kb gzipped</h4>
 
 ---
 
