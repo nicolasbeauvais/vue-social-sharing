@@ -10,8 +10,8 @@
 <a href="https://travis-ci.com/nicolasbeauvais/vue-social-sharing"><img src="https://img.shields.io/travis/com/nicolasbeauvais/vue-social-sharing/master.svg?style=flat-square" alt="Build Status"></a>
 <a href="https://www.npmjs.com/package/vue-social-sharing"><img src="https://img.shields.io/npm/dt/vue-social-sharing.svg?style=flat-square" alt="Downloads"></a>
 <a href="https://github.com/nicolasbeauvais/vue-social-sharing/blob/master/LICENSE"><img src="https://img.shields.io/github/license/nicolasbeauvais/vue-social-sharing.svg?style=flat-square" alt="License"></a>
-<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-1.x-brightgreen.svg" alt="Vue 1"></a>
-<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg" alt="Vue 2"></a>
+<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-1.x-brightgreen.svg?style=flat-square" alt="Vue 1"></a>
+<a href="https://vuejs.org/"><img src="https://img.shields.io/badge/vue-2.x-brightgreen.svg?style=flat-square" alt="Vue 2"></a>
 </p>
 
 <h3 align="center">Vue.js renderless components for sharing links on major social networks</h3>
