@@ -1,3 +1,7 @@
+<a name="3.0.0-beta.7"></a>
+# [3.0.0-beta.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.6...3.0.0-beta.7) (2020-05-19)
+- 🐛Fix another error when no custom networks are used
+
 <a name="3.0.0-beta.6"></a>
 # [3.0.0-beta.6](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.5...3.0.0-beta.6) (2020-05-19)
 - 🐛Fix error when no custom networks are used
