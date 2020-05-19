@@ -7,7 +7,10 @@ export default {
 
     Vue.prototype.$SocialSharing = {
       options: {
-        networks: Object.assign(AvailableNetworks, options.networks)
+        networks: options.hasOwnProperty('networks') ? Object.assign(
+          AvailableNetworks,
+          options.networks
+        ) : AvailableNetworks
       }
     }
   }
