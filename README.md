@@ -28,7 +28,7 @@ Renderless components give you the highest possible control over your markup and
 
 ### Understanding social sharing
 
-Before using this package it is important to understand how Social Network handle sharing links on their platform. When you share a link on a Social Network, the Social Network will crawl the link to detect [Open Graph meta tags](https://ogp.me/). If you share links that do not contain Open Graph meta tags, the Social Network will not be able to display a rich content for your link. You can refer to the [Available properties](https://github.com/nicolasbeauvais/vue-social-sharing#available-properties) section of the documentation to check which Social Network accept properties without Open Graph tags.  
+Before using this package it is important to understand how Social Networks handle sharing links on their platform. When you share a link on a Social Network, the Social Network will crawl the link to detect [Open Graph meta tags](https://ogp.me/). If you share links that do not contain Open Graph meta tags, the Social Network will not be able to display a rich content for your link. You can refer to the [Available properties](https://github.com/nicolasbeauvais/vue-social-sharing#available-networks-and-properties) section of the documentation to check which Social Network accept which properties without Open Graph tags.  
 
 ## Installation
 
@@ -81,11 +81,11 @@ modules: [
 </ShareNetwork>
 ```
 
-#### Available networks and properties
+## Available networks and properties
 
 The `url` and `title` properties are the only one required for all networks.
 
-### General properties
+###### General properties
 
 Name           | Data Type  | Description
 -------------- | ---------- | -----------
