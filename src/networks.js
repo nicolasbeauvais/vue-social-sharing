@@ -32,7 +32,7 @@ export default {
   stumbleupon: 'https://www.stumbleupon.com/submit?url=@u&title=@t',
   telegram: 'https://t.me/share/url?url=@u&text=@t%0D%0A@d',
   tumblr: 'https://www.tumblr.com/share/link?url=@u&name=@t&description=@d',
-  twitter: 'https://twitter.com/intent/tweet?text=@t&url=@u&hashtags=@h@t',
+  twitter: 'https://twitter.com/intent/tweet?text=@t&url=@u&hashtags=@h@tu',
   viber: 'viber://forward?text=@t%0D%0A@u%0D%0A@d',
   vk: 'https://vk.com/share.php?url=@u&title=@t&description=@d&image=@m&noparse=true',
   weibo: 'http://service.weibo.com/share/share.php?url=@u&title=@t&pic=@m',
