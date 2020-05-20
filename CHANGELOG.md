@@ -1,3 +1,7 @@
+<a name="3.0.0-beta.8"></a>
+# [3.0.0-beta.8](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.7...3.0.0-beta.8) (2020-05-20)
+- Fix Twitter title duplicated
+
 <a name="3.0.0-beta.7"></a>
 # [3.0.0-beta.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.6...3.0.0-beta.7) (2020-05-19)
 - 🐛Fix another error when no custom networks are used
