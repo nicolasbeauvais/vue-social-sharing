@@ -135,26 +135,25 @@ export default {
      * Create the url for sharing.
      */
     shareLink () {
-      const link = this.rawLink
-      const encode = encodeURIComponent
+      let link = this.rawLink
 
       /**
        * Twitter sharing shouldn't include empty parameter
        * Source: https://github.com/nicolasbeauvais/vue-social-sharing/issues/143
        */
       if (this.key === 'twitter') {
-        if (!this.hashtags.length) link.replace('&hashtags=@h', '')
-        if (!this.twitterUser) link.replace('@tu', '')
+        if (!this.hashtags.length) link = link.replace('&hashtags=@h', '')
+        if (!this.twitterUser.length) link = link.replace('@tu', '')
       }
 
       return link
-        .replace(/@tu/g, '&via=' + encode(this.twitterUser))
-        .replace(/@u/g, encode(this.url))
-        .replace(/@t/g, encode(this.title))
-        .replace(/@d/g, encode(this.description))
-        .replace(/@q/g, encode(this.quote))
+        .replace(/@tu/g, '&via=' + encodeURIComponent(this.twitterUser))
+        .replace(/@u/g, encodeURIComponent(this.url))
+        .replace(/@t/g, encodeURIComponent(this.title))
+        .replace(/@d/g, encodeURIComponent(this.description))
+        .replace(/@q/g, encodeURIComponent(this.quote))
         .replace(/@h/g, this.encodedHashtags)
-        .replace(/@m/g, encode(this.media))
+        .replace(/@m/g, encodeURIComponent(this.media))
     },
 
     /**
