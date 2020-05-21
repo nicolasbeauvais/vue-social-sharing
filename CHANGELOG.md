@@ -1,3 +1,7 @@
+<a name="3.0.0-beta.9"></a>
+# [3.0.0-beta.9](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.8...3.0.0-beta.9) (2020-05-21)
+- Fix wrong text displayed on Twitter when sharing without a TwitterUser
+
 <a name="3.0.0-beta.8"></a>
 # [3.0.0-beta.8](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.7...3.0.0-beta.8) (2020-05-20)
 - Fix Twitter title duplicated
