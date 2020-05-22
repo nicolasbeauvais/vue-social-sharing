@@ -83,7 +83,7 @@ modules: [
 
 ## Available networks and properties
 
-The `url` and `title` properties are the only one required for all networks.
+The `url` is the only property required for all networks.
 
 ###### General properties
 
@@ -165,8 +165,6 @@ Name           | Data Type  | Default   | Description
 Name           | Data Type  | Description
 -------------- | ---------- | -----------
 `url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`description`  | String     | Description of the shared content.
 
 ###### Odnoklassniki
 
