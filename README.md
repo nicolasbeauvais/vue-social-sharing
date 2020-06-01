@@ -49,7 +49,7 @@ npm install --save vue-social-sharing
 ```javascript
 import VueSocialSharing from 'vue-social-sharing'
 
-Vue.use(SocialSharing);
+Vue.use(VueSocialSharing);
 ```
 
 ##### Nuxt
