@@ -7,7 +7,7 @@
       <ShareNetwork
         v-for="network in networks"
         :network="network.network"
-        :key="network.key"
+        :key="network.network"
         :style="{backgroundColor: network.color}"
         :url="sharing.url"
         :title="sharing.title"
