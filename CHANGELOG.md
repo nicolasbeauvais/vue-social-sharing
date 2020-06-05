@@ -1,8 +1,12 @@
+<a name="3.0.0-beta.11"></a>
+# [3.0.0-beta.11](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.10...3.0.0-beta.11) (2020-06-05)
+- Add share to Yammer
+- Update Readme.md
+
 <a name="3.0.0-beta.10"></a>
 # [3.0.0-beta.10](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.9...3.0.0-beta.10) (2020-05-22)
 - Update LinkedIn sharer URL
 - Update Readme.md
-
 
 <a name="3.0.0-beta.9"></a>
 # [3.0.0-beta.9](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.8...3.0.0-beta.9) (2020-05-21)
