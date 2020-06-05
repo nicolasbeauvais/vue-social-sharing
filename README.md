@@ -3,7 +3,7 @@
 <h5 align="center">Less than 2.5kb gzipped</h5>
 
 <p align="center">
-  <img width="580" src="https://user-images.githubusercontent.com/2951704/82338944-c33bda80-99ed-11ea-89e4-2cc49e9ed966.png">
+  <img width="580" src="https://user-images.githubusercontent.com/2951704/83863753-11f2af80-a724-11ea-9202-98b40cdbebe2.png">
 </p>
 
 <br>

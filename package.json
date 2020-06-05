@@ -1,6 +1,6 @@
 {
   "name": "vue-social-sharing",
-  "version": "3.0.0-beta.10",
+  "version": "3.0.0-beta.11",
   "description": "A Vue.js component for sharing links to social networks",
   "author": "Nicolas Beauvais <nicolas@bvs.email>",
   "license": "MIT",
@@ -9,11 +9,20 @@
     "url": "https://github.com/nicolasbeauvais/vue-social-sharing/issues"
   },
   "keywords": [
+    "nuxtjs",
     "plugin",
-    "vue",
-    "vuejs",
+    "renderless-components",
+    "share",
     "social",
-    "share"
+    "social-network",
+    "social-networks",
+    "social-shares",
+    "ssr",
+    "vue",
+    "vue-component",
+    "vue-components",
+    "vuejs",
+    "vuejs-components"
   ],
   "main": "dist/vue-social-sharing.js",
   "files": [
