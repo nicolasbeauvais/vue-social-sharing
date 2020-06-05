@@ -292,6 +292,14 @@ Name           | Data Type  | Description
 `url`          | String     | URL of the shared content.
 `title`        | String     | Title of the shared content.
 
+###### Yammer
+
+Name           | Data Type  | Description
+-------------- | ---------- | -----------
+`title`        | String     | Shared in the message content.
+`url`          | String     | Shared in the message content after the title.
+`description`  | String     | Shared in the message content after the url.
+
 #### Available events
 
 Events that are emitted on the vue $root instance:

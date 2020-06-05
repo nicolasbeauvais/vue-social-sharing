@@ -8,7 +8,7 @@ export default {
         <ShareNetwork
           v-for="network in networks"
           :network="network.network"
-          :key="network.key"
+          :key="network.network"
           :style="{backgroundColor: network.color}"
           :url="sharing.url"
           :title="sharing.title"
@@ -60,6 +60,7 @@ export default {
           { network: 'whatsapp', name: 'Whatsapp', icon: 'fab fah fa-lg fa-whatsapp', color: '#25d366' },
           { network: 'wordpress', name: 'Wordpress', icon: 'fab fah fa-lg fa-wordpress', color: '#21759b' },
           { network: 'xing', name: 'Xing', icon: 'fab fah fa-lg fa-xing', color: '#026466' },
+          { network: 'yammer', name: 'Yammer', icon: 'fab fah fa-lg fa-yammer', color: '#0072c6' },
           { network: 'fakeblock', name: 'Custom Network', icon: 'fab fah fa-lg fa-vuejs', color: '#41b883' }
         ]
       }
