@@ -91,7 +91,7 @@ Name           | Data Type  | Description
 -------------- | ---------- | -----------
 `tag`          | String     | HTML tag used to render the network component. Default to "a" tag.
 
-##### Network properties
+###### Network properties
 
 | Prop           | Type   | Default            | Description                                                |
 |----------------|--------|--------------------|------------------------------------------------------------|
