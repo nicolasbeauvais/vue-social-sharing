@@ -111,7 +111,7 @@ Name           | Data Type  | Description
 | Buffer        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Email         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | EverNote      | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
-| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will used.   `quote` Facebook quote. |
+| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will used.<br/>`quote` Facebook quote. |
 | FlipBoard     | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | HackerNews    | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | InstaPaper    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
@@ -126,7 +126,7 @@ Name           | Data Type  | Description
 | StumbleUpon   | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Telegram      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | Tumblr        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
-| Twitter       | :heavy_check_mark: | :heavy_check_mark: | :x:                | `hashtags` A list of comma-separated hashtags.   `twitter-user` Twitter user to mention.               |
+| Twitter       | :heavy_check_mark: | :heavy_check_mark: | :x:                | `hashtags` A list of comma-separated hashtags.<br/>`twitter-user` Twitter user to mention.               |
 | Viber         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | VK            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `media` URL of an image describing the content.                                                        |
 | Weibo         | :heavy_check_mark: | :heavy_check_mark: | :x:                | `media` URL of an image describing the content.                                                        |
