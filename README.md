@@ -103,214 +103,37 @@ Name           | Data Type  | Description
 | `twitter-user` | String |                    | Twitter user (Twitter only).                               |
 | `media`        | String |                    | Url to a media (Pinterest only).                           |
 
-###### Baidu
+###### Networks
 
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Buffer
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Email
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared as the email subject.
-`url`          | String     | Shared in the email content.
-`description`  | String     | Shared in the email content after the url.
-
-###### EverNote
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Facebook
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`description`  | String     | Description of the shared content.
-`quote`        | String     | A quote from the shared content.
-`hashtags`     | String     | A list of comma-separated hashtags, only the first one will used by Facebook.
-
-###### FlipBoard
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### HackerNews
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### InstaPaper
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`description`  | String     | Description of the shared content.
-
-###### Line
-
-Name           | Data Type  | Default   | Description
--------------- | ---------- | --------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
-
-###### LinkedIn
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-
-###### Odnoklassniki
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Pinterest
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`media`        | String     | URL of an image describing the content.
-
-###### Pocket
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Reddit
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Skype
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
-
-###### SMS
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
-
-###### StumbleUpon
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Telegram
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
-
-###### Tumblr
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`description`  | String     | Description of the shared content.
-
-###### Twitter
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`hashtags`     | String     | A list of comma-separated hashtags.
-`twitter-user` | String     | Twitter user to mention.
-
-###### Viber
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
-
-###### VK
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`description`  | String     | Description of the shared content.
-`media`        | String     | URL of an image describing the content.
-
-###### Weibo
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`media`        | String     | URL of an image describing the content.
-
-###### WhatsApp
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
-
-###### Wordpress
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-`description`  | String     | Description of the shared content.
-`media`        | String     | URL of an image describing the content.
-
-###### Xing
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`url`          | String     | URL of the shared content.
-`title`        | String     | Title of the shared content.
-
-###### Yammer
-
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`title`        | String     | Shared in the message content.
-`url`          | String     | Shared in the message content after the title.
-`description`  | String     | Shared in the message content after the url.
+| Network       | `url`              | `title`            | `description`      | Extras/Comments                                                                                                 |
+|---------------|--------------------|--------------------|--------------------|--------------------------------------------------------------------------------------------------------|
+| Baidu         | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Buffer        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Email         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| EverNote      | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will used.   `quote` Facebook quote. |
+| FlipBoard     | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| HackerNews    | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| InstaPaper    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| Line          | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| LinkedIn      | :heavy_check_mark: | :x:                | :x:                |                                                                                                        |
+| Odnoklassniki | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Pinterest     | :heavy_check_mark: | :heavy_check_mark: | :x:                | `media` URL of an image describing the content.                                                        |
+| Pocket        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Reddit        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Skype         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| SMS           | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| StumbleUpon   | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Telegram      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| Tumblr        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| Twitter       | :heavy_check_mark: | :heavy_check_mark: | :x:                | `hashtags` A list of comma-separated hashtags.   `twitter-user` Twitter user to mention.               |
+| Viber         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| VK            | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `media` URL of an image describing the content.                                                        |
+| Weibo         | :heavy_check_mark: | :heavy_check_mark: | :x:                | `media` URL of an image describing the content.                                                        |
+| WhatsApp      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
+| Wordpress     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `media` URL of an image describing the content.                                                        |
+| Xing          | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
+| Yammer        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 
 #### Available events
 
