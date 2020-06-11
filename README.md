@@ -135,6 +135,8 @@ Name           | Data Type  | Description
 | Xing          | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Yammer        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 
+For the networks: `Line`, `Skype`, `SMS`, `Telegram`, `Viber`, `WhatsApp` and `Yammer`; the shared content is a string of the form: "`$title` `$url` `$description`"
+
 #### Available events
 
 Events that are emitted on the vue $root instance:
