@@ -93,15 +93,15 @@ Name           | Data Type  | Description
 
 ###### Network properties
 
-| Prop           | Type   | Default            | Description                                                |
-|----------------|--------|--------------------|------------------------------------------------------------|
-| `url`          | String | current page's URL | URL to share.                                              |
-| `title`        | String |                    | Sharing title (when available).                            |
-| `description`  | String |                    | Sharing description (when available).                      |
-| `quote`        | String |                    | Facebook quote (Facebook only).                            |
-| `hashtags`     | String |                    | A list of comma-separated hashtags (Twitter and Facebook). |
-| `twitter-user` | String |                    | Twitter user (Twitter only).                               |
-| `media`        | String |                    | Url to a media (Pinterest only).                           |
+| Prop           | Type   | Description                                                |
+|----------------|--------|------------------------------------------------------------|
+| `url`          | String | URL to share.                                              |
+| `title`        | String | Sharing title (if available).                              |
+| `description`  | String | Sharing description (if available).                        |
+| `quote`        | String | Facebook quote (Facebook only).                            |
+| `hashtags`     | String | A list of comma-separated hashtags (Twitter and Facebook). |
+| `twitter-user` | String | Twitter user (Twitter only).                               |
+| `media`        | String | Url to a media (Pinterest, VK, Weibo, and Wordpress).      |
 
 ###### Networks
 
