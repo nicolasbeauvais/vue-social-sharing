@@ -111,7 +111,7 @@ Name           | Data Type  | Description
 | Buffer        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Email         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | EverNote      | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
-| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will used.<br/>`quote` Facebook quote. |
+| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will be used.<br/>`quote` Facebook quote. |
 | FlipBoard     | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | HackerNews    | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | InstaPaper    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
