@@ -222,7 +222,7 @@ export default {
         ',screenY=' + this.popup.top
       )
 
-      if (!this.popup.window) return null
+      if (!this.popup.window) return
 
       this.popup.window.focus()
 
