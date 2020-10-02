@@ -1,3 +1,7 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.11...3.0.0) (2020-10-02)
+- Fix error triggered by popup when prevented by AdBlocker
+
 <a name="3.0.0-beta.11"></a>
 # [3.0.0-beta.11](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.10...3.0.0-beta.11) (2020-06-05)
 - Add share to Yammer
