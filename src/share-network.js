@@ -222,6 +222,7 @@ export default {
         ',screenY=' + this.popup.top
       )
 
+      // If an adblocker prevent popups, popup.window stays undefined and we can't display it       
       if (!this.popup.window) return
 
       this.popup.window.focus()
