@@ -81,12 +81,14 @@ export default {
     tag: {
       type: String,
       default: 'a'
-    }
-  },
+    },
 
-  data () {
-    return {
-      popup: {
+    /**
+     * Properties to configure the popup window.
+     */
+    popup: {
+      type: Object,
+      default: {
         width: 626,
         height: 436,
         top: 0,
