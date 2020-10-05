@@ -80,8 +80,27 @@ describe('SocialSharing', () => {
     // default width popup = 626
     // default height popup = 436
 
-    expect(vm.popup.left).toBe(187) // 1000 / 2 - 626 / 2 = 187
-    expect(vm.popup.top).toBe(132) // 700 / 2 - 436 / 2 = 132
+    expect(vm.popupLeft).toBe(187) // 1000 / 2 - 626 / 2 = 187
+    expect(vm.popupTop).toBe(132) // 700 / 2 - 436 / 2 = 132
+  })
+
+  // Sets correct popup size
+  it('sets correct popup size', () => {
+    const vm = mountShareNetwork({
+      propsData: {
+        network: 'facebook',
+        url: 'http://vuejs.org/',
+        title: 'The Progressive JavaScript Framework',
+        popup: {
+          height: 100,
+          width: 100
+        }
+      }
+    }).vm
+
+    expect(vm.popup.height).toBe(100)
+    expect(vm.popup.width).toBe(100)
+    expect(vm.popupTop).toBe(0)
   })
 
   it('create component with a link tag', () => {
