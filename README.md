@@ -103,6 +103,13 @@ Name           | Data Type  | Description
 | `twitter-user` | String | Twitter user (Twitter only).                               |
 | `media`        | String | Url to a media (Pinterest, VK, Weibo, and Wordpress).      |
 
+###### Popup properties
+
+| Prop           | Type   | Description                                                |
+|----------------|--------|------------------------------------------------------------|
+| `popup.width`  | Number | Custom width of the popup window.                          |
+| `popup.height` | Number | Custom height of the popup window.                         |
+
 ###### Networks
 
 | Network       | `url`              | `title`            | `description`      | Extras/Comments                                                                                                 |
