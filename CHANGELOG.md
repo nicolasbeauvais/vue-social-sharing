@@ -1,6 +1,10 @@
+<a name="3.0.1"></a>
+# [3.0.1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0...3.0.1) (2020-10-06)
+- Add props for popup size customization
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.11...3.0.0) (2020-10-02)
-- Fix error triggered by popup when prevented by AdBlocker
+- Fix error triggered by popup when prevented by AdBlocker or mobile context
 
 <a name="3.0.0-beta.11"></a>
 # [3.0.0-beta.11](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.0-beta.10...3.0.0-beta.11) (2020-06-05)
