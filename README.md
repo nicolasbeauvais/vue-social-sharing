@@ -87,9 +87,11 @@ The `url` is the only property required for all networks.
 
 ###### General properties
 
-Name           | Data Type  | Description
--------------- | ---------- | -----------
-`tag`          | String     | HTML tag used to render the network component. Default to "a" tag.
+| Name           | Data Type | Description                                                        |
+|----------------|-----------| -------------------------------------------------------------------|
+| `tag`          | String    | HTML tag used to render the network component. Default to "a" tag. |
+| `popup.width`  | Number    | Custom width of the popup window. Default to 626px.                |
+| `popup.height` | Number    | Custom height of the popup window. Default to 426px.               |
 
 ###### Network properties
 
@@ -199,6 +201,13 @@ modules: [
     }
   }],
 ]
+```
+
+## Customizing the popup window size
+
+If needed, you can set a custom width and height for the popup window:
+```html
+<ShareNetwork :popup="{width: 400, height: 200}" />
 ```
 
 ## Feature request
