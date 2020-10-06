@@ -81,19 +81,26 @@ export default {
     tag: {
       type: String,
       default: 'a'
+    },
+
+    /**
+     * Properties to configure the popup window.
+     */
+    popup: {
+      type: Object,
+      default: () => ({
+        width: 626,
+        height: 436
+      })
     }
   },
 
   data () {
     return {
-      popup: {
-        width: 626,
-        height: 436,
-        top: 0,
-        left: 0,
-        window: undefined,
-        interval: null
-      }
+      popupTop: 0,
+      popupLeft: 0,
+      popupWindow: undefined,
+      popupInterval: null
     }
   },
 
@@ -191,8 +198,8 @@ export default {
       const height = $window.innerHeight || (document.documentElement.clientHeight || $window.screenY)
       const systemZoom = width / $window.screen.availWidth
 
-      this.popup.left = (width - this.popup.width) / 2 / systemZoom + ($window.screenLeft !== undefined ? $window.screenLeft : $window.screenX)
-      this.popup.top = (height - this.popup.height) / 2 / systemZoom + ($window.screenTop !== undefined ? $window.screenTop : $window.screenY)
+      this.popupLeft = (width - this.popup.width) / 2 / systemZoom + ($window.screenLeft !== undefined ? $window.screenLeft : $window.screenX)
+      this.popupTop = (height - this.popup.height) / 2 / systemZoom + ($window.screenTop !== undefined ? $window.screenTop : $window.screenY)
     },
 
     /**
@@ -202,37 +209,37 @@ export default {
       this.resizePopup()
 
       // If a popup window already exist, we close it and trigger a change event.
-      if (this.popup.window && this.popup.interval) {
-        clearInterval(this.popup.interval)
+      if (this.popupWindow && this.popupInterval) {
+        clearInterval(this.popupInterval)
 
         // Force close (for Facebook)
-        this.popup.window.close()
+        this.popupWindow.close()
 
         this.emit('change')
       }
 
-      this.popup.window = $window.open(
+      this.popupWindow = $window.open(
         this.shareLink,
         'sharer',
         ',height=' + this.popup.height +
         ',width=' + this.popup.width +
-        ',left=' + this.popup.left +
-        ',top=' + this.popup.top +
-        ',screenX=' + this.popup.left +
-        ',screenY=' + this.popup.top
+        ',left=' + this.popupLeft +
+        ',top=' + this.popupTop +
+        ',screenX=' + this.popupLeft +
+        ',screenY=' + this.popupTop
       )
 
       // If popup are prevented (AdBlocker, Mobile App context..), popup.window stays undefined and we can't display it
-      if (!this.popup.window) return
+      if (!this.popupWindow) return
 
-      this.popup.window.focus()
+      this.popupWindow.focus()
 
       // Create an interval to detect popup closing event
-      this.popup.interval = setInterval(() => {
-        if (!this.popup.window || this.popup.window.closed) {
-          clearInterval(this.popup.interval)
+      this.popupInterval = setInterval(() => {
+        if (!this.popupWindow || this.popupWindow.closed) {
+          clearInterval(this.popupInterval)
 
-          this.popup.window = null
+          this.popupWindow = null
 
           this.emit('close')
         }
