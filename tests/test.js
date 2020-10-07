@@ -155,7 +155,7 @@ describe('SocialSharing', () => {
       ...fakeWindow,
       open: (url, sharer) => {
         expect(url).toBe(shareNetwork.vm.shareLink)
-        expect(sharer).toBe('sharer')
+        expect(sharer).toBe('sharer-facebook')
 
         popupCreated = true
 
