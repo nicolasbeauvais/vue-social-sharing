@@ -220,7 +220,7 @@ export default {
 
       this.popupWindow = $window.open(
         this.shareLink,
-        'sharer',
+        `sharer-${this.key}`,
         ',height=' + this.popup.height +
         ',width=' + this.popup.width +
         ',left=' + this.popupLeft +
