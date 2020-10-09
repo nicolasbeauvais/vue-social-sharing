@@ -33,6 +33,7 @@
 - Make sure `npm test` passes. (see [development setup](#development-setup))
 
 - If adding new feature:
+
   - Add accompanying test case.
   - Provide convincing reason to add this feature. Ideally you should open a suggestion issue first and have it greenlighted before working on it.
 
@@ -41,6 +42,7 @@
   - Add appropriate test coverage if applicable.
 
 ### Work Step Example
+
 - Fork the repository from [nicolasbeauvais/vue-social-sharing](https://github.com/nicolasbeauvais/vue-social-sharing) !
 - Create your topic branch from `master`: `git branch my-new-topic origin/master`
 - Add codes and pass tests !
@@ -59,13 +61,13 @@ After cloning the repo, run:
 ### Commonly used NPM scripts
 
     # watch and serve with hot reload unit test at localhost:8080
-    $ npm run dev
+    $ npm run storybook
 
     # lint source codes
     $ npm run lint
 
     # run unit tests in browser (firefox/safari/chrome)
-    $ npm run test:unit
+    $ npm run test
 
     # build all dist files, including npm packages
     $ npm run build
@@ -73,7 +75,9 @@ After cloning the repo, run:
     # run the full test suite, include linting
     $ npm test
 
+    # render an example page with all the buttons
+    $ npm run example
+
 There are some other scripts available in the `scripts` section of the `package.json` file.
 
 The default test script will do the following: lint with ESLint -> unit tests with coverage -> e2e tests. **Please make sure to have this pass successfully before submitting a PR.** Although the same tests will be run against your PR on the CI server, it is better to have it working locally beforehand.
-
