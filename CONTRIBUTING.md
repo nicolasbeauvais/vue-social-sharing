@@ -66,9 +66,6 @@ After cloning the repo, run:
     # lint source codes
     $ npm run lint
 
-    # run unit tests in browser (firefox/safari/chrome)
-    $ npm run test
-
     # build all dist files, including npm packages
     $ npm run build
 
