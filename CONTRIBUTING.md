@@ -60,19 +60,19 @@ After cloning the repo, run:
 
 ### Commonly used NPM scripts
 
-    # watch and serve with hot reload unit test at localhost:8080
+    # Run Storybook to experiment with the library
     $ npm run storybook
 
-    # lint source codes
+    # Lint source codes
     $ npm run lint
 
-    # build all dist files, including npm packages
+    # Build all dist files, including npm packages
     $ npm run build
 
-    # run the full test suite, include linting
-    $ npm test
+    # Run the full test suite, include linting
+    $ npm run test
 
-    # render an example page with all the buttons
+    # Render an example page with all the buttons
     $ npm run example
 
 There are some other scripts available in the `scripts` section of the `package.json` file.
