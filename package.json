@@ -28,7 +28,8 @@
   "files": [
     "dist",
     "src",
-    "nuxt"
+    "nuxt",
+    "vetur"
   ],
   "scripts": {
     "test": "jest tests",
@@ -77,5 +78,8 @@
   },
   "peerDependencies": {
     "vue": "^2.6.10"
+  },
+  "vetur": {
+    "tags": "vetur/vetur-tags.json"
   }
 }
