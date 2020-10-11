@@ -25,11 +25,13 @@
     "vuejs-components"
   ],
   "main": "dist/vue-social-sharing.js",
+  "types": "types/index.d.ts",
   "files": [
     "dist",
     "src",
     "nuxt",
-    "vetur"
+    "vetur",
+    "types/*.d.ts"
   ],
   "scripts": {
     "test": "jest tests",
