@@ -30,6 +30,7 @@
     "dist",
     "src",
     "nuxt",
+    "vetur",
     "types/*.d.ts"
   ],
   "scripts": {
@@ -79,5 +80,8 @@
   },
   "peerDependencies": {
     "vue": "^2.6.10"
+  },
+  "vetur": {
+    "tags": "vetur/vetur-tags.json"
   }
 }

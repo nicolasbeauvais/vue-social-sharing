@@ -1,0 +1,17 @@
+{
+  "share-network": {
+    "description": "A renderless component for sharing links on major social networks",
+    "attributes": [
+      "network",
+      "url",
+      "title",
+      "description",
+      "quote",
+      "hashtags",
+      "twitterUser",
+      "media",
+      "tag",
+      "popup"
+    ]
+  }
+}
