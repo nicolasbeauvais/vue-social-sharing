@@ -38,6 +38,6 @@ export default {
   weibo: 'http://service.weibo.com/share/share.php?url=@u&title=@t&pic=@m',
   whatsapp: 'https://api.whatsapp.com/send?text=@t%0D%0A@u%0D%0A@d',
   wordpress: 'https://wordpress.com/press-this.php?u=@u&t=@t&s=@d&i=@m',
-  xing: 'https://www.xing.com/app/user?op=share&url=@u&title=@t',
+  xing: 'https://www.xing.com/social/share/spi?op=share&url=@u&title=@t',
   yammer: 'https://www.yammer.com/messages/new?login=true&status=@t%0D%0A@u%0D%0A@d'
 }
