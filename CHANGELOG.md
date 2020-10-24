@@ -1,3 +1,7 @@
+<a name="3.0.3"></a>
+# [3.0.3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.2...3.0.3) (2020-10-24)
+- Update Xing sharing url 
+
 <a name="3.0.2"></a>
 # [3.0.2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.1...3.0.2) (2020-10-07)
 - Use a unique name for each network's popup window
