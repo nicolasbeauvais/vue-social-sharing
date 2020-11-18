@@ -182,6 +182,9 @@ export default {
 
     return createElement(this.tag, {
       class: 'share-network-' + this.key,
+      attrs: {
+        href: '#'
+      },
       on: {
         click: () => this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']()
       }
