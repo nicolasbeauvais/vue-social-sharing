@@ -17,6 +17,6 @@ export interface PluginOptions {
   networks: Record<string, string>
 }
 
-type VueSocialSharing = PluginObject<PluginOptions>
+declare const VueSocialSharing: PluginObject<PluginOptions>
 
 export default VueSocialSharing
