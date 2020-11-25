@@ -180,15 +180,16 @@ export default {
       throw new Error('Network ' + this.key + ' does not exist')
     }
 
-    return createElement(this.tag, {
+    const node = {
       class: 'share-network-' + this.key,
-      attrs: {
-        href: '#'
-      },
       on: {
         click: () => this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']()
       }
-    }, this.$slots.default)
+    }
+
+    if (this.tag === 'a') node.attrs = { href: '#' }
+
+    return createElement(this.tag, node, this.$slots.default)
   },
 
   methods: {
