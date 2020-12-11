@@ -1,15 +1,17 @@
 import dynamicDataNotes from './dynamic-data-notes.md'
+import { ShareNetwork } from '../../src/vue-social-sharing'
 
 export default {
   name: 'Dynamic data',
   code: () => ({
+    components: { ShareNetwork },
     template: `
       <div style="text-align: center;">
         <p>Change the url to share on Twitter:</p>
         <input type="text" v-model="url" style="margin-bottom: 20px;padding: 5px;min-width: 230px;text-align: center;">
 
         <div id="share-network-list">
-          <ShareNetwork
+          <share-network
             network="twitter"
             :url="url"
             :title="title"
@@ -20,7 +22,7 @@ export default {
           >
             <i class="fab fah fa-lg fa-twitter"></i>
             <span>Share on Twitter</span>
-          </ShareNetwork>
+          </share-network>
         </div>
       </div>
       `,

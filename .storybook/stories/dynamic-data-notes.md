@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { ShareNetwork } from 'vue-social-sharing'
+
 export default {
   data () {
     return {
@@ -30,7 +32,8 @@ export default {
       hashtags: 'vuejs,vite,javascript',
       twitterUser: 'youyuxi'
     }
-  }
+  },
+  components: { ShareNetwork }
 }
 </script>
 ```

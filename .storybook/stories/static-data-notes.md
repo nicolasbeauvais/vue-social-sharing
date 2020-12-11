@@ -17,8 +17,11 @@
 </template>
 
 <script>
+import { ShareNetwork } from 'vue-social-sharing'
+
 export default {
-  // Nothing needed here
+  // ...
+  components: { ShareNetwork }
 }
 </script>
 ```

@@ -1,11 +1,13 @@
 import multipleShareNetworks from './multiple-share-networks.md'
+import { ShareNetwork } from '../../src/vue-social-sharing'
 
 export default {
   name: 'Multiple share networks',
   code: () => ({
+    components: { ShareNetwork },
     template: `      
       <div id="share-network-list">
-        <ShareNetwork
+        <share-network
           v-for="network in networks"
           :network="network.network"
           :key="network.network"
@@ -19,7 +21,7 @@ export default {
         >
           <i :class="network.icon"></i>
           <span>{{ network.name }}</span>
-        </ShareNetwork>
+        </share-network>
       </div>
       `,
     data () {

@@ -2,23 +2,6 @@
 
 To use a custom network you need to define it in the initialisation option of the `VueSocialSharing` plugin.
 
-```javascript
-import Vue from 'vue'
-import VueSocialSharing from 'vue-social-sharing'
-
-Vue.use(VueSocialSharing, {
-  networks: {
-    fakeblock: 'https://fakeblock.com/share?url=@url&title=@title',
-  }
-})
-
-new Vue({
-  el: '#app',
-})
-```
-
-You can then use your custom network like any other one:
-
 ```html
 <template>
   <ShareNetwork
@@ -32,8 +15,14 @@ You can then use your custom network like any other one:
 </template>
 
 <script>
+import { ShareNetwork, useNetworks } from 'vue-social-sharing'
 export default {
- // Nothing needed here
+ components: { ShareNetwork },
+ setup () {
+  const { setNetwork } = useNetworks()
+
+  setNetwork('fakeblock', 'https://fakeblock.com/share?url=@url&title=@title')
+ }
 }
 </script>
 ```

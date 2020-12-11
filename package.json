@@ -54,6 +54,7 @@
     "@babel/preset-env": "^7.5.5",
     "@storybook/addon-notes": "^5.1.10",
     "@storybook/vue": "^5.1.10",
+    "@vue/composition-api": "^1.0.0-beta.21",
     "@vue/test-utils": "^1.0.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
@@ -78,8 +79,12 @@
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6"
   },
+  "dependencies": {
+    "vue-demi": "latest"
+  },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "@vue/composition-api": "^1.0.0-beta.1",
+    "vue": "^2.6.10 || >=3.0.0-rc.0"
   },
   "vetur": {
     "tags": "vetur/vetur-tags.json"
