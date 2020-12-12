@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import { configure, storiesOf } from '@storybook/vue'
 import './style.css'
 import StaticData from './stories/static-data'
