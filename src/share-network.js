@@ -187,7 +187,7 @@ export default {
       }
     }
 
-    if (this.tag === 'a') node.attrs = { href: '#' }
+    if (this.tag === 'a') node.attrs = { href: 'javascript:void(0)' }
 
     return createElement(this.tag, node, this.$slots.default)
   },
