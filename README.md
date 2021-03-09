@@ -119,6 +119,7 @@ The `url` is the only property required for all networks.
 | InstaPaper    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | Line          | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | LinkedIn      | :heavy_check_mark: | :x:                | :x:                |                                                                                                        |
+| Messenger      | :heavy_check_mark: | :x:                | :x:                |                                                                                                        |
 | Odnoklassniki | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Pinterest     | :heavy_check_mark: | :heavy_check_mark: | :x:                | `media` URL of an image describing the content.                                                        |
 | Pocket        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
