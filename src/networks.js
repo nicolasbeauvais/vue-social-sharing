@@ -22,6 +22,7 @@ export default {
   instapaper: 'http://www.instapaper.com/edit?url=@u&title=@t&description=@d',
   line: 'http://line.me/R/msg/text/?@t%0D%0A@u%0D%0A@d',
   linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=@u',
+  messenger: 'fb-messenger://share/?link=@u',
   odnoklassniki: 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&st.shareUrl=@u&st.comments=@t',
   pinterest: 'https://pinterest.com/pin/create/button/?url=@u&media=@m&description=@t',
   pocket: 'https://getpocket.com/save?url=@u&title=@t',
