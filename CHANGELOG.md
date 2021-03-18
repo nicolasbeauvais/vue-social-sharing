@@ -1,3 +1,8 @@
+<a name="3.0.5"></a>
+# [3.0.5](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.4...3.0.5) (2021-02-15)
+- Change SocialSharing nodes href attributes to `javascript:void(0)` to support Vue-router history
+- Update LinkedIn sharing URL
+
 <a name="3.0.4"></a>
 # [3.0.4](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.3...3.0.4) (2020-11-25)
 - Add `href` attribute to SocialSharing nodes with `a` tag for accessibility
