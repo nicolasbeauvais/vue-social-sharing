@@ -23,6 +23,7 @@ a[class^="share-network-"] {
   align-items: center;
   cursor: pointer;
   margin: 0 10px 10px 0;
+  text-decoration: none;
 }
 
 a[class^="share-network-"] .fah {
