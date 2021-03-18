@@ -1,6 +1,6 @@
 {
   "name": "vue-social-sharing",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "A Vue.js component for sharing links to social networks",
   "author": "Nicolas Beauvais <nicolas@bvs.email>",
   "license": "MIT",
@@ -53,7 +53,7 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@storybook/addon-notes": "^5.1.10",
-    "@storybook/vue": "^5.1.10",
+    "@storybook/vue": "^6.1.21",
     "@vue/test-utils": "^1.0.2",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
