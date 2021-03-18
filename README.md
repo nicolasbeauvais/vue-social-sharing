@@ -1,9 +1,9 @@
 <h1 align="center">Vue Social Sharing</h1>
 <h4 align="center">A renderless components for sharing links on major social networks</h4>
-<h5 align="center">Less than 2.5kb gzipped</h5>
+<p align="center">Less than 2.5kb gzipped</p>
 
 <p align="center">
-  <img width="580" src="https://user-images.githubusercontent.com/2951704/83863753-11f2af80-a724-11ea-9202-98b40cdbebe2.png">
+  <img width="580" src="https://user-images.githubusercontent.com/2951704/111610221-63fc5180-87db-11eb-8e66-22c1309a6a92.png">
 </p>
 
 <br>

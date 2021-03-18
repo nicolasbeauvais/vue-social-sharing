@@ -1,3 +1,7 @@
+<a name="3.0.6"></a>
+# [3.0.6](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.5...3.0.6) (2021-03-18)
+- Add share to Messenger
+
 <a name="3.0.5"></a>
 # [3.0.5](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.4...3.0.5) (2021-02-15)
 - Change SocialSharing nodes href attributes to `javascript:void(0)` to support Vue-router history
