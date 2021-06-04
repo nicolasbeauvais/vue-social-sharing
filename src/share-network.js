@@ -1,3 +1,4 @@
+import { h } from 'vue';
 import AvailableNetworks from './networks'
 
 let $window = typeof window !== 'undefined' ? window : null
@@ -175,7 +176,7 @@ export default {
     }
   },
 
-  render: function (createElement) {
+  render: function () {
     if (!this.networks.hasOwnProperty(this.key)) {
       throw new Error('Network ' + this.key + ' does not exist')
     }
@@ -189,7 +190,7 @@ export default {
 
     if (this.tag === 'a') node.attrs = { href: 'javascript:void(0)' }
 
-    return createElement(this.tag, node, this.$slots.default)
+    return h(this.tag, node, this.$slots.default)
   },
 
   methods: {
