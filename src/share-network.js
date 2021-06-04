@@ -178,19 +178,21 @@ export default {
 
   render: function () {
     if (!this.networks.hasOwnProperty(this.key)) {
-      throw new Error('Network ' + this.key + ' does not exist')
+      throw new Error('Network ' + this.key + ' does not exist');
     }
 
     const node = {
       class: 'share-network-' + this.key,
-      on: {
-        click: () => this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']()
+      onclick: () => {
+        return this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']();
       }
+    };
+
+    if (this.tag === 'a') {
+      node.href = 'javascript:void(0)';
     }
 
-    if (this.tag === 'a') node.attrs = { href: 'javascript:void(0)' }
-
-    return h(this.tag, node, this.$slots.default)
+    return h(this.tag, node, this.$slots.default());
   },
 
   methods: {
