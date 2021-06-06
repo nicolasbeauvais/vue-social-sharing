@@ -2,17 +2,17 @@ import AvailableNetworks from './networks'
 import ShareNetwork from './share-network'
 
 export default {
-  install: (Vue, options) => {
-    Vue.component(ShareNetwork.name, ShareNetwork)
+  install: (app, options) => {
+    app.component(ShareNetwork.name, ShareNetwork);
 
-    Vue.prototype.$SocialSharing = {
+    app.config.globalProperties.$SocialSharing = {
       options: {
-        networks: options && options.hasOwnProperty('networks') ? Object.assign(
-          AvailableNetworks,
-          options.networks
-        ) : AvailableNetworks
+        networks:
+          options && options.hasOwnProperty('networks')
+            ? Object.assign(AvailableNetworks, options.networks)
+            : AvailableNetworks
       }
-    }
+    };
   }
 }
 
