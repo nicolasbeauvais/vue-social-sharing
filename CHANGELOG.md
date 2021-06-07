@@ -1,3 +1,7 @@
+<a name="4.0.0-alpha1"></a>
+# [4.0.0-alpha1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.7...4.0.0-alpha1) (2021-06-07)
+- Vue 3 compatibility
+
 <a name="3.0.7"></a>
 # [3.0.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.6...3.0.7) (2021-03-18)
 - Fix dependencies

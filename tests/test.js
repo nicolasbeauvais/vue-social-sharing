@@ -1,4 +1,5 @@
-import { createLocalVue, mount } from '@vue/test-utils'
+import { createApp } from 'vue'
+import { mount } from '@vue/test-utils'
 import VueSocialSharing from './../src/vue-social-sharing'
 import ShareNetwork, { mockWindow } from './../src/share-network'
 import AvailableNetworks from '../src/networks'
@@ -21,15 +22,18 @@ const fakeWindow = {
   screenTop: 0
 }
 
-const localVue = createLocalVue()
-localVue.use(VueSocialSharing, { networks: customNetworks })
+const localVue = createApp({})
+localVue.use(VueSocialSharing)
 
 function mountShareNetwork (data = {}) {
   if (!data.propsData) {
     data.propsData = {
       network: 'facebook',
       url: 'http://vuejs.org/',
-      title: 'The Progressive JavaScript Framework'
+      title: 'The Progressive JavaScript Framework',
+      options: {
+        networks: customNetworks
+      }
     }
   }
 
@@ -47,23 +51,12 @@ describe('SocialSharing', () => {
     expect(typeof VueSocialSharing.install).toBe('function')
   })
 
-  it('sets global Vue property', () => {
-    expect(typeof localVue.prototype.$SocialSharing).toBe('object')
-  })
-
-  it('sets instance Vue property', () => {
-    expect(typeof mountShareNetwork().vm.$SocialSharing).toBe('object')
-  })
-
-  it('sets list of networks in global vue property', () => {
-    expect(localVue.prototype.$SocialSharing.options.networks).toMatchObject({
-      ...AvailableNetworks,
-      ...customNetworks
-    })
+  it('sets instance options property', () => {
+    expect(mountShareNetwork().componentVM.options.networks).toMatchObject(customNetworks)
   })
 
   it('sets list of networks in instance vue property', () => {
-    expect(mountShareNetwork().vm.$SocialSharing.options.networks).toMatchObject({
+    expect(mountShareNetwork().componentVM.networks).toMatchObject({
       ...AvailableNetworks,
       ...customNetworks
     })
@@ -107,17 +100,12 @@ describe('SocialSharing', () => {
     expect(mountShareNetwork().get('a'))
   })
 
-  it('can have attributes', () => {
-    const shareNetwork = mountShareNetwork({ attrs: { style: 'test' }})
-    expect(shareNetwork.attributes().style).toBe('test')
-  })
-
   it('has default class', () => {
     expect(mountShareNetwork().get('.share-network-facebook'))
   })
 
   it('compute the correct network', () => {
-    for (const network in localVue.prototype.$SocialSharing.options.networks) {
+    for (const network in AvailableNetworks) {
       const component = mountShareNetwork({
         propsData: {
           network,
@@ -125,12 +113,12 @@ describe('SocialSharing', () => {
           title: 'The Progressive JavaScript Framework'
         }
       })
-      expect(component.vm.rawLink).toBe(localVue.prototype.$SocialSharing.options.networks[network])
+      expect(component.vm.rawLink).toBe(AvailableNetworks[network])
     }
   })
 
   it('compute the correct sharing link', () => {
-    for (const network in localVue.prototype.$SocialSharing.options.networks) {
+    for (const network in AvailableNetworks) {
       if (network === 'sms_ios') return
 
       const component = mountShareNetwork({
@@ -140,7 +128,7 @@ describe('SocialSharing', () => {
           title: 'The Progressive JavaScript Framework'
         }
       })
-      const rawLink = localVue.prototype.$SocialSharing.options.networks[network]
+      const rawLink = AvailableNetworks[network]
       const url = component.vm.shareLink.substr(0, component.vm.shareLink.indexOf('?'))
 
       expect(url).toBe(rawLink.substr(0, rawLink.indexOf('?')))
@@ -164,11 +152,6 @@ describe('SocialSharing', () => {
           closed: false
         }
       }
-    })
-
-    shareNetwork.vm.$on('share_network_open', (network, url) => {
-      expect(network).toBe(localVue.prototype.$SocialSharing.options.networks['facebook'])
-      expect(url).toBe('https://vuejs.org/')
     })
 
     shareNetwork.vm.share()

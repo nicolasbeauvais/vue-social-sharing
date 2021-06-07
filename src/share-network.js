@@ -1,4 +1,4 @@
-import { h } from 'vue';
+import { h } from 'vue'
 import AvailableNetworks from './networks'
 
 let $window = typeof window !== 'undefined' ? window : null
@@ -93,6 +93,13 @@ export default {
         width: 626,
         height: 436
       })
+    },
+
+    options: {
+      type: Object,
+      default: () => ({
+        networks: null
+      })
     }
   },
 
@@ -110,9 +117,7 @@ export default {
      * List of available networks
      */
     networks () {
-      return this.$SocialSharing
-        ? this.$SocialSharing.options.networks
-        : AvailableNetworks
+      return Object.assign(AvailableNetworks, this.options.networks || {})
     },
 
     /**
@@ -178,21 +183,21 @@ export default {
 
   render: function () {
     if (!this.networks.hasOwnProperty(this.key)) {
-      throw new Error('Network ' + this.key + ' does not exist');
+      throw new Error('Network ' + this.key + ' does not exist')
     }
 
     const node = {
       class: 'share-network-' + this.key,
       onclick: () => {
-        return this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']();
+        return this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']()
       }
-    };
-
-    if (this.tag === 'a') {
-      node.href = 'javascript:void(0)';
     }
 
-    return h(this.tag, node, this.$slots.default());
+    if (this.tag === 'a') {
+      node.href = 'javascript:void(0)'
+    }
+
+    return h(this.tag, node, this.$slots.default === 'function' ? this.$slots.default() : null)
   },
 
   methods: {
