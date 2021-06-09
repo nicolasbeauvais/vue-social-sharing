@@ -1,5 +1,5 @@
-<a name="4.0.0-alpha3"></a>
-# [4.0.0-alpha3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/4.0.0-alpha2...4.0.0-alpha3) (2021-06-09)
+<a name="4.0.0-alpha4"></a>
+# [4.0.0-alpha3](https://github.com/nicolasbeauvais/vue-social-sharing/compare/4.0.0-alpha2...4.0.0-alpha4) (2021-06-09)
 - Fix npm release
 
 <a name="4.0.0-alpha2"></a>
