@@ -1,3 +1,8 @@
+<a name="3.0.8"></a>
+# [3.0.8](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.
+7...3.0.8) (2021-03-18)
+- Fix npm
+
 <a name="3.0.7"></a>
 # [3.0.7](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.6...3.0.7) (2021-03-18)
 - Fix dependencies
