@@ -1,3 +1,7 @@
+<a name="4.0.0-alpha2"></a>
+# [4.0.0-alpha2](https://github.com/nicolasbeauvais/vue-social-sharing/compare/4.0.0-alpha1...4.0.0-alpha2) (2021-06-07)
+- Fix component rendering
+  
 <a name="4.0.0-alpha1"></a>
 # [4.0.0-alpha1](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.7...4.0.0-alpha1) (2021-06-07)
 - Vue 3 compatibility

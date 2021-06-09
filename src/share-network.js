@@ -197,7 +197,7 @@ export default {
       node.href = 'javascript:void(0)'
     }
 
-    return h(this.tag, node, this.$slots.default === 'function' ? this.$slots.default() : null)
+    return h(this.tag, node, typeof this.$slots.default === 'function' ? this.$slots.default() : null)
   },
 
   methods: {
