@@ -1,6 +1,6 @@
 {
   "name": "vue-social-sharing",
-  "version": "4.0.0-alpha2",
+  "version": "4.0.0-alpha3",
   "description": "A Vue.js component for sharing links to social networks",
   "author": "Nicolas Beauvais <nicolas@bvs.email>",
   "license": "MIT",
