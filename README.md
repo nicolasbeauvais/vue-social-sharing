@@ -40,6 +40,21 @@ yarn add vue-social-sharing
 npm install --save vue-social-sharing
 ```
 
+## Vue 3 support
+
+Vue 3 support is available in Alpha build, you can try it with the following command:
+
+```bash
+# Yarn
+yarn add vue-social-sharing@next
+
+# NPM
+npm install --save vue-social-sharing@next
+```
+
+Remember that this is an alpha build, not all feature are available yet and you will certainly encounter some bugs. 
+
+
 ## Usage
 
 ### Loading the library
