@@ -1,4 +1,4 @@
-import { PluginObject } from "vue"
+import { Plugin } from "vue"
 
 export interface Props {
   network: string
@@ -17,6 +17,6 @@ export interface PluginOptions {
   networks: Record<string, string>
 }
 
-declare const VueSocialSharing: PluginObject<PluginOptions>
+declare const VueSocialSharing: Plugin
 
 export default VueSocialSharing
