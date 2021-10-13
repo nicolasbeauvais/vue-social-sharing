@@ -31,7 +31,7 @@ export default {
   skype: 'https://web.skype.com/share?url=@t%0D%0A@u%0D%0A@d',
   sms: 'sms:?body=@t%0D%0A@u%0D%0A@d',
   stumbleupon: 'https://www.stumbleupon.com/submit?url=@u&title=@t',
-  telegram: 'https://t.me/share/url?url=@u&text=@t%0D%0A@d',
+  telegram: 'https://t.me/share/url?url=@u&text=@t',
   tumblr: 'https://www.tumblr.com/share/link?url=@u&name=@t&description=@d',
   twitter: 'https://twitter.com/intent/tweet?text=@t&url=@u&hashtags=@h@tu',
   viber: 'viber://forward?text=@t%0D%0A@u%0D%0A@d',
