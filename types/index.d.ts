@@ -20,3 +20,11 @@ export interface PluginOptions {
 declare const VueSocialSharing: PluginObject<PluginOptions>
 
 export default VueSocialSharing
+
+export const ShareNetwork
+
+declare const ShareNetwork: DefineComponent<{}, {}, any>
+
+export {
+  ShareNetwork,
+}
