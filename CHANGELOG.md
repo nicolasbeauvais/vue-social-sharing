@@ -1,3 +1,8 @@
+<a name="3.0.9"></a>
+# [3.0.9](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.8...3.0.9) (2022-02-06)
+- Fix LinkedIn URL
+
+
 <a name="3.0.8"></a>
 # [3.0.8](https://github.com/nicolasbeauvais/vue-social-sharing/compare/3.0.7...3.0.8) (2021-03-18)
 - Fix npm
