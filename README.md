@@ -177,18 +177,17 @@ You can listen to a `ShareNetwork` local event by using the following code:
 In version `3.x` you can extend and override the list of available networks. You can see a working example of the feature in the `examples/index.js` file:
 
 ```javascript
-import Vue from 'vue'
+import { createApp } from 'vue'
 import VueSocialSharing from '@/vue-social-sharing'
 
-Vue.use(VueSocialSharing, {
+const app = createApp(App)
+app.use(VueSocialSharing, {
   networks: {
     fakeblock: 'https://fakeblock.com/share?url=@url&title=@title'
   }
 })
 
-new Vue({
-  el: '#app',
-})
+app.mount('#app')
 ```
 
 ## Extending the network list in Nuxt

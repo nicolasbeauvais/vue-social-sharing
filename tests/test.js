@@ -42,7 +42,14 @@ function mountShareNetwork (data = {}) {
   return mount(ShareNetwork, {
     propsData: data.propsData,
     attrs: data.attrs,
-    localVue
+    localVue,
+    global: {
+      provide: {
+        'shareNetworkOptions': {
+          networks: customNetworks
+        }
+      }
+    }
   })
 }
 

@@ -10,6 +10,18 @@ export function mockWindow (self) {
 export default {
   name: 'ShareNetwork',
 
+  inject: {
+    /**
+     * Options containing custom (extra) networks defined by the user
+     */
+    options: {
+      from: 'shareNetworkOptions',
+      default: {
+        networks: null
+      }
+    }
+  },
+
   props: {
     /**
      * Name of the network to display.
@@ -92,13 +104,6 @@ export default {
       default: () => ({
         width: 626,
         height: 436
-      })
-    },
-
-    options: {
-      type: Object,
-      default: () => ({
-        networks: null
       })
     }
   },
