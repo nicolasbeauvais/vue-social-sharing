@@ -23,6 +23,14 @@ const fakeWindow = {
 
 const localVue = createLocalVue()
 localVue.use(VueSocialSharing, { networks: customNetworks })
+const CompWithProps = {
+  props: ['foo'],
+  render: function () {
+    return '<span>' + this.foo + '</span>'
+  }
+}
+
+localVue.component('comp-with-props', CompWithProps)
 
 function mountShareNetwork (data = {}) {
   if (!data.propsData) {
@@ -110,6 +118,20 @@ describe('SocialSharing', () => {
   it('can have attributes', () => {
     const shareNetwork = mountShareNetwork({ attrs: { style: 'test' }})
     expect(shareNetwork.attributes().style).toBe('test')
+  })
+
+  it('can pass props to custom element', () => {
+    const shareNetwork = mountShareNetwork({
+      propsData: {
+        tag: 'comp-with-props',
+        network: 'facebook',
+        url: 'http://vuejs.org/',
+        title: 'The Progressive JavaScript Framework',
+        foo: 'bar'
+      }
+    })
+
+    expect(shareNetwork.findComponent(CompWithProps).props('foo')).toBe('bar')
   })
 
   it('has default class', () => {
