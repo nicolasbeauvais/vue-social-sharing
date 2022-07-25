@@ -182,6 +182,7 @@ export default {
 
     const node = {
       class: 'share-network-' + this.key,
+      props: this.$attrs,
       on: {
         click: () => this[this.rawLink.substring(0, 4) === 'http' ? 'share' : 'touch']()
       }
