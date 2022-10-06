@@ -9,7 +9,9 @@ export function mockWindow (self) {
 
 export default {
   name: 'ShareNetwork',
-
+  compatConfig: {
+    MODE: 3,
+  },
   props: {
     /**
      * Name of the network to display.
