@@ -5,7 +5,6 @@
  * @u = url
  * @t = title
  * @d = description
- * @q = quote
  * @h = hashtags
  * @m = media
  * @tu = twitterUser
@@ -16,7 +15,7 @@ export default {
   buffer: 'https://bufferapp.com/add?text=@t&url=@u',
   email: 'mailto:?subject=@t&body=@u%0D%0A@d',
   evernote: 'https://www.evernote.com/clip.action?url=@u&title=@t',
-  facebook: 'https://www.facebook.com/sharer/sharer.php?u=@u&title=@t&description=@d&quote=@q&hashtag=@h',
+  facebook: 'https://www.facebook.com/sharer/sharer.php?u=@u&title=@t&description=@d&hashtag=@h',
   flipboard: 'https://share.flipboard.com/bookmarklet/popout?v=2&url=@u&title=@t',
   hackernews: 'https://news.ycombinator.com/submitlink?u=@u&t=@t',
   instapaper: 'http://www.instapaper.com/edit?url=@u&title=@t&description=@d',

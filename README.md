@@ -28,7 +28,7 @@ Renderless components give you the highest possible control over your markup and
 
 ### Understanding social sharing
 
-Before using this package it is important to understand how Social Networks handle sharing links on their platform. When you share a link on a Social Network, the Social Network will crawl the link to detect [Open Graph meta tags](https://ogp.me/). If you share links that do not contain Open Graph meta tags, the Social Network will not be able to display a rich content for your link. You can refer to the [Available properties](https://github.com/nicolasbeauvais/vue-social-sharing#available-networks-and-properties) section of the documentation to check which Social Network accept which properties without Open Graph tags.  
+Before using this package it is important to understand how Social Networks handle sharing links on their platform. When you share a link on a Social Network, the Social Network will crawl the link to detect [Open Graph meta tags](https://ogp.me/). If you share links that do not contain Open Graph meta tags, the Social Network will not be able to display a rich content for your link. You can refer to the [Available properties](https://github.com/nicolasbeauvais/vue-social-sharing#available-networks-and-properties) section of the documentation to check which Social Network accept which properties without Open Graph tags.
 
 ## Installation
 
@@ -52,7 +52,7 @@ yarn add vue-social-sharing@next
 npm install --save vue-social-sharing@next
 ```
 
-Remember that this is an alpha build, not all feature are available yet and you will certainly encounter some bugs. 
+Remember that this is an alpha build, not all feature are available yet and you will certainly encounter some bugs.
 
 
 ## Usage
@@ -89,7 +89,6 @@ modules: [
     url="https://news.vuejs.org/issues/180"
     title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
     description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
-    quote="The hot reload is so fast it\'s near instant. - Evan You"
     hashtags="vuejs,vite"
   >
     Share on Facebook
@@ -115,7 +114,6 @@ The `url` is the only property required for all networks.
 | `url`          | String | URL to share.                                              |
 | `title`        | String | Sharing title (if available).                              |
 | `description`  | String | Sharing description (if available).                        |
-| `quote`        | String | Facebook quote (Facebook only).                            |
 | `hashtags`     | String | A list of comma-separated hashtags (Twitter and Facebook). |
 | `twitter-user` | String | Twitter user (Twitter only).                               |
 | `media`        | String | Url to a media (Pinterest, VK, Weibo, and Wordpress).      |
@@ -128,7 +126,7 @@ The `url` is the only property required for all networks.
 | Buffer        | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Email         | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 | EverNote      | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
-| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will be used.<br/>`quote` Facebook quote. |
+| Facebook      | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | `hashtags` A list of comma-separated hashtags, only the first one will be used.<br/>                   |
 | FlipBoard     | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | HackerNews    | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | InstaPaper    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |

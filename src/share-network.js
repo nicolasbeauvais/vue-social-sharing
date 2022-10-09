@@ -43,14 +43,6 @@ export default {
     },
 
     /**
-     * Quote content, used for Facebook.
-     */
-    quote: {
-      type: String,
-      default: ''
-    },
-
-    /**
      * Hashtags, used for Twitter and Facebook.
      */
     hashtags: {
@@ -158,7 +150,6 @@ export default {
         .replace(/@u/g, encodeURIComponent(this.url))
         .replace(/@t/g, encodeURIComponent(this.title))
         .replace(/@d/g, encodeURIComponent(this.description))
-        .replace(/@q/g, encodeURIComponent(this.quote))
         .replace(/@h/g, this.encodedHashtags)
         .replace(/@m/g, encodeURIComponent(this.media))
     },
