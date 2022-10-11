@@ -153,7 +153,8 @@ The `url` is the only property required for all networks.
 | Xing          | :heavy_check_mark: | :heavy_check_mark: | :x:                |                                                                                                        |
 | Yammer        | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                                                                                                        |
 
-For the networks: `Line`, `Skype`, `SMS`, `Telegram`, `Viber`, `WhatsApp` and `Yammer`; the shared content is a string of the form: "`$title` `$url` `$description`"
+For the networks: `Line`, `SMS`, `Telegram`, `Viber`, `WhatsApp` and `Yammer`; the shared content is a string of the form: "`$title` `$url` `$description`"
+The shared content for the `Skype` is a string of the form: "`$title` `$description`" with `url` appended automatically.
 
 #### Available events
 
