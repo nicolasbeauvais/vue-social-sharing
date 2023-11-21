@@ -99,7 +99,6 @@ export default {
     return {
       popupTop: 0,
       popupLeft: 0,
-      popupWindow: undefined,
       popupInterval: null
     }
   },
@@ -211,18 +210,18 @@ export default {
      */
     share () {
       this.resizePopup()
-
+      let popupWindow;
       // If a popup window already exist, we close it and trigger a change event.
-      if (this.popupWindow && this.popupInterval) {
+      if (popupWindow && this.popupInterval) {
         clearInterval(this.popupInterval)
 
         // Force close (for Facebook)
-        this.popupWindow.close()
+        popupWindow.close()
 
         this.emit('change')
       }
 
-      this.popupWindow = $window.open(
+      popupWindow = $window.open(
         this.shareLink,
         'sharer-' + this.key,
         ',height=' + this.popup.height +
@@ -234,16 +233,16 @@ export default {
       )
 
       // If popup are prevented (AdBlocker, Mobile App context..), popup.window stays undefined and we can't display it
-      if (!this.popupWindow) return
+      if (!popupWindow) return
 
-      this.popupWindow.focus()
+      popupWindow.focus()
 
       // Create an interval to detect popup closing event
       this.popupInterval = setInterval(() => {
-        if (!this.popupWindow || this.popupWindow.closed) {
+        if (!popupWindow || popupWindow.closed) {
           clearInterval(this.popupInterval)
 
-          this.popupWindow = null
+          popupWindow = null
 
           this.emit('close')
         }
