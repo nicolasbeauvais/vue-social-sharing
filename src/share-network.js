@@ -99,7 +99,6 @@ export default {
     return {
       popupTop: 0,
       popupLeft: 0,
-      popupWindow: undefined,
       popupInterval: null
     }
   },
@@ -210,46 +209,53 @@ export default {
      * Shares URL in specified network.
      */
     share () {
-      this.resizePopup()
-
+      
+      this.resizePopup();
+      let popupWindow;
       // If a popup window already exist, we close it and trigger a change event.
-      if (this.popupWindow && this.popupInterval) {
-        clearInterval(this.popupInterval)
+      if (popupWindow && this.popupInterval) {
+        clearInterval(this.popupInterval);
 
         // Force close (for Facebook)
-        this.popupWindow.close()
+        popupWindow.close();
 
-        this.emit('change')
+        this.emit("change");
       }
 
-      this.popupWindow = $window.open(
+      popupWindow = $window.open(
         this.shareLink,
-        'sharer-' + this.key,
-        ',height=' + this.popup.height +
-        ',width=' + this.popup.width +
-        ',left=' + this.popupLeft +
-        ',top=' + this.popupTop +
-        ',screenX=' + this.popupLeft +
-        ',screenY=' + this.popupTop
-      )
+        "sharer-" + this.key,
+        ",height=" +
+          this.popup.height +
+          ",width=" +
+          this.popup.width +
+          ",left=" +
+          this.popupLeft +
+          ",top=" +
+          this.popupTop +
+          ",screenX=" +
+          this.popupLeft +
+          ",screenY=" +
+          this.popupTop
+      );
 
       // If popup are prevented (AdBlocker, Mobile App context..), popup.window stays undefined and we can't display it
-      if (!this.popupWindow) return
+      if (!popupWindow) return;
 
-      this.popupWindow.focus()
+      popupWindow.focus();
 
       // Create an interval to detect popup closing event
       this.popupInterval = setInterval(() => {
-        if (!this.popupWindow || this.popupWindow.closed) {
-          clearInterval(this.popupInterval)
+        if (!popupWindow || popupWindow.closed) {
+          clearInterval(this.popupInterval);
 
-          this.popupWindow = null
+          popupWindow = null;
 
-          this.emit('close')
+          this.emit("close");
         }
-      }, 500)
+      }, 500);
 
-      this.emit('open')
+      this.emit("open");
     },
 
     /**
